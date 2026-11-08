@@ -1,41 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hanafia Future Darul Quran Academy</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#071735;color:white;line-height:1.7}
-header{background:linear-gradient(135deg,#061638,#174582);padding:24px;text-align:center;border-bottom:2px solid #d5ad50}
+body{
+ font-family:Arial,sans-serif;
+ background:#071735;
+ color:white;
+ line-height:1.7
+}
+header{
+ background:linear-gradient(135deg,#061638,#174582);
+ padding:24px;
+ text-align:center;
+ border-bottom:2px solid #d5ad50
+}
 header h1{color:#f5cb60}
-nav{background:#0b2450;padding:12px;text-align:center;position:sticky;top:0;z-index:5}
-nav a{color:white;text-decoration:none;margin:7px;display:inline-block;font-size:14px}
+nav{
+ background:#0b2450;
+ padding:12px;
+ text-align:center;
+ position:sticky;
+ top:0;
+ z-index:5
+}
+nav a{
+ color:white;
+ text-decoration:none;
+ margin:7px;
+ display:inline-block;
+ font-size:14px
+}
 section{padding:35px 15px;scroll-margin-top:65px}
 .container{max-width:950px;margin:auto}
-.hero{text-align:center;background:linear-gradient(145deg,#123d7b,#061638);padding:55px 18px}
+.hero{
+ text-align:center;
+ background:linear-gradient(145deg,#123d7b,#061638);
+ padding:55px 18px
+}
 h2{color:#f5cb60;text-align:center;margin-bottom:20px}
 h3{color:#f5cb60;margin-bottom:10px}
 p{color:#e2eafa}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.card,.panel{background:linear-gradient(145deg,#153e7c,#081a3b);border:1px solid #b99b55;border-radius:15px;padding:20px;margin-bottom:15px;box-shadow:0 8px 20px #0005}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:16px
+}
+.card,.panel{
+ background:linear-gradient(145deg,#153e7c,#081a3b);
+ border:1px solid #b99b55;
+ border-radius:15px;
+ padding:20px;
+ margin-bottom:15px;
+ box-shadow:0 8px 20px #0005
+}
 .card{text-align:center}
-.btn{display:inline-block;background:linear-gradient(120deg,#ffe28b,#c18c25);color:#102247;padding:11px 20px;border:0;border-radius:25px;font-weight:bold;text-decoration:none;cursor:pointer;margin:6px}
-input,select,textarea{width:100%;padding:12px;margin:7px 0 14px;border:1px solid #c5a35b;border-radius:8px;background:#fff;color:#111;font-size:15px}
+.btn{
+ display:inline-block;
+ background:linear-gradient(120deg,#ffe28b,#c18c25);
+ color:#102247;
+ padding:11px 20px;
+ border:0;
+ border-radius:25px;
+ font-weight:bold;
+ text-decoration:none;
+ cursor:pointer;
+ margin:6px
+}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+input,select,textarea{
+ width:100%;
+ padding:12px;
+ margin:7px 0 14px;
+ border:1px solid #c5a35b;
+ border-radius:8px;
+ background:#fff;
+ color:#111;
+ font-size:15px
+}
 label{display:block;color:#f5d37b}
 form{max-width:650px;margin:auto}
 .hidden{display:none!important}
 .muted{color:#c9d5eb;font-size:13px}
-.notice{padding:12px;background:#102c5a;border-radius:9px;margin:10px 0}
-table{width:100%;border-collapse:collapse;margin-top:12px}
-td,th{padding:9px;border:1px solid #9c854e;text-align:left;font-size:13px}
+.notice{
+ padding:12px;
+ background:#102c5a;
+ border-radius:9px;
+ margin:10px 0;
+ overflow-wrap:anywhere
+}
 .table-wrap{overflow-x:auto}
-footer{text-align:center;padding:28px;background:#041027}
-hr{border:0;border-top:1px solid #8d7542;margin:18px 0}
-@media(max-width:600px){.grid{grid-template-columns:1fr}header h1{font-size:23px}}
+footer{
+ text-align:center;
+ padding:28px;
+ background:#041027
+}
+hr{
+ border:0;
+ border-top:1px solid #8d7542;
+ margin:18px 0
+}
+.status{margin-top:10px;overflow-wrap:anywhere}
+@media(max-width:600px){
+ .grid{grid-template-columns:1fr}
+ header h1{font-size:23px}
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -53,21 +129,48 @@ hr{border:0;border-top:1px solid #8d7542;margin:18px 0}
 </nav>
 
 <section class="hero" id="home">
-<h1 style="color:#f5cb60">আধুনিক অনলাইন কুরআন একাডেমি</h1>
+<h1 style="color:#f5cb60">
+আধুনিক অনলাইন কুরআন একাডেমি
+</h1>
 <p>বিশুদ্ধ কুরআন শিক্ষা, সুন্দর ভবিষ্যৎ</p>
 <p>দেশ-বিদেশের শিক্ষার্থীদের জন্য অনলাইন কুরআন শিক্ষা।</p>
+
 <a class="btn" href="#admission">অনলাইন ভর্তি</a>
-<a class="btn" href="https://wa.me/8801342268929">WhatsApp</a>
+
+<a class="btn"
+href="https://wa.me/8801342268929"
+target="_blank"
+rel="noopener">
+WhatsApp
+</a>
 </section>
 
 <section id="features">
 <div class="container">
 <h2>আমাদের বিশেষ বৈশিষ্ট্য</h2>
+
 <div class="grid">
-<div class="card"><h3>🎯 ব্যক্তিগত মনোযোগ</h3><p>প্রতিটি শিক্ষার্থীর জন্য আলাদা যত্ন।</p></div>
-<div class="card"><h3>👨‍🏫 অভিজ্ঞ শিক্ষক</h3><p>প্রশিক্ষিত হাফেজ ও কারী শিক্ষক।</p></div>
-<div class="card"><h3>🌍 অনলাইন ক্লাস</h3><p>বিশ্বের যেকোনো স্থান থেকে শিক্ষা।</p></div>
-<div class="card"><h3>📚 পরিকল্পিত সিলেবাস</h3><p>নূরানী, নাজেরা, হিফজ ও ইসলামিক শিক্ষা।</p></div>
+
+<div class="card">
+<h3>🎯 ব্যক্তিগত মনোযোগ</h3>
+<p>প্রতিটি শিক্ষার্থীর জন্য আলাদা যত্ন।</p>
+</div>
+
+<div class="card">
+<h3>👨‍🏫 অভিজ্ঞ শিক্ষক</h3>
+<p>প্রশিক্ষিত হাফেজ ও কারী শিক্ষক।</p>
+</div>
+
+<div class="card">
+<h3>🌍 অনলাইন ক্লাস</h3>
+<p>বিশ্বের যেকোনো স্থান থেকে শিক্ষা।</p>
+</div>
+
+<div class="card">
+<h3>📚 পরিকল্পিত সিলেবাস</h3>
+<p>নূরানী, নাজেরা, হিফজ ও ইসলামিক শিক্ষা।</p>
+</div>
+
 </div>
 </div>
 </section>
@@ -75,11 +178,29 @@ hr{border:0;border-top:1px solid #8d7542;margin:18px 0}
 <section id="courses">
 <div class="container">
 <h2>আমাদের কোর্স</h2>
+
 <div class="grid">
-<div class="card"><h3>নূরানী</h3><p>আরবি হরফ ও প্রাথমিক শিক্ষা।</p></div>
-<div class="card"><h3>নাজেরা</h3><p>শুদ্ধ উচ্চারণে কুরআন তিলাওয়াত।</p></div>
-<div class="card"><h3>হিফজ</h3><p>পরিকল্পিত কুরআন মুখস্থ শিক্ষা।</p></div>
-<div class="card"><h3>ইসলামিক শিক্ষা</h3><p>দোয়া ও প্রয়োজনীয় মাসআলা।</p></div>
+
+<div class="card">
+<h3>নূরানী</h3>
+<p>আরবি হরফ ও প্রাথমিক শিক্ষা।</p>
+</div>
+
+<div class="card">
+<h3>নাজেরা</h3>
+<p>শুদ্ধ উচ্চারণে কুরআন তিলাওয়াত।</p>
+</div>
+
+<div class="card">
+<h3>হিফজ</h3>
+<p>পরিকল্পিত কুরআন মুখস্থ শিক্ষা।</p>
+</div>
+
+<div class="card">
+<h3>ইসলামিক শিক্ষা</h3>
+<p>দোয়া ও প্রয়োজনীয় মাসআলা।</p>
+</div>
+
 </div>
 </div>
 </section>
@@ -87,14 +208,19 @@ hr{border:0;border-top:1px solid #8d7542;margin:18px 0}
 <section id="admission">
 <div class="container">
 <h2>অনলাইন ভর্তি আবেদন</h2>
+
 <div class="panel">
 <form id="admissionForm">
+
 <label>শিক্ষার্থীর নাম</label>
-<input id="aName" required>
+<input id="aName" required maxlength="100">
+
 <label>পিতার নাম</label>
-<input id="aFather" required>
+<input id="aFather" required maxlength="100">
+
 <label>মোবাইল নম্বর</label>
-<input id="aMobile" required type="tel">
+<input id="aMobile" required type="tel" maxlength="25">
+
 <label>বয়সভিত্তিক গ্রুপ</label>
 <select id="aAge" required>
 <option value="">নির্বাচন করুন</option>
@@ -102,16 +228,24 @@ hr{border:0;border-top:1px solid #8d7542;margin:18px 0}
 <option>৯-১৪ বছর</option>
 <option>১৫ বছর ও তদূর্ধ্ব</option>
 </select>
+
 <label>কোর্স</label>
 <select id="aCourse" required>
 <option value="">নির্বাচন করুন</option>
-<option>নূরানী</option><option>নাজেরা</option>
-<option>হিফজ</option><option>ইসলামিক শিক্ষা</option>
+<option>নূরানী</option>
+<option>নাজেরা</option>
+<option>হিফজ</option>
+<option>ইসলামিক শিক্ষা</option>
 </select>
+
 <label>দেশ ও ঠিকানা</label>
-<input id="aAddress" required>
-<button class="btn" type="submit">আবেদন জমা দিন</button>
-<p id="aMessage"></p>
+<input id="aAddress" required maxlength="300">
+
+<button class="btn" id="admissionSubmit" type="submit">
+আবেদন জমা দিন
+</button>
+
+<p id="aMessage" class="status" aria-live="polite"></p>
 </form>
 </div>
 </div>
@@ -120,413 +254,740 @@ hr{border:0;border-top:1px solid #8d7542;margin:18px 0}
 <section id="login">
 <div class="container">
 <h2>Login Portal</h2>
+
 <div class="panel">
 <form id="loginForm">
+
 <label>Email Address</label>
-<input id="email" type="email" required>
+<input id="email" type="email" autocomplete="username" required>
+
 <label>Password</label>
-<input id="password" type="password" required>
-<button class="btn" type="submit">Login করুন</button>
-<p id="loginMessage"></p>
+<input id="password" type="password" autocomplete="current-password" required>
+
+<button class="btn" id="loginSubmit" type="submit">
+Login করুন
+</button>
+
+<p id="loginMessage" class="status" aria-live="polite"></p>
 </form>
-<button class="btn" id="logoutBtn" style="display:none">Logout</button>
+
+<button class="btn" id="logoutBtn" style="display:none">
+Logout
+</button>
+
 </div>
 </div>
 </section>
-
-<!-- ADMIN DASHBOARD -->
-<section id="adminPanel" class="hidden">
+ <!-- ADMIN DASHBOARD -->
+<section id="adminDashboard" class="hidden">
 <div class="container">
-<h2>🛡️ Admin Dashboard</h2>
+<h2>Admin Dashboard</h2>
+
 <div class="panel">
-<h3>একাডেমি ব্যবস্থাপনা</h3>
-<p id="adminWelcome"></p>
-<p id="adminCount">আবেদন: 0</p>
-<button class="btn" id="refreshApplications">আবেদন দেখুন</button>
-<div id="applications"></div>
+<h3>প্রশাসকের তথ্য</h3>
+<p id="adminInfo">স্বাগতম, Admin</p>
+<hr>
+
+<h3>ভর্তি আবেদনসমূহ</h3>
+<div id="applicationsList">
+<p>আবেদন লোড হচ্ছে...</p>
+</div>
 </div>
 
 <div class="panel">
-<h3>শিক্ষক ও শিক্ষার্থী প্রোফাইল তৈরি</h3>
-<p class="muted">Firebase Authentication-এ অ্যাকাউন্ট তৈরি হওয়ার পর তার UID এখানে যুক্ত করুন।</p>
+<h3>নতুন User Profile তৈরি</h3>
+
 <form id="profileForm">
-<label>ব্যবহারকারীর UID</label>
-<input id="pUid" required>
+
+<label>User UID</label>
+<input id="profileUid" required>
+
 <label>নাম</label>
-<input id="pName" required>
+<input id="profileName" required>
+
 <label>Email</label>
-<input id="pEmail" type="email" required>
-<label>ভূমিকা</label>
-<select id="pRole" required>
+<input id="profileEmail" type="email" required>
+
+<label>Role নির্বাচন</label>
+<select id="profileRole" required>
+<option value="">নির্বাচন করুন</option>
 <option value="teacher">Teacher</option>
 <option value="student">Student</option>
 </select>
-<label>কোর্স</label>
-<input id="pCourse" placeholder="যেমন: হিফজ">
-<button class="btn">প্রোফাইল সংরক্ষণ</button>
+
+<button class="btn" type="submit">
+Profile সংরক্ষণ
+</button>
+
+<p id="profileMessage" class="status"></p>
 </form>
-<p id="profileMessage"></p>
 </div>
 
 <div class="panel">
-<h3>Zoom ক্লাস তৈরি করুন</h3>
+<h3>Zoom Class তৈরি</h3>
+
 <form id="classForm">
+
 <label>ক্লাসের নাম</label>
-<input id="cName" required placeholder="যেমন: নাজেরা ক্লাস">
-<label>তারিখ ও সময়</label>
-<input id="cTime" type="datetime-local" required>
-<label>Zoom Meeting Link</label>
-<input id="cLink" type="url" required placeholder="https://zoom.us/j/...">
+<input id="classTitle" required>
+
+<label>কোর্স</label>
+<select id="classCourse" required>
+<option value="">নির্বাচন করুন</option>
+<option>নূরানী</option>
+<option>নাজেরা</option>
+<option>হিফজ</option>
+<option>ইসলামিক শিক্ষা</option>
+</select>
+
 <label>Teacher UID</label>
-<input id="cTeacher" required>
+<input id="classTeacher" required>
+
 <label>Student UID (একাধিক হলে কমা দিয়ে লিখুন)</label>
-<input id="cStudents" required>
-<button class="btn">ক্লাস প্রকাশ করুন</button>
+<input id="classStudents" required>
+
+<label>ক্লাসের তারিখ ও সময়</label>
+<input id="classDate" type="datetime-local" required>
+
+<label>Zoom Meeting Link</label>
+<input id="zoomLink" type="url" placeholder="https://zoom.us/j/..." required>
+
+<button class="btn" type="submit">
+ক্লাস তৈরি করুন
+</button>
+
+<p id="classMessage" class="status"></p>
 </form>
-<p id="classMessage"></p>
 </div>
+
 </div>
 </section>
+
 
 <!-- TEACHER DASHBOARD -->
-<section id="teacherPanel" class="hidden">
+<section id="teacherDashboard" class="hidden">
 <div class="container">
-<h2>👨‍🏫 Teacher Dashboard</h2>
+<h2>Teacher Dashboard</h2>
+
 <div class="panel">
-<p id="teacherWelcome"></p>
 <h3>আমার ক্লাসসমূহ</h3>
-<div id="teacherClasses"></div>
+<div id="teacherClasses">
+<p>ক্লাস লোড হচ্ছে...</p>
 </div>
+</div>
+
 <div class="panel">
-<h3>উপস্থিতি প্রদান</h3>
+<h3>উপস্থিতি জমা দিন</h3>
+
 <form id="attendanceForm">
+
 <label>Class ID</label>
-<input id="attClass" required>
+<input id="attendanceClassId" required>
+
 <label>Student UID</label>
-<input id="attStudent" required>
-<label>উপস্থিতির অবস্থা</label>
-<select id="attStatus">
-<option>Present</option><option>Absent</option>
+<input id="attendanceStudentId" required>
+
+<label>উপস্থিতি</label>
+<select id="attendanceStatus" required>
+<option value="present">উপস্থিত</option>
+<option value="absent">অনুপস্থিত</option>
+<option value="late">বিলম্বে উপস্থিত</option>
 </select>
-<button class="btn">উপস্থিতি সংরক্ষণ</button>
+
+<button class="btn" type="submit">
+উপস্থিতি সংরক্ষণ
+</button>
+
+<p id="attendanceMessage" class="status"></p>
 </form>
-<p id="attendanceMessage"></p>
 </div>
+
 </div>
 </section>
 
+
 <!-- STUDENT DASHBOARD -->
-<section id="studentPanel" class="hidden">
+<section id="studentDashboard" class="hidden">
 <div class="container">
-<h2>🎓 Student Dashboard</h2>
+<h2>Student Dashboard</h2>
+
 <div class="panel">
 <h3>আমার প্রোফাইল</h3>
-<div id="studentInfo"></div>
+<div id="studentInfo">
+তথ্য লোড হচ্ছে...
 </div>
+</div>
+
 <div class="panel">
-<h3>আমার Zoom ক্লাস</h3>
-<div id="studentClasses"></div>
+<h3>আমার অনলাইন ক্লাস</h3>
+<div id="studentClasses">
+ক্লাস লোড হচ্ছে...
 </div>
+</div>
+
+</div>
+</section>
+  <!-- ADMIN DASHBOARD -->
+<section id="adminDashboard" class="hidden">
+<div class="container">
+<h2>Admin Dashboard</h2>
+
+<div class="panel">
+<h3>প্রশাসকের তথ্য</h3>
+<p id="adminInfo">স্বাগতম, Admin</p>
+<hr>
+
+<h3>ভর্তি আবেদনসমূহ</h3>
+<div id="applicationsList">
+<p>আবেদন লোড হচ্ছে...</p>
+</div>
+</div>
+
+<div class="panel">
+<h3>নতুন User Profile তৈরি</h3>
+
+<form id="profileForm">
+
+<label>User UID</label>
+<input id="profileUid" required>
+
+<label>নাম</label>
+<input id="profileName" required>
+
+<label>Email</label>
+<input id="profileEmail" type="email" required>
+
+<label>Role নির্বাচন</label>
+<select id="profileRole" required>
+<option value="">নির্বাচন করুন</option>
+<option value="teacher">Teacher</option>
+<option value="student">Student</option>
+</select>
+
+<button class="btn" type="submit">
+Profile সংরক্ষণ
+</button>
+
+<p id="profileMessage" class="status"></p>
+</form>
+</div>
+
+<div class="panel">
+<h3>Zoom Class তৈরি</h3>
+
+<form id="classForm">
+
+<label>ক্লাসের নাম</label>
+<input id="classTitle" required>
+
+<label>কোর্স</label>
+<select id="classCourse" required>
+<option value="">নির্বাচন করুন</option>
+<option>নূরানী</option>
+<option>নাজেরা</option>
+<option>হিফজ</option>
+<option>ইসলামিক শিক্ষা</option>
+</select>
+
+<label>Teacher UID</label>
+<input id="classTeacher" required>
+
+<label>Student UID (একাধিক হলে কমা দিয়ে লিখুন)</label>
+<input id="classStudents" required>
+
+<label>ক্লাসের তারিখ ও সময়</label>
+<input id="classDate" type="datetime-local" required>
+
+<label>Zoom Meeting Link</label>
+<input id="zoomLink" type="url" placeholder="https://zoom.us/j/..." required>
+
+<button class="btn" type="submit">
+ক্লাস তৈরি করুন
+</button>
+
+<p id="classMessage" class="status"></p>
+</form>
+</div>
+
+</div>
+</section>
+
+
+<!-- TEACHER DASHBOARD -->
+<section id="teacherDashboard" class="hidden">
+<div class="container">
+<h2>Teacher Dashboard</h2>
+
+<div class="panel">
+<h3>আমার ক্লাসসমূহ</h3>
+<div id="teacherClasses">
+<p>ক্লাস লোড হচ্ছে...</p>
+</div>
+</div>
+
+<div class="panel">
+<h3>উপস্থিতি জমা দিন</h3>
+
+<form id="attendanceForm">
+
+<label>Class ID</label>
+<input id="attendanceClassId" required>
+
+<label>Student UID</label>
+<input id="attendanceStudentId" required>
+
+<label>উপস্থিতি</label>
+<select id="attendanceStatus" required>
+<option value="present">উপস্থিত</option>
+<option value="absent">অনুপস্থিত</option>
+<option value="late">বিলম্বে উপস্থিত</option>
+</select>
+
+<button class="btn" type="submit">
+উপস্থিতি সংরক্ষণ
+</button>
+
+<p id="attendanceMessage" class="status"></p>
+</form>
+</div>
+
+</div>
+</section>
+
+
+<!-- STUDENT DASHBOARD -->
+<section id="studentDashboard" class="hidden">
+<div class="container">
+<h2>Student Dashboard</h2>
+
+<div class="panel">
+<h3>আমার প্রোফাইল</h3>
+<div id="studentInfo">
+তথ্য লোড হচ্ছে...
+</div>
+</div>
+
+<div class="panel">
+<h3>আমার অনলাইন ক্লাস</h3>
+<div id="studentClasses">
+ক্লাস লোড হচ্ছে...
+</div>
+</div>
+
 </div>
 </section>
 
 <footer>
-<h3 style="color:#f5cb60">Hanafia Future Darul Quran Academy</h3>
+<h3>Hanafia Future Darul Quran Academy</h3>
 <p>Learn Quran • Build Future</p>
 <p>WhatsApp: 01342268929</p>
 <p>© 2026 All Rights Reserved</p>
 </footer>
-
 <script type="module">
-import {initializeApp}
+import { initializeApp }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 
 import {
-getFirestore,collection,addDoc,getDocs,doc,
-getDoc,setDoc,query,where,serverTimestamp
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
-
-import {
-getAuth,signInWithEmailAndPassword,signOut,
-onAuthStateChanged
+ getAuth, signInWithEmailAndPassword, signOut,
+ onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
-// আপনার Firebase Config বসান
+import {
+ getFirestore, collection, addDoc, getDoc, doc,
+ setDoc, getDocs, query, where, updateDoc,
+ serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+/* FIREBASE CONFIG */
 const firebaseConfig = {
-apiKey:"YOUR_API_KEY",
-authDomain:"noorul-ilm-management.firebaseapp.com",
-projectId:"noorul-ilm-management",
-storageBucket:"YOUR_STORAGE_BUCKET",
-messagingSenderId:"YOUR_SENDER_ID",
-appId:"YOUR_APP_ID"
+ apiKey: "AIzaSyCkivjlMyvCA3dVMzqt4VfBlS45LT0FObo",
+ authDomain: "hanafia-future-academy.firebaseapp.com",
+ projectId: "hanafia-future-academy",
+ storageBucket: "hanafia-future-academy.firebasestorage.app",
+ messagingSenderId: "97046937102",
+ appId: "1:97046937102:web:38ed6a351b318959c0865f",
+ measurementId: "G-MYYT1V0RKK"
 };
 
-const app=initializeApp(firebaseConfig);
-const db=getFirestore(app);
-const auth=getAuth(app);
+/* এখানে Admin UID বসাবেন */
+const ADMIN_UID = "PASTE_ADMIN_UID_HERE";
 
-// আপনার প্রকৃত Admin UID বসান
-const ADMIN_UID="YOUR_ADMIN_UID";
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-const $=id=>document.getElementById(id);
-let currentProfile=null;
+const $ = id => document.getElementById(id);
 
-function message(id,text,color="#a7f5c0"){
-$(id).textContent=text;
-$(id).style.color=color;
+function message(id, text) {
+ if ($(id)) $(id).textContent = text;
 }
 
-function showPanel(id){
-["adminPanel","teacherPanel","studentPanel"].forEach(x=>{
-$(x).classList.add("hidden");
-});
-if(id) $(id).classList.remove("hidden");
+function showDashboard(role) {
+ ["adminDashboard","teacherDashboard","studentDashboard"]
+ .forEach(id => $(id)?.classList.add("hidden"));
+
+ if (role === "admin") $("adminDashboard")?.classList.remove("hidden");
+ if (role === "teacher") $("teacherDashboard")?.classList.remove("hidden");
+ if (role === "student") $("studentDashboard")?.classList.remove("hidden");
 }
 
-function safeDate(value){
-if(!value)return "সময় নির্ধারিত নয়";
-return value.toLocaleString();
+function hideDashboards() {
+ showDashboard("");
 }
 
-// Public admission
-$("admissionForm").addEventListener("submit",async e=>{
-e.preventDefault();
-try{
-await addDoc(collection(db,"student_records"),{
-studentName:$("aName").value.trim(),
-fatherName:$("aFather").value.trim(),
-mobile:$("aMobile").value.trim(),
-ageGroup:$("aAge").value,
-course:$("aCourse").value,
-address:$("aAddress").value.trim(),
-status:"Pending",
-createdAt:serverTimestamp()
-});
-message("aMessage","আলহামদুলিল্লাহ! আবেদন জমা হয়েছে।");
-e.target.reset();
-}catch(err){
-message("aMessage","আবেদন জমা হয়নি: "+err.message,"#ffaaaa");
-}
-});
-
-// Login
-$("loginForm").addEventListener("submit",async e=>{
-e.preventDefault();
-try{
-await signInWithEmailAndPassword(auth,$("email").value,$("password").value);
-message("loginMessage","Login সফল হয়েছে!");
-}catch(err){
-message("loginMessage","Login ব্যর্থ: "+err.message,"#ffaaaa");
-}
-});
-
-// Authentication and role routing
-onAuthStateChanged(auth,async user=>{
-showPanel(null);
-$("logoutBtn").style.display=user?"inline-block":"none";
-if(!user)return;
-
-try{
-if(user.uid===ADMIN_UID){
-currentProfile={role:"admin"};
-$("adminWelcome").textContent="স্বাগতম, Admin!";
-showPanel("adminPanel");
-await loadApplications();
-return;
+function safeZoomLink(value) {
+ try {
+  const url = new URL(value);
+  return url.protocol === "https:" &&
+   (url.hostname === "zoom.us" ||
+    url.hostname.endsWith(".zoom.us"));
+ } catch {
+  return false;
+ }
 }
 
-const snap=await getDoc(doc(db,"user_profiles",user.uid));
-if(!snap.exists()){
-message("loginMessage","আপনার প্রোফাইল এখনো তৈরি হয়নি। Admin-এর সঙ্গে যোগাযোগ করুন.","#ffaaaa");
-await signOut(auth);
-return;
-}
+/* LOGIN */
+$("loginForm").addEventListener("submit", async e => {
+ e.preventDefault();
 
-currentProfile=snap.data();
+ const button = $("loginSubmit");
+ button.disabled = true;
+ message("loginMessage","Login হচ্ছে...");
 
-if(currentProfile.role==="teacher"){
-$("teacherWelcome").textContent="স্বাগতম, "+currentProfile.name;
-showPanel("teacherPanel");
-await loadTeacherClasses(user.uid);
-}else if(currentProfile.role==="student"){
-$("studentInfo").textContent=
-"নাম: "+currentProfile.name+
-" | কোর্স: "+(currentProfile.course||"নির্ধারিত নয়");
-showPanel("studentPanel");
-await loadStudentClasses(user.uid);
-}else{
-throw new Error("অবৈধ ব্যবহারকারীর ভূমিকা");
-}
-}catch(err){
-console.error(err);
-message("loginMessage","প্রোফাইল লোড হয়নি: "+err.message,"#ffaaaa");
-}
+ try {
+  await signInWithEmailAndPassword(
+   auth,
+   $("email").value.trim(),
+   $("password").value
+  );
+  message("loginMessage","সফলভাবে Login হয়েছে।");
+ } catch(error) {
+  message("loginMessage","Login হয়নি: " + error.message);
+ } finally {
+  button.disabled = false;
+ }
 });
 
-// Admin: applications
-async function loadApplications(){
-const box=$("applications");
-box.textContent="লোড হচ্ছে...";
-try{
-const snap=await getDocs(collection(db,"student_records"));
-$("adminCount").textContent="মোট আবেদন: "+snap.size;
-box.replaceChildren();
-
-snap.forEach(item=>{
-const d=item.data();
-const div=document.createElement("div");
-div.className="notice";
-const info=document.createElement("p");
-info.textContent=d.studentName+" | "+d.mobile+" | "+d.course+" | "+d.status;
-div.appendChild(info);
-
-const approve=document.createElement("button");
-approve.className="btn";
-approve.textContent="ভর্তি অনুমোদন";
-approve.onclick=async()=>{
-try{
-await setDoc(doc(db,"student_records",item.id),
-{status:"Approved"},{merge:true});
-message("adminWelcome","আবেদন অনুমোদন হয়েছে।");
-await loadApplications();
-}catch(err){message("adminWelcome",err.message,"#ffaaaa");}
-};
-div.appendChild(approve);
-box.appendChild(div);
-});
-}catch(err){
-box.textContent="আবেদন লোড হয়নি: "+err.message;
-}
-}
-$("refreshApplications").onclick=loadApplications;
-
-// Admin: create teacher/student profile
-$("profileForm").addEventListener("submit",async e=>{
-e.preventDefault();
-try{
-const uid=$("pUid").value.trim();
-await setDoc(doc(db,"user_profiles",uid),{
-name:$("pName").value.trim(),
-email:$("pEmail").value.trim(),
-role:$("pRole").value,
-course:$("pCourse").value.trim(),
-createdAt:serverTimestamp()
-});
-message("profileMessage","প্রোফাইল সংরক্ষণ হয়েছে!");
-e.target.reset();
-}catch(err){
-message("profileMessage","ব্যর্থ: "+err.message,"#ffaaaa");
-}
+/* LOGOUT */
+$("logoutBtn").addEventListener("click", async () => {
+ await signOut(auth);
 });
 
-// Admin: create Zoom class
-$("classForm").addEventListener("submit",async e=>{
-e.preventDefault();
-try{
-const studentIds=$("cStudents").value.split(",")
-.map(x=>x.trim()).filter(Boolean);
+/* AUTH STATE */
+onAuthStateChanged(auth, async user => {
+ $("logoutBtn").style.display = user ? "inline-block" : "none";
 
-const date=new Date($("cTime").value);
-if(isNaN(date.getTime()))throw new Error("সঠিক তারিখ দিন");
+ if (!user) {
+  hideDashboards();
+  return;
+ }
 
-await addDoc(collection(db,"classes"),{
-name:$("cName").value.trim(),
-classTime:date,
-zoomLink:$("cLink").value.trim(),
-teacherUid:$("cTeacher").value.trim(),
-studentIds,
-createdAt:serverTimestamp()
-});
-message("classMessage","Zoom ক্লাস প্রকাশ হয়েছে!");
-e.target.reset();
-}catch(err){
-message("classMessage","ব্যর্থ: "+err.message,"#ffaaaa");
-}
+ try {
+  if (user.uid === ADMIN_UID) {
+   showDashboard("admin");
+   await loadApplications();
+   return;
+  }
+
+  const profile = await getDoc(doc(db,"user_profiles",user.uid));
+
+  if (!profile.exists()) {
+   message("loginMessage","আপনার Profile এখনো তৈরি হয়নি।");
+   hideDashboards();
+   return;
+  }
+
+  const data = profile.data();
+
+  if (data.role === "teacher") {
+   showDashboard("teacher");
+   await loadTeacherClasses(user.uid);
+  } else if (data.role === "student") {
+   showDashboard("student");
+   await loadStudentProfile(user.uid);
+   await loadStudentClasses(user.uid);
+  } else {
+   hideDashboards();
+  }
+ } catch(error) {
+  message("loginMessage","তথ্য লোড হয়নি: " + error.message);
+ }
 });
 
-// Load classes
-async function loadTeacherClasses(uid){
-const box=$("teacherClasses");
-box.textContent="লোড হচ্ছে...";
-try{
-const snap=await getDocs(query(
-collection(db,"classes"),where("teacherUid","==",uid)
-));
-box.replaceChildren();
-snap.forEach(item=>{
-const d=item.data();
-const div=document.createElement("div");
-div.className="notice";
-const p=document.createElement("p");
-p.textContent=d.name+" | "+safeDate(d.classTime?.toDate?.());
-div.appendChild(p);
-const link=document.createElement("a");
-link.className="btn";
-link.href=d.zoomLink;
-link.target="_blank";
-link.rel="noopener";
-link.textContent="Zoom ক্লাসে যোগ দিন";
-div.appendChild(link);
-const id=document.createElement("p");
-id.textContent="Class ID: "+item.id;
-div.appendChild(id);
-box.appendChild(div);
-});
-}catch(err){box.textContent="ক্লাস লোড হয়নি: "+err.message;}
-}
+/* ADMISSION FORM */
+$("admissionForm").addEventListener("submit", async e => {
+ e.preventDefault();
 
-async function loadStudentClasses(uid){
-const box=$("studentClasses");
-box.textContent="লোড হচ্ছে...";
-try{
-const snap=await getDocs(collection(db,"classes"));
-box.replaceChildren();
-snap.forEach(item=>{
-const d=item.data();
-if(!(d.studentIds||[]).includes(uid))return;
-const div=document.createElement("div");
-div.className="notice";
-const p=document.createElement("p");
-p.textContent=d.name+" | "+safeDate(d.classTime?.toDate?.());
-div.appendChild(p);
-const link=document.createElement("a");
-link.className="btn";
-link.href=d.zoomLink;
-link.target="_blank";
-link.rel="noopener";
-link.textContent="Join Zoom Class";
-div.appendChild(link);
-box.appendChild(div);
+ const button = $("admissionSubmit");
+ button.disabled = true;
+ message("aMessage","আবেদন জমা হচ্ছে...");
+
+ try {
+  await addDoc(collection(db,"student_records"),{
+   studentName: $("aName").value.trim(),
+   fatherName: $("aFather").value.trim(),
+   mobile: $("aMobile").value.trim(),
+   ageGroup: $("aAge").value,
+   course: $("aCourse").value,
+   address: $("aAddress").value.trim(),
+   status: "pending",
+   createdAt: serverTimestamp()
+  });
+
+  message("aMessage","আলহামদুলিল্লাহ! আবেদন জমা হয়েছে।");
+  $("admissionForm").reset();
+
+ } catch(error) {
+  message("aMessage","আবেদন জমা হয়নি: " + error.message);
+ } finally {
+  button.disabled = false;
+ }
 });
-}catch(err){box.textContent="ক্লাস লোড হয়নি: "+err.message;}
+
+/* LOAD APPLICATIONS */
+async function loadApplications() {
+ const box = $("applicationsList");
+ box.textContent = "";
+
+ const snapshot = await getDocs(collection(db,"student_records"));
+
+ if (snapshot.empty) {
+  box.textContent = "কোনো আবেদন পাওয়া যায়নি।";
+  return;
+ }
+
+ snapshot.forEach(item => {
+  const data = item.data();
+  const card = document.createElement("div");
+  card.className = "notice";
+
+  const title = document.createElement("h3");
+  title.textContent = data.studentName || "নাম নেই";
+
+  const details = document.createElement("p");
+  details.textContent =
+   "পিতা: " + (data.fatherName || "") +
+   " | মোবাইল: " + (data.mobile || "") +
+   " | কোর্স: " + (data.course || "") +
+   " | অবস্থা: " + (data.status || "pending");
+
+  card.append(title,details);
+
+  if (data.status !== "approved") {
+   const btn = document.createElement("button");
+   btn.className = "btn";
+   btn.textContent = "অনুমোদন করুন";
+
+   btn.onclick = async () => {
+    try {
+     await updateDoc(doc(db,"student_records",item.id),{
+      status:"approved"
+     });
+     await loadApplications();
+    } catch(error) {
+     alert("অনুমোদন হয়নি: " + error.message);
+    }
+   };
+
+   card.append(btn);
+  }
+
+  box.append(card);
+ });
 }
 
-// Teacher attendance
-$("attendanceForm").addEventListener("submit",async e=>{
-e.preventDefault();
-try{
-if(currentProfile?.role!=="teacher")throw new Error("শিক্ষক লগইন প্রয়োজন");
-await setDoc(doc(db,"attendance",
-$("attClass").value+"_"+$("attStudent").value),{
-classId:$("attClass").value.trim(),
-studentUid:$("attStudent").value.trim(),
-teacherUid:auth.currentUser.uid,
-status:$("attStatus").value,
-date:serverTimestamp()
-});
-message("attendanceMessage","উপস্থিতি সংরক্ষণ হয়েছে!");
-e.target.reset();
-}catch(err){
-message("attendanceMessage","ব্যর্থ: "+err.message,"#ffaaaa");
-}
+/* CREATE USER PROFILE */
+$("profileForm").addEventListener("submit", async e => {
+ e.preventDefault();
+
+ try {
+  await setDoc(doc(db,"user_profiles",$("profileUid").value.trim()),{
+   name:$("profileName").value.trim(),
+   email:$("profileEmail").value.trim(),
+   role:$("profileRole").value,
+   createdAt:serverTimestamp()
+  });
+
+  message("profileMessage","Profile সংরক্ষণ হয়েছে।");
+  $("profileForm").reset();
+
+ } catch(error) {
+  message("profileMessage","সমস্যা: " + error.message);
+ }
 });
 
-// Logout
-$("logoutBtn").addEventListener("click",async()=>{
-await signOut(auth);
-currentProfile=null;
-location.reload();
+/* CREATE ZOOM CLASS */
+$("classForm").addEventListener("submit", async e => {
+ e.preventDefault();
+
+ const link = $("zoomLink").value.trim();
+
+ if (!safeZoomLink(link)) {
+  message("classMessage","সঠিক Zoom Meeting Link দিন।");
+  return;
+ }
+
+ try {
+  const studentIds = $("classStudents").value
+   .split(",").map(x=>x.trim()).filter(Boolean);
+
+  await addDoc(collection(db,"classes"),{
+   title:$("classTitle").value.trim(),
+   course:$("classCourse").value,
+   teacherId:$("classTeacher").value.trim(),
+   studentIds:studentIds,
+   classDate:$("classDate").value,
+   zoomLink:link,
+   createdAt:serverTimestamp()
+  });
+
+  message("classMessage","Zoom Class তৈরি হয়েছে।");
+  $("classForm").reset();
+
+ } catch(error) {
+  message("classMessage","সমস্যা: " + error.message);
+ }
 });
+
+/* TEACHER CLASSES */
+async function loadTeacherClasses(uid) {
+ const box = $("teacherClasses");
+ box.textContent = "";
+
+ const q = query(
+  collection(db,"classes"),
+  where("teacherId","==",uid)
+ );
+
+ const snapshot = await getDocs(q);
+
+ if(snapshot.empty) {
+  box.textContent = "আপনার কোনো ক্লাস নেই।";
+  return;
+ }
+
+ snapshot.forEach(item => {
+  const data = item.data();
+  const card = document.createElement("div");
+  card.className = "notice";
+
+  const title = document.createElement("h3");
+  title.textContent = data.title || "ক্লাস";
+
+  const date = document.createElement("p");
+  date.textContent = "সময়: " + (data.classDate || "");
+
+  const link = document.createElement("a");
+  link.className = "btn";
+  link.textContent = "Join Zoom Class";
+  link.href = data.zoomLink;
+  link.target = "_blank";
+  link.rel = "noopener";
+
+  const id = document.createElement("p");
+  id.textContent = "Class ID: " + item.id;
+
+  card.append(title,date,link,id);
+  box.append(card);
+ });
+}
+
+/* STUDENT PROFILE */
+async function loadStudentProfile(uid) {
+ const box = $("studentInfo");
+ const snap = await getDoc(doc(db,"user_profiles",uid));
+
+ if(snap.exists()) {
+  const data = snap.data();
+  box.textContent = "নাম: " + (data.name || "") +
+   " | Email: " + (data.email || "");
+ }
+}
+
+/* STUDENT CLASSES */
+async function loadStudentClasses(uid) {
+ const box = $("studentClasses");
+ box.textContent = "";
+
+ const q = query(
+  collection(db,"classes"),
+  where("studentIds","array-contains",uid)
+ );
+
+ const snapshot = await getDocs(q);
+
+ if(snapshot.empty) {
+  box.textContent = "আপনার কোনো ক্লাস নির্ধারণ করা হয়নি।";
+  return;
+ }
+
+ snapshot.forEach(item => {
+  const data = item.data();
+  const card = document.createElement("div");
+  card.className = "notice";
+
+  const title = document.createElement("h3");
+  title.textContent = data.title || "ক্লাস";
+
+  const date = document.createElement("p");
+  date.textContent = "সময়: " + (data.classDate || "");
+
+  const link = document.createElement("a");
+  link.className = "btn";
+  link.textContent = "Join Zoom Class";
+  link.href = data.zoomLink;
+  link.target = "_blank";
+  link.rel = "noopener";
+
+  card.append(title,date,link);
+  box.append(card);
+ });
+}
+
+/* ATTENDANCE */
+$("attendanceForm").addEventListener("submit", async e => {
+ e.preventDefault();
+
+ const user = auth.currentUser;
+ if(!user) return;
+
+ try {
+  const classId = $("attendanceClassId").value.trim();
+  const studentId = $("attendanceStudentId").value.trim();
+
+  const classSnap = await getDoc(doc(db,"classes",classId));
+
+  if(!classSnap.exists()) {
+   message("attendanceMessage","ক্লাস পাওয়া যায়নি।");
+   return;
+  }
+
+  const classData = classSnap.data();
+
+  if(classData.teacherId !== user.uid ||
+     !classData.studentIds.includes(studentId)) {
+   message("attendanceMessage","এই ক্লাসের জন্য অনুমতি নেই।");
+   return;
+  }
+
+  await addDoc(collection(db,"attendance"),{
+   classId:classId,
+   studentId:studentId,
+   teacherId:user.uid,
+   status:$("attendanceStatus").value,
+   createdAt:serverTimestamp()
+  });
+
+  message("attendanceMessage","উপস্থিতি সংরক্ষণ হয়েছে।");
+  $("attendanceForm").reset();
+
+ } catch(error) {
+  message("attendanceMessage","সমস্যা: " + error.message);
+ }
+});
+
+console.log("Hanafia Academy System Ready");
 </script>
+
 </body>
 </html>

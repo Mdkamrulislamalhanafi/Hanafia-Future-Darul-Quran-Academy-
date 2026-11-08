@@ -120,13 +120,157 @@ hr{
 <p>Learn Quran • Build Future</p>
 </header>
 
+ 
 <nav>
-<a href="#home">হোম</a>
-<a href="#features">বৈশিষ্ট্য</a>
-<a href="#courses">কোর্স</a>
-<a href="#admission">ভর্তি</a>
-<a href="#login">Login</a>
+  <a href="#home">হোম</a>
+  <a href="#courses">কোর্স</a>
+  <a href="#learningSteps">পড়াশোনার ধাপ</a>
+  <a href="#teacherEvaluation">শিক্ষক মূল্যায়ন</a>
+  <a href="#parentMonitoring">অভিভাবক</a>
+  <a href="#trialClass">ফ্রি ট্রায়াল</a>
+  <a href="#login">Login</a>
 </nav>
+
+<!-- LEARNING STEPS -->
+<section id="learningSteps">
+  <div class="container">
+    <h2>পড়াশোনার ধাপসমূহ</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>ধাপ ১: আরবি শিক্ষা</h3>
+        <p>আরবি হরফ, মাখরাজ, হরকত ও তানভীন।</p>
+      </div>
+      <div class="card">
+        <h3>ধাপ ২: নূরানী কায়দা</h3>
+        <p>কায়দার ধারাবাহিক পাঠ ও শব্দ গঠন।</p>
+      </div>
+      <div class="card">
+        <h3>ধাপ ৩: আমপারা</h3>
+        <p>ছোট সূরা ও কুরআন পড়ার অনুশীলন।</p>
+      </div>
+      <div class="card">
+        <h3>ধাপ ৪: নাজেরা</h3>
+        <p>দেখে দেখে শুদ্ধভাবে কুরআন পড়া।</p>
+      </div>
+      <div class="card">
+        <h3>ধাপ ৫: তাজবিদ</h3>
+        <p>মাখরাজ, সিফাত, মাদ ও গুন্নাহ।</p>
+      </div>
+      <div class="card">
+        <h3>ধাপ ৬: হিফজ</h3>
+        <p>নতুন সবক, সবকপারা ও আমুখতা।</p>
+      </div>
+      <div class="card">
+        <h3>ধাপ ৭: দাওর</h3>
+        <p>সম্পূর্ণ কুরআন পুনরাবৃত্তি ও মজবুতকরণ।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHER EVALUATION -->
+<section id="teacherEvaluation">
+  <div class="container">
+    <h2>শিক্ষক মূল্যায়ন</h2>
+    <div class="panel">
+      <p>শিক্ষকের পাঠদান সম্পর্কে আপনার মতামত দিন।</p>
+
+      <form id="evaluationForm">
+        <label>শিক্ষকের UID</label>
+        <input id="evaluationTeacherUid" required>
+
+        <label>শিক্ষার্থীর নাম</label>
+        <input id="evaluationStudentName" required>
+
+        <label>পাঠদানের মান</label>
+        <select id="evaluationRating" required>
+          <option value="">নির্বাচন করুন</option>
+          <option value="5">৫ - অত্যন্ত ভালো</option>
+          <option value="4">৪ - ভালো</option>
+          <option value="3">৩ - মোটামুটি</option>
+          <option value="2">২ - উন্নতি প্রয়োজন</option>
+          <option value="1">১ - অসন্তোষজনক</option>
+        </select>
+
+        <label>আপনার মন্তব্য</label>
+        <textarea id="evaluationComment" rows="4"
+          maxlength="1000" placeholder="আপনার মতামত লিখুন"></textarea>
+
+        <button class="btn" type="submit">মূল্যায়ন জমা দিন</button>
+        <p id="evaluationMessage" class="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FREE TRIAL -->
+<section id="trialClass">
+  <div class="container">
+    <h2>ফ্রি ট্রায়াল ক্লাস বুকিং</h2>
+    <div class="panel">
+      <p>ভর্তির আগে বিনামূল্যে পরিচিতিমূলক ক্লাসের জন্য আবেদন করুন।</p>
+
+      <form id="trialForm">
+        <label>শিক্ষার্থীর নাম</label>
+        <input id="trialName" required maxlength="100">
+
+        <label>অভিভাবকের নাম</label>
+        <input id="trialGuardian" required maxlength="100">
+
+        <label>WhatsApp / মোবাইল নম্বর</label>
+        <input id="trialMobile" type="tel" required maxlength="25">
+
+        <label>পছন্দের কোর্স</label>
+        <select id="trialCourse" required>
+          <option value="">নির্বাচন করুন</option>
+          <option>নূরানী কায়দা</option>
+          <option>নাজেরা</option>
+          <option>হিফজ</option>
+          <option>তাজবিদ</option>
+          <option>ইসলামিক শিক্ষা</option>
+        </select>
+
+        <label>পছন্দের তারিখ</label>
+        <input id="trialDate" type="date" required>
+
+        <label>পছন্দের সময়</label>
+        <input id="trialTime" type="time" required>
+
+        <button class="btn" type="submit">ট্রায়াল বুকিং জমা দিন</button>
+        <p id="trialMessage" class="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- PARENT MONITORING -->
+<section id="parentMonitoring">
+  <div class="container">
+    <h2>অভিভাবক মনিটরিং</h2>
+    <div class="panel">
+      <h3>সন্তানের পড়াশোনার অগ্রগতি</h3>
+      <p>অভিভাবক Login করার পর সন্তানের দৈনিক পড়ার রিপোর্ট দেখতে পারবেন।</p>
+      <div id="parentProgress">
+        অভিভাবক Login করার পর তথ্য দেখা যাবে।
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENT DASHBOARD -->
+<section id="parentDashboard" class="hidden">
+  <div class="container">
+    <h2>Parent Dashboard</h2>
+    <div class="panel">
+      <h3>সন্তানের পড়াশোনার রিপোর্ট</h3>
+      <div id="parentChildrenProgress">
+        রিপোর্ট লোড হচ্ছে...
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="hero" id="home">
 <h1 style="color:#f5cb60">

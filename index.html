@@ -1133,5 +1133,134 @@ $("attendanceForm").addEventListener("submit", async e => {
 console.log("Hanafia Academy System Ready");
 </script>
 
+/* FREE TRIAL BOOKING */
+$("trialForm").addEventListener("submit", async e => {
+  e.preventDefault();
+
+  const btn = $("trialForm").querySelector("button");
+  btn.disabled = true;
+
+  try {
+    await addDoc(collection(db, "trial_requests"), {
+      studentName: $("trialName").value.trim(),
+      guardianName: $("trialGuardian").value.trim(),
+      mobile: $("trialMobile").value.trim(),
+      course: $("trialCourse").value,
+      preferredDate: $("trialDate").value,
+      preferredTime: $("trialTime").value,
+      status: "pending",
+      createdAt: serverTimestamp()
+    });
+
+    message("trialMessage", "আলহামদুলিল্লাহ! ট্রায়াল আবেদন জমা হয়েছে।");
+    $("trialForm").reset();
+  } catch (error) {
+    message("trialMessage", "সমস্যা: " + error.message);
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+
+/* TEACHER EVALUATION */
+$("evaluationForm").addEventListener("submit", async e => {
+  e.preventDefault();
+
+  const user = auth.currentUser;
+
+  if (!user) {
+    message("evaluationMessage", "আগে Login করুন।");
+    return;
+  }
+
+  try {
+    await addDoc(collection(db, "teacher_evaluations"), {
+      teacherId: $("evaluationTeacherUid").value.trim(),
+      studentName: $("evaluationStudentName").value.trim(),
+      rating: Number($("evaluationRating").value),
+      comment: $("evaluationComment").value.trim(),
+      submittedBy: user.uid,
+      createdAt: serverTimestamp()
+    });
+
+    message("evaluationMessage", "আপনার মূল্যায়ন জমা হয়েছে।");
+    $("evaluationForm").reset();
+  } catch (error) {
+    message("evaluationMessage", "সমস্যা: " + error.message);
+  }
+});
+
+
+/* TEACHER SUBMITS DAILY READING PROGRESS */
+async function saveReadingProgress(studentUid, lessonType, details) {
+  const user = auth.currentUser;
+
+  if (!user) throw new Error("Login প্রয়োজন");
+
+  await addDoc(collection(db, "reading_progress"), {
+    studentId: studentUid,
+    teacherId: user.uid,
+    lessonType: lessonType,
+    details: details,
+    createdAt: serverTimestamp()
+  });
+}
+
+
+/* PARENT DASHBOARD */
+async function loadParentProgress(parentUid) {
+  const profile = await getDoc(
+    doc(db, "user_profiles", parentUid)
+  );
+
+  const box = $("parentChildrenProgress");
+  box.textContent = "";
+
+  if (!profile.exists()) {
+    box.textContent = "অভিভাবকের Profile পাওয়া যায়নি।";
+    return;
+  }
+
+  const studentIds = profile.data().studentIds || [];
+
+  if (!studentIds.length) {
+    box.textContent = "এই অভিভাবকের সঙ্গে কোনো শিক্ষার্থী যুক্ত নেই।";
+    return;
+  }
+
+  for (const studentId of studentIds) {
+    const q = query(
+      collection(db, "reading_progress"),
+      where("studentId", "==", studentId)
+    );
+
+    const results = await getDocs(q);
+
+    const card = document.createElement("div");
+    card.className = "notice";
+
+    const heading = document.createElement("h3");
+    heading.textContent = "শিক্ষার্থীর UID: " + studentId;
+    card.append(heading);
+
+    if (results.empty) {
+      const p = document.createElement("p");
+      p.textContent = "এখনো পড়ার রিপোর্ট দেওয়া হয়নি।";
+      card.append(p);
+    } else {
+      results.forEach(item => {
+        const data = item.data();
+        const p = document.createElement("p");
+        p.textContent =
+          (data.lessonType || "") + ": " +
+          (data.details || "");
+        card.append(p);
+      });
+    }
+
+    box.append(card);
+  }
+}
+
 </body>
 </html>

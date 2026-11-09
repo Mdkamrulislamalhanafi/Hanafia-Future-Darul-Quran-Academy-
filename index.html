@@ -10,167 +10,323 @@
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
- font-family:'Hind Siliguri', Arial, sans-serif;
- background:#071735;
- color:white;
- line-height:1.7;
- overflow-x:hidden;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-header{
- background:linear-gradient(135deg,#061638,#174582);
- padding:24px;
- text-align:center;
- border-bottom:2px solid #d5ad50;
- position:sticky;
- top:0;
- z-index:50;
+
+html {
+  scroll-behavior: smooth;
 }
-header h1{color:#f5cb60; font-size: 26px;}
-nav{
- background:#0b2450;
- padding:12px;
- text-align:center;
- position:sticky;
- top:85px;
- z-index:40;
- backdrop-blur:md;
- box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+body {
+  font-family: 'Hind Siliguri', Arial, sans-serif;
+  background: #071735;
+  color: #ffffff;
+  line-height: 1.8;
+  overflow-x: hidden;
+  animation: pageFade 1s ease;
 }
-nav a{
- color:white;
- text-decoration:none;
- margin:5px 8px;
- display:inline-block;
- font-size:14px;
- transition: color 0.3s;
+
+header {
+  text-align: center;
+  padding: 30px 15px;
+  background: linear-gradient(135deg, #061638, #174582);
+  border-bottom: 3px solid #d5ad50;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  animation: slideDown 0.8s ease;
 }
+
+header h1 {
+  color: #f5cb60;
+  font-size: 32px;
+}
+
+header h3 {
+  color: #ffffff;
+}
+
+/* Navigation */
+nav {
+  background: #0b2450;
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 102px;
+  z-index: 90;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
 nav a:hover {
- color: #f5cb60;
+  color: #f5cb60;
+  transform: translateY(-2px);
 }
-section{padding:40px 15px;scroll-margin-top:130px}
-.container{max-width:950px;margin:auto}
-.hero{
- text-align:center;
- background:linear-gradient(145deg,#123d7b,#061638);
- padding:55px 18px;
- border-radius: 20px;
- border: 1px solid rgba(185, 155, 85, 0.3);
- box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+/* Sections */
+section {
+  padding: 45px 16px;
+  scroll-margin-top: 150px;
+  animation: sectionFade 0.8s ease both;
 }
-h2{color:#f5cb60;text-align:center;margin-bottom:20px}
-h3{color:#f5cb60;margin-bottom:10px}
-p{color:#e2eafa}
-.grid{
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:16px;
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
 }
-.card,.panel{
- background:linear-gradient(145deg,#153e7c,#081a3b);
- border:1px solid #b99b55;
- border-radius:15px;
- padding:20px;
- margin-bottom:15px;
- box-shadow:0 8px 20px #0005;
- transition: transform 0.3s ease;
+
+h2 {
+  color: #f5cb60;
+  text-align: center;
+  font-size: 27px;
+  margin-bottom: 25px;
 }
-.card:hover {
- transform: translateY(-3px);
+
+h3 {
+  color: #f5cb60;
 }
-.card{text-align:center}
-.btn{
- display:inline-block;
- background:linear-gradient(120deg,#ffe28b,#c18c25);
- color:#102247;
- padding:11px 20px;
- border:0;
- border-radius:25px;
- font-weight:bold;
- text-decoration:none;
- cursor:pointer;
- margin:6px;
- transition: transform 0.2s, opacity 0.2s;
+
+p {
+  color: #e2eafa;
 }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 75px 20px;
+  background: linear-gradient(145deg, #123d7b, #061638);
+  border-radius: 20px;
+  border: 1px solid rgba(185, 155, 85, 0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  animation: heroReveal 1.2s ease both;
+}
+
+.hero h1 {
+  color: #f5cb60;
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  margin: 10px 0;
+}
+
+/* Cards & Panels */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card,
+.panel {
+  background: linear-gradient(145deg, #153e7c, #081a3b);
+  border: 1px solid #c6a24e;
+  border-radius: 15px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 20px #0005;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.card {
+  text-align: center;
+}
+
+.card:hover,
+.panel:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(212,175,55,0.2);
+  border-color: #ffe28b;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: linear-gradient(120deg, #ffe28b, #c18c25);
+  color: #102247;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 7px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
 .btn:hover {
- transform: scale(1.02);
- opacity: 0.95;
-}
-.btn:disabled{opacity:.6;cursor:not-allowed}
-input,select,textarea{
- width:100%;
- padding:12px;
- margin:7px 0 14px;
- border:1px solid #c5a35b;
- border-radius:8px;
- background:#fff;
- color:#111;
- font-size:15px
-}
-label{display:block;color:#f5d37b; font-weight: 500; font-size: 14px;}
-form{max-width:650px;margin:auto}
-.hidden{display:none!important}
-.muted{color:#c9d5eb;font-size:13px}
-.notice{
- padding:15px;
- background:#102c5a;
- border-radius:12px;
- margin:10px 0;
- overflow-wrap:anywhere;
- border: 1px solid rgba(185, 155, 85, 0.3);
-}
-footer{
- text-align:center;
- padding:28px;
- background:#041027;
- border-top: 1px solid #8d7542;
-}
-hr{
- border:0;
- border-top:1px solid #8d7542;
- margin:18px 0
-}
-.status{margin-top:10px;overflow-wrap:anywhere; font-weight: bold;}
-
-/* Custom Animations */
-@keyframes float {
- 0%, 100% { transform: translateY(0); }
- 50% { transform: translateY(-6px); }
-}
-@keyframes pulseGlow {
- 0%, 100% { box-shadow: 0 0 15px rgba(213, 173, 80, 0.4); }
- 50% { box-shadow: 0 0 25px rgba(213, 173, 80, 0.8); }
-}
-.animate-float {
- animation: float 4s ease-in-out infinite;
-}
-.animate-glow {
- animation: pulseGlow 3s ease-in-out infinite;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
 }
 
-@media(max-width:600px){
- .grid{grid-template-columns:1fr}
- header h1{font-size:22px}
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Forms */
+form {
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+  animation: formReveal 0.8s ease both;
+}
+
+label {
+  display: block;
+  color: #f5d37b;
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px;
+  margin: 7px 0;
+  border: 1px solid #c5a35b;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111111;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #ffe28b;
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.25);
+}
+
+/* Notices */
+.notice {
+  padding: 15px;
+  background: #102c5a;
+  border-left: 4px solid #f5cb60;
+  border-radius: 9px;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+  animation: noticeReveal 0.7s ease both;
+  border-top: 1px solid rgba(185, 155, 85, 0.3);
+  border-right: 1px solid rgba(185, 155, 85, 0.3);
+  border-bottom: 1px solid rgba(185, 155, 85, 0.3);
+}
+
+.status {
+  margin-top: 12px;
+  color: #f5cb60;
+  font-weight: bold;
+}
+
+.muted {
+  color: #c9d5eb;
+  font-size: 13px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  background: #041027;
+  border-top: 2px solid #c5a35b;
+  animation: footerReveal 1s ease both;
+}
+
+footer h3 {
+  margin-bottom: 10px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #8d7542;
+  margin: 18px 0;
+}
+
+/* Dashboards Animation */
+#adminDashboard,
+#teacherDashboard,
+#studentDashboard,
+#parentDashboard {
+  animation: dashboardReveal 0.9s ease both;
+}
+
+/* Keyframes */
+@keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-35px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes sectionFade { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes heroReveal { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes formReveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes noticeReveal { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes footerReveal { from { opacity: 0; } to { opacity: 1; } }
+@keyframes dashboardReveal { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  header h1 { font-size: 25px; }
+  .hero { padding: 50px 15px; }
+  .hero h1 { font-size: 25px; }
+  .grid { grid-template-columns: 1fr; }
+  nav a { padding: 6px 8px; font-size: 13px; }
+  section { padding: 30px 12px; }
+  .card, .panel { padding: 16px; }
+  h2 { font-size: 23px; }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="animate-glow">
-<h1>🕌 HANAFIA Future Darul Quran Academy</h1>
-<p>Learn Quran • Build Future</p>
+<header>
+  <h1>🕌 HANAFIA Future Darul Quran Academy</h1>
+  <p>Learn Quran • Build Future</p>
 </header>
  
 <nav>
   <a href="#home">হোম</a>
   <a href="#educationDepartments">শিক্ষার বিভাগ</a>
   <a href="#learningSteps">পড়াশোনার ধাপ</a>
-  <a href="#courses">কোর্স</a>
-  <a href="#teacherEvaluation">শিক্ষক মূল্যায়ন</a>
-  <a href="#parentMonitoring">অভিভাবক</a>
+  <a href="#courses">কোর্সসমূহ</a>
+  <a href="#features">বৈশিষ্ট্য</a>
+  <a href="#admission">ভর্তি</a>
   <a href="#trialClass">ফ্রি ট্রায়াল</a>
+  <a href="#teacherEvaluation">মূল্যায়ন</a>
+  <a href="#parentMonitoring">অভিভাবক</a>
   <a href="#login">Login</a>
 </nav>
 
@@ -192,7 +348,7 @@ hr{
   </section>
 </div>
 
-<!-- NEW SECTION: EDUCATION DEPARTMENTS (শিক্ষার বিভাগ) -->
+<!-- EDUCATION DEPARTMENTS SECTION (শিক্ষার বিভাগ) -->
 <section id="educationDepartments">
 <div class="container">
   <div style="text-align: center; margin-bottom: 30px;">
@@ -202,19 +358,19 @@ hr{
   </div>
   
   <div class="grid">
-    <div class="card animate-float">
+    <div class="card">
       <h3>📖 শুদ্ধ তিলাওয়াত বিভাগ</h3>
       <p>নূরানী ও নাজেরার মাধ্যমে হরফের সঠিক মাখরাজ ও সাবলীল তিলাওয়াত শিক্ষা।</p>
     </div>
-    <div class="card animate-float">
+    <div class="card">
       <h3>🧠 হিফজুল কুরআন বিভাগ</h3>
       <p>পরিকল্পিত উপায়ে সম্পূর্ণ কুরআন মুখস্থ করার বিশেষ তত্ত্বাবধান ও হিফজ প্রোগ্রাম।</p>
     </div>
-    <div class="card animate-float">
+    <div class="card">
       <h3>🎙️ তাজভীদ ও কিরাআত</h3>
       <p>নিয়মকানুন মেনে সুন্দর ও সুরভিত কণ্ঠে কুরআন তিলাওয়াতের উন্নত প্রশিক্ষণ।</p>
     </div>
-    <div class="card animate-float">
+    <div class="card">
       <h3>🌍 ইসলামী ও নৈতিক শিক্ষা</h3>
       <p>দৈনন্দিন দোয়া, জরুরি মাসআলা-মাসায়েল এবং সুন্নাহভিত্তিক জীবনগঠন শিক্ষা।</p>
     </div>
@@ -260,31 +416,6 @@ hr{
   </div>
 </section>
 
-<!-- FEATURES SECTION -->
-<section id="features">
-<div class="container">
-<h2>আমাদের বিশেষ বৈশিষ্ট্য</h2>
-<div class="grid">
-  <div class="card animate-float">
-    <h3>🎯 ব্যক্তিগত মনোযোগ</h3>
-    <p>প্রতিটি শিক্ষার্থীর জন্য আলাদা যত্ন ও নিবিড় তদারকি।</p>
-  </div>
-  <div class="card animate-float">
-    <h3>👨‍🏫 অভিজ্ঞ শিক্ষক</h3>
-    <p>প্রশিক্ষিত হাফেজ ও দক্ষ কারী শিক্ষক দ্বারা পাঠদান।</p>
-  </div>
-  <div class="card animate-float">
-    <h3>🌍 অনলাইন ক্লাস</h3>
-    <p>বিশ্বের যেকোনো স্থান থেকে নিরবচ্ছিন্নভাবে ক্লাসে অংশগ্রহণ।</p>
-  </div>
-  <div class="card animate-float">
-    <h3>📚 পরিকল্পিত সিলেবাস</h3>
-    <p>নূরানী, নাজেরা, হিফজ ও ইসলামিক শিক্ষার আধুনিক সমন্বয়।</p>
-  </div>
-</div>
-</div>
-</section>
-
 <!-- COURSES SECTION -->
 <section id="courses">
 <div class="container">
@@ -292,19 +423,44 @@ hr{
 <div class="grid">
   <div class="card">
     <h3>নূরানী</h3>
-    <p>আরবি হরফ চেনা, সঠিক উচ্চারণ ও প্রাথমিক শিক্ষা।</p>
+    <p>আরবি হরফ চেনা, সঠিক উচ্চারণ ও প্রাথমিক শিক্ষা。</p>
   </div>
   <div class="card">
     <h3>নাজেরা</h3>
-    <p>শুদ্ধ উচ্চারণে সাবলীল কুরআন তিলাওয়াত অনুশীলন।</p>
+    <p>শুদ্ধ উচ্চারণে সাবলীল কুরআন তিলাওয়াত অনুশীলন。</p>
   </div>
   <div class="card">
     <h3>হিফজ</h3>
-    <p>পরিকল্পিত ও সুশৃঙ্খল উপায়ে সম্পূর্ণ কুরআন মুখস্থ শিক্ষা।</p>
+    <p>পরিকল্পিত ও সুশৃঙ্খল উপায়ে সম্পূর্ণ কুরআন মুখস্থ শিক্ষা。</p>
   </div>
   <div class="card">
     <h3>ইসলামিক শিক্ষা</h3>
-    <p>দৈনন্দিন প্রয়োজনীয় দোয়া, কালিমা ও জরুরি মাসআলা-মাসাইল।</p>
+    <p>দৈনন্দিন প্রয়োজনীয় দোয়া, কালিমা ও জরুরি মাসআলা-মাসাইল。</p>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section id="features">
+<div class="container">
+<h2>আমাদের বিশেষ বৈশিষ্ট্য</h2>
+<div class="grid">
+  <div class="card">
+    <h3>🎯 ব্যক্তিগত মনোযোগ</h3>
+    <p>প্রতিটি শিক্ষার্থীর জন্য আলাদা যত্ন ও নিবিড় তদারকি。</p>
+  </div>
+  <div class="card">
+    <h3>👨‍🏫 অভিজ্ঞ শিক্ষক</h3>
+    <p>প্রশিক্ষিত হাফেজ ও দক্ষ কারী শিক্ষক দ্বারা পাঠদান。</p>
+  </div>
+  <div class="card">
+    <h3>🌍 অনলাইন ক্লাস</h3>
+    <p>বিশ্বের যেকোনো স্থান থেকে নিরবচ্ছিন্নভাবে ক্লাসে অংশগ্রহণ。</p>
+  </div>
+  <div class="card">
+    <h3>📚 পরিকল্পিত সিলেবাস</h3>
+    <p>নূরানী, নাজেরা, হিফজ ও ইসলামিক শিক্ষার আধুনিক সমন্বয়。</p>
   </div>
 </div>
 </div>
@@ -685,7 +841,6 @@ import {
  setDoc, getDocs, query, where, updateDoc, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-/* FIREBASE CONFIG */
 const firebaseConfig = {
  apiKey: "AIzaSyCkivjlMyvCA3dVMzqt4VfBlS45LT0FObo",
  authDomain: "hanafia-future-academy.firebaseapp.com",
@@ -1191,7 +1346,7 @@ async function loadParentProgress(parentUid) {
 
       const results = await getDocs(q);
       const card = document.createElement("div");
-      card.className = "notice";
+      card.className, "notice";
 
       const heading = document.createElement("h3");
       heading.textContent = "শিক্ষার্থীর UID: " + studentId;

@@ -465,3 +465,233 @@ footer {
     transition-duration: 0.01ms !important;
   }
 }
+/* =================================
+   PREMIUM DASHBOARD ANIMATIONS
+================================= */
+
+/* Dashboard Background */
+#adminDashboard,
+#teacherDashboard,
+#parentDashboard,
+#studentDashboard {
+  animation: dashboardReveal 0.9s ease both;
+}
+
+@keyframes dashboardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dashboard Heading */
+#adminDashboard h2,
+#teacherDashboard h2 {
+  color: #d4af37;
+  text-align: center;
+  animation: headingGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes headingGlow {
+  from {
+    text-shadow: 0 0 2px #d4af37;
+  }
+  to {
+    text-shadow: 0 0 14px #d4af37;
+  }
+}
+
+/* Premium Panel Design */
+#adminDashboard .panel,
+#teacherDashboard .panel,
+#parentDashboard .panel,
+#studentDashboard .panel {
+  background: linear-gradient(
+    145deg,
+    #101d35,
+    #172b4d
+  );
+
+  border: 1px solid rgba(212,175,55,0.35);
+  border-radius: 18px;
+  padding: 22px;
+  margin: 22px 0;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+
+  animation: panelAppear 0.8s ease both;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+#adminDashboard .panel:hover,
+#teacherDashboard .panel:hover {
+  transform: translateY(-5px);
+  border-color: #d4af37;
+  box-shadow: 0 12px 30px rgba(212,175,55,0.15);
+}
+
+@keyframes panelAppear {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Panel Headings */
+.panel h3 {
+  color: #e7c65a;
+  margin-bottom: 18px;
+}
+
+/* Input Animation */
+.panel input,
+.panel select,
+.panel textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  margin: 8px 0 17px;
+
+  border: 1px solid #526783;
+  border-radius: 10px;
+
+  background: #0b1629;
+  color: #ffffff;
+
+  transition: all 0.3s ease;
+}
+
+.panel input:focus,
+.panel select:focus,
+.panel textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+
+  transform: scale(1.01);
+}
+
+/* Labels */
+.panel label {
+  display: block;
+  color: #f1d98b;
+  font-weight: 600;
+}
+
+/* Premium Button */
+.panel .btn {
+  background: linear-gradient(
+    135deg,
+    #b68b20,
+    #f3d36a
+  );
+
+  color: #10203a;
+  border: none;
+  border-radius: 10px;
+
+  padding: 13px 22px;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(212,175,55,0.2);
+}
+
+.panel .btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(212,175,55,0.4);
+}
+
+.panel .btn:active {
+  transform: scale(0.96);
+}
+
+/* Status Animation */
+.status {
+  animation: statusAppear 0.5s ease;
+}
+
+@keyframes statusAppear {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Notice Cards */
+.notice {
+  border-left: 4px solid #d4af37;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 12px 0;
+
+  background: rgba(255,255,255,0.06);
+
+  animation: noticeSlide 0.6s ease both;
+}
+
+@keyframes noticeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Horizontal Divider */
+#adminDashboard hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d4af37,
+    transparent
+  );
+  margin: 22px 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  #adminDashboard .panel,
+  #teacherDashboard .panel {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .panel .btn {
+    width: 100%;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  #adminDashboard *,
+  #teacherDashboard *,
+  #parentDashboard *,
+  #studentDashboard * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

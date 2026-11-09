@@ -256,3 +256,212 @@ hr {
     font-size: 23px;
   }
 }
+/* ===== HAFANIA ANIMATION DESIGN ===== */
+
+/* Page animation */
+body {
+  animation: pageFade 1s ease;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Header animation */
+header {
+  animation: slideDown 0.8s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero animation */
+.hero h1 {
+  animation: heroText 1s ease;
+}
+
+.hero p {
+  animation: heroText 1.3s ease;
+}
+
+@keyframes heroText {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section animation */
+section {
+  animation: sectionFade 0.8s ease both;
+}
+
+@keyframes sectionFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card animation */
+.card,
+.panel {
+  transition: transform 0.35s ease,
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+}
+
+.card:hover,
+.panel:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px #0008;
+  border-color: #ffe28b;
+}
+
+/* Button animation */
+.btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 18px #d5ad5070;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* Navigation animation */
+nav a {
+  transition: color 0.3s ease,
+              transform 0.3s ease;
+}
+
+nav a:hover {
+  transform: translateY(-3px);
+}
+
+/* Form animation */
+form {
+  animation: formFade 0.8s ease;
+}
+
+@keyframes formFade {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+input,
+select,
+textarea {
+  transition: border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ffe28b;
+  box-shadow: 0 0 10px #f5cb6050;
+}
+
+/* Dashboard animation */
+#adminDashboard,
+#teacherDashboard,
+#studentDashboard,
+#parentDashboard {
+  animation: dashboardIn 0.7s ease;
+}
+
+@keyframes dashboardIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Notice animation */
+.notice {
+  animation: noticeIn 0.5s ease both;
+}
+
+@keyframes noticeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Footer */
+footer {
+  animation: footerFade 1s ease;
+}
+
+@keyframes footerFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile animation */
+@media (max-width: 600px) {
+  .card:hover,
+  .panel:hover {
+    transform: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

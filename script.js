@@ -642,3 +642,106 @@ async function loadParentProgress(parentUid) {
 }
 
 console.log("Hanafia Future Darul Quran Academy Ready");
+/* LINK PARENT WITH STUDENT */
+
+const linkParentStudentForm =
+  document.getElementById("linkParentStudentForm");
+
+if (linkParentStudentForm) {
+
+  linkParentStudentForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const message = document.getElementById(
+      "linkParentStudentMessage"
+    );
+
+    const user = auth.currentUser;
+
+    const parentUid = document.getElementById(
+      "linkParentUid"
+    ).value.trim();
+
+    const studentUid = document.getElementById(
+      "linkStudentUid"
+    ).value.trim();
+
+    try {
+      message.textContent = "তথ্য যাচাই হচ্ছে...";
+
+      // Admin যাচাই
+      if (!user || user.uid !== ADMIN_UID) {
+        message.textContent =
+          "শুধু Admin এই কাজ করতে পারবেন।";
+        return;
+      }
+
+      if (parentUid === studentUid) {
+        message.textContent =
+          "Parent ও Student UID একই হতে পারবে না।";
+        return;
+      }
+
+      // Parent Profile যাচাই
+      const parentRef = doc(
+        db,
+        "user_profiles",
+        parentUid
+      );
+
+      const parentDoc = await getDoc(parentRef);
+
+      if (!parentDoc.exists() ||
+          parentDoc.data().role !== "parent") {
+        message.textContent =
+          "এই UID-এর Parent Profile পাওয়া যায়নি।";
+        return;
+      }
+
+      // Student Profile যাচাই
+      const studentRef = doc(
+        db,
+        "user_profiles",
+        studentUid
+      );
+
+      const studentDoc = await getDoc(studentRef);
+
+      if (!studentDoc.exists() ||
+          studentDoc.data().role !== "student") {
+        message.textContent =
+          "এই UID-এর Student Profile পাওয়া যায়নি।";
+        return;
+      }
+
+      // Parent-এর Student UID তালিকা
+      const studentIds =
+        parentDoc.data().studentIds || [];
+
+      if (studentIds.includes(studentUid)) {
+        message.textContent =
+          "এই শিক্ষার্থী আগে থেকেই যুক্ত আছে।";
+        return;
+      }
+
+      studentIds.push(studentUid);
+
+      await setDoc(
+        parentRef,
+        { studentIds: studentIds },
+        { merge: true }
+      );
+
+      message.textContent =
+        "আলহামদুলিল্লাহ! শিক্ষার্থী অভিভাবকের সঙ্গে যুক্ত হয়েছে।";
+
+      linkParentStudentForm.reset();
+
+    } catch (error) {
+      console.error(error);
+
+      message.textContent =
+        "সমস্যা হয়েছে। Firebase Rules ও UID যাচাই করুন।";
+    }
+  });
+}

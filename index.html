@@ -1261,60 +1261,82 @@ async function saveReadingProgress(studentUid, lessonType, details) {
     createdAt: serverTimestamp()
   });
 }
-
-
 /* PARENT DASHBOARD */
+
 async function loadParentProgress(parentUid) {
-  const profile = await getDoc(
-    doc(db, "user_profiles", parentUid)
-  );
-
   const box = $("parentChildrenProgress");
-  box.textContent = "";
 
-  if (!profile.exists()) {
-    box.textContent = "অভিভাবকের Profile পাওয়া যায়নি।";
-    return;
-  }
+  if (!box) return;
 
-  const studentIds = profile.data().studentIds || [];
+  box.textContent = "রিপোর্ট লোড হচ্ছে...";
 
-  if (!studentIds.length) {
-    box.textContent = "এই অভিভাবকের সঙ্গে কোনো শিক্ষার্থী যুক্ত নেই।";
-    return;
-  }
-
-  for (const studentId of studentIds) {
-    const q = query(
-      collection(db, "reading_progress"),
-      where("studentId", "==", studentId)
+  try {
+    const profile = await getDoc(
+      doc(db, "user_profiles", parentUid)
     );
 
-    const results = await getDocs(q);
+    box.textContent = "";
 
-    const card = document.createElement("div");
-    card.className = "notice";
-
-    const heading = document.createElement("h3");
-    heading.textContent = "শিক্ষার্থীর UID: " + studentId;
-    card.append(heading);
-
-    if (results.empty) {
-      const p = document.createElement("p");
-      p.textContent = "এখনো পড়ার রিপোর্ট দেওয়া হয়নি।";
-      card.append(p);
-    } else {
-      results.forEach(item => {
-        const data = item.data();
-        const p = document.createElement("p");
-        p.textContent =
-          (data.lessonType || "") + ": " +
-          (data.details || "");
-        card.append(p);
-      });
+    if (!profile.exists()) {
+      box.textContent = "অভিভাবকের Profile পাওয়া যায়নি।";
+      return;
     }
 
-    box.append(card);
+    const studentIds = profile.data().studentIds || [];
+
+    if (!studentIds.length) {
+      box.textContent =
+        "এই অভিভাবকের সঙ্গে কোনো শিক্ষার্থী যুক্ত নেই।";
+      return;
+    }
+
+    for (const studentId of studentIds) {
+
+      const q = query(
+        collection(db, "reading_progress"),
+        where("studentUid", "==", studentId)
+      );
+
+      const results = await getDocs(q);
+
+      const card = document.createElement("div");
+      card.className = "notice";
+
+      const heading = document.createElement("h3");
+      heading.textContent =
+        "শিক্ষার্থীর UID: " + studentId;
+
+      card.append(heading);
+
+      if (results.empty) {
+        const p = document.createElement("p");
+        p.textContent =
+          "এখনো পড়ার রিপোর্ট দেওয়া হয়নি।";
+        card.append(p);
+
+      } else {
+
+        results.forEach(item => {
+          const data = item.data();
+
+          const p = document.createElement("p");
+
+          p.textContent =
+            "পাঠ: " + (data.lessonType || "") +
+            " | বিস্তারিত: " + (data.details || "");
+
+          card.append(p);
+        });
+      }
+
+      box.append(card);
+    }
+
+  } catch (error) {
+    console.error("Parent progress error:", error);
+
+    box.textContent =
+      "রিপোর্ট লোড করা যায়নি। আবার চেষ্টা করুন।";
   }
 }
 

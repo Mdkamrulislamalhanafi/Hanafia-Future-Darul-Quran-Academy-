@@ -510,44 +510,100 @@ Profile সংরক্ষণ
 
 <!-- TEACHER DASHBOARD -->
 <section id="teacherDashboard" class="hidden">
-<div class="container">
-<h2>Teacher Dashboard</h2>
+  <div class="container">
 
-<div class="panel">
-<h3>আমার ক্লাসসমূহ</h3>
-<div id="teacherClasses">
-<p>ক্লাস লোড হচ্ছে...</p>
-</div>
-</div>
+    <h2>Teacher Dashboard</h2>
 
-<div class="panel">
-<h3>উপস্থিতি জমা দিন</h3>
+    <!-- MY CLASSES -->
+    <div class="panel">
+      <h3>আমার ক্লাসসমূহ</h3>
 
-<form id="attendanceForm">
+      <div id="teacherClasses">
+        <p>ক্লাস লোড হচ্ছে...</p>
+      </div>
+    </div>
 
-<label>Class ID</label>
-<input id="attendanceClassId" required>
+    <!-- ATTENDANCE FORM -->
+    <div class="panel">
+      <h3>উপস্থিতি জমা দিন</h3>
 
-<label>Student UID</label>
-<input id="attendanceStudentId" required>
+      <form id="attendanceForm">
 
-<label>উপস্থিতি</label>
-<select id="attendanceStatus" required>
-<option value="present">উপস্থিত</option>
-<option value="absent">অনুপস্থিত</option>
-<option value="late">বিলম্বে উপস্থিত</option>
-</select>
+        <label>Class ID</label>
+        <input
+          id="attendanceClassId"
+          required
+          placeholder="Class ID লিখুন"
+        >
 
-<button class="btn" type="submit">
-উপস্থিতি সংরক্ষণ
-</button>
+        <label>Student UID</label>
+        <input
+          id="attendanceStudentId"
+          required
+          placeholder="Student UID লিখুন"
+        >
 
-<p id="attendanceMessage" class="status"></p>
-</form>
-</div>
+        <label>উপস্থিতি</label>
+        <select id="attendanceStatus" required>
+          <option value="present">উপস্থিত</option>
+          <option value="absent">অনুপস্থিত</option>
+          <option value="late">বিলম্বে উপস্থিত</option>
+        </select>
 
-</div>
+        <button class="btn" type="submit">
+          উপস্থিতি সংরক্ষণ
+        </button>
+
+        <p id="attendanceMessage" class="status"></p>
+
+      </form>
+    </div>
+
+    <!-- DAILY QURAN READING REPORT -->
+    <div class="panel">
+      <h3>দৈনিক কুরআন পড়ার রিপোর্ট</h3>
+
+      <form id="readingProgressForm">
+
+        <label>শিক্ষার্থীর UID</label>
+        <input
+          type="text"
+          id="readingStudentUid"
+          placeholder="শিক্ষার্থীর UID লিখুন"
+          required
+        >
+
+        <label>পাঠের ধরন</label>
+        <select id="readingLessonType" required>
+          <option value="">নির্বাচন করুন</option>
+          <option value="নূরানী">নূরানী</option>
+          <option value="নাজেরা">নাজেরা</option>
+          <option value="হিফজ">হিফজ</option>
+          <option value="তাজবিদ">তাজবিদ</option>
+        </select>
+
+        <label>আজকের পড়ার বিস্তারিত</label>
+        <textarea
+          id="readingDetails"
+          placeholder="কতটুকু পড়েছে, কোথায় ভুল হয়েছে লিখুন"
+          required
+        ></textarea>
+
+        <button class="btn" type="submit">
+          রিপোর্ট জমা দিন
+        </button>
+
+        <p
+          id="readingProgressMessage"
+          class="status"
+        ></p>
+
+      </form>
+    </div>
+
+  </div>
 </section>
+
 
 
 <!-- STUDENT DASHBOARD -->

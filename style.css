@@ -695,3 +695,346 @@ footer {
     transition: none !important;
   }
 }
+/* ==========================================
+   HANAFIA FUTURE ACADEMY
+   PREMIUM WEBSITE ANIMATION
+========================================== */
+
+/* 1. Website Smooth Loading */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  animation: websiteLoad 1s ease both;
+}
+
+@keyframes websiteLoad {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 2. Header Animation */
+header {
+  animation: headerDrop 0.8s ease both;
+}
+
+@keyframes headerDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3. Navigation Animation */
+nav a {
+  position: relative;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #d4af37;
+  transform: translateY(-2px);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* 4. Hero Section */
+.hero {
+  animation: heroReveal 1.2s ease both;
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  animation: heroTitle 1s ease both;
+}
+
+@keyframes heroTitle {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero p {
+  animation: heroText 1.3s ease both;
+}
+
+@keyframes heroText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 5. All Sections */
+section {
+  animation: sectionReveal 0.8s ease both;
+}
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 6. Cards Animation */
+.card,
+.feature-card,
+.course-card,
+.panel {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.card:hover,
+.feature-card:hover,
+.course-card:hover,
+.panel:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(212,175,55,0.16);
+  border-color: #d4af37;
+}
+
+/* 7. Image Animation */
+.card img,
+.course-card img,
+.feature-card img {
+  transition: transform 0.5s ease;
+}
+
+.card:hover img,
+.course-card:hover img,
+.feature-card:hover img {
+  transform: scale(1.04);
+}
+
+/* 8. Buttons */
+button,
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+}
+
+button:active,
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* 9. Form Animation */
+form {
+  animation: formReveal 0.8s ease both;
+}
+
+@keyframes formReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input,
+select,
+textarea {
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+}
+
+/* 10. Login Animation */
+#loginForm {
+  animation: loginAppear 0.9s ease both;
+}
+
+@keyframes loginAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 11. Admission Animation */
+#admissionForm {
+  animation: admissionAppear 1s ease both;
+}
+
+@keyframes admissionAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 12. Dashboard Cards */
+#adminDashboard .panel,
+#teacherDashboard .panel,
+#studentDashboard .panel,
+#parentDashboard .panel {
+  animation: dashboardCard 0.8s ease both;
+}
+
+@keyframes dashboardCard {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 13. Notice Animation */
+.notice {
+  animation: noticeReveal 0.7s ease both;
+}
+
+@keyframes noticeReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 14. Footer Animation */
+footer {
+  animation: footerReveal 1s ease both;
+}
+
+@keyframes footerReveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 15. Golden Highlight */
+h1,
+h2,
+h3 {
+  transition: color 0.3s ease;
+}
+
+h2:hover,
+h3:hover {
+  color: #d4af37;
+}
+
+/* 16. WhatsApp Floating Button */
+.whatsapp,
+.whatsapp-btn {
+  animation: whatsappPulse 2s infinite;
+}
+
+@keyframes whatsappPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* 17. Mobile Optimization */
+@media (max-width: 600px) {
+  .card:hover,
+  .feature-card:hover,
+  .course-card:hover,
+  .panel:hover {
+    transform: none;
+  }
+
+  button,
+  .btn {
+    min-height: 44px;
+  }
+}
+
+/* 18. Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,46 +1,63 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hanafia Future Darul Quran Academy</title>
+<title>HANAFIA Future Darul Quran Academy</title>
+<!-- FontAwesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Google Fonts (Bangla Support) -->
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{
- font-family:Arial,sans-serif;
+ font-family:'Hind Siliguri', Arial, sans-serif;
  background:#071735;
  color:white;
- line-height:1.7
+ line-height:1.7;
+ overflow-x:hidden;
 }
 header{
  background:linear-gradient(135deg,#061638,#174582);
  padding:24px;
  text-align:center;
- border-bottom:2px solid #d5ad50
+ border-bottom:2px solid #d5ad50;
+ position:sticky;
+ top:0;
+ z-index:50;
 }
-header h1{color:#f5cb60}
+header h1{color:#f5cb60; font-size: 26px;}
 nav{
  background:#0b2450;
  padding:12px;
  text-align:center;
  position:sticky;
- top:0;
- z-index:5
+ top:85px;
+ z-index:40;
+ backdrop-blur:md;
+ box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 nav a{
  color:white;
  text-decoration:none;
- margin:7px;
+ margin:5px 8px;
  display:inline-block;
- font-size:14px
+ font-size:14px;
+ transition: color 0.3s;
 }
-section{padding:35px 15px;scroll-margin-top:65px}
+nav a:hover {
+ color: #f5cb60;
+}
+section{padding:40px 15px;scroll-margin-top:130px}
 .container{max-width:950px;margin:auto}
 .hero{
  text-align:center;
  background:linear-gradient(145deg,#123d7b,#061638);
- padding:55px 18px
+ padding:55px 18px;
+ border-radius: 20px;
+ border: 1px solid rgba(185, 155, 85, 0.3);
+ box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 h2{color:#f5cb60;text-align:center;margin-bottom:20px}
 h3{color:#f5cb60;margin-bottom:10px}
@@ -48,7 +65,7 @@ p{color:#e2eafa}
 .grid{
  display:grid;
  grid-template-columns:repeat(2,1fr);
- gap:16px
+ gap:16px;
 }
 .card,.panel{
  background:linear-gradient(145deg,#153e7c,#081a3b);
@@ -56,7 +73,11 @@ p{color:#e2eafa}
  border-radius:15px;
  padding:20px;
  margin-bottom:15px;
- box-shadow:0 8px 20px #0005
+ box-shadow:0 8px 20px #0005;
+ transition: transform 0.3s ease;
+}
+.card:hover {
+ transform: translateY(-3px);
 }
 .card{text-align:center}
 .btn{
@@ -69,7 +90,12 @@ p{color:#e2eafa}
  font-weight:bold;
  text-decoration:none;
  cursor:pointer;
- margin:6px
+ margin:6px;
+ transition: transform 0.2s, opacity 0.2s;
+}
+.btn:hover {
+ transform: scale(1.02);
+ opacity: 0.95;
 }
 .btn:disabled{opacity:.6;cursor:not-allowed}
 input,select,textarea{
@@ -82,44 +108,60 @@ input,select,textarea{
  color:#111;
  font-size:15px
 }
-label{display:block;color:#f5d37b}
+label{display:block;color:#f5d37b; font-weight: 500; font-size: 14px;}
 form{max-width:650px;margin:auto}
 .hidden{display:none!important}
 .muted{color:#c9d5eb;font-size:13px}
 .notice{
- padding:12px;
+ padding:15px;
  background:#102c5a;
- border-radius:9px;
+ border-radius:12px;
  margin:10px 0;
- overflow-wrap:anywhere
+ overflow-wrap:anywhere;
+ border: 1px solid rgba(185, 155, 85, 0.3);
 }
-.table-wrap{overflow-x:auto}
 footer{
  text-align:center;
  padding:28px;
- background:#041027
+ background:#041027;
+ border-top: 1px solid #8d7542;
 }
 hr{
  border:0;
  border-top:1px solid #8d7542;
  margin:18px 0
 }
-.status{margin-top:10px;overflow-wrap:anywhere}
+.status{margin-top:10px;overflow-wrap:anywhere; font-weight: bold;}
+
+/* Custom Animations */
+@keyframes float {
+ 0%, 100% { transform: translateY(0); }
+ 50% { transform: translateY(-6px); }
+}
+@keyframes pulseGlow {
+ 0%, 100% { box-shadow: 0 0 15px rgba(213, 173, 80, 0.4); }
+ 50% { box-shadow: 0 0 25px rgba(213, 173, 80, 0.8); }
+}
+.animate-float {
+ animation: float 4s ease-in-out infinite;
+}
+.animate-glow {
+ animation: pulseGlow 3s ease-in-out infinite;
+}
+
 @media(max-width:600px){
  .grid{grid-template-columns:1fr}
- header h1{font-size:23px}
+ header h1{font-size:22px}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>🕌 HANAFIA</h1>
-<h3>Future Darul Quran Academy</h3>
+<header class="animate-glow">
+<h1>🕌 HANAFIA Future Darul Quran Academy</h1>
 <p>Learn Quran • Build Future</p>
 </header>
-
  
 <nav>
   <a href="#home">হোম</a>
@@ -131,11 +173,78 @@ hr{
   <a href="#login">Login</a>
 </nav>
 
+<!-- HERO SECTION -->
+<div class="container" style="padding-top: 20px;">
+  <section class="hero" id="home">
+    <h1 style="color:#f5cb60; font-size: 28px; margin-bottom: 10px;">
+    আধুনিক অনলাইন কুরআন একাডেমি
+    </h1>
+    <p style="font-size: 18px; font-weight: bold; margin-bottom: 8px;">বিশুদ্ধ কুরআন শিক্ষা, সুন্দর ভবিষ্যৎ</p>
+    <p style="margin-bottom: 20px;">দেশ-বিদেশের শিক্ষার্থীদের জন্য ঘরে বসে অনলাইনের মাধ্যমে কুরআন শিক্ষার সেরা মাধ্যম।</p>
+
+    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+      <a class="btn" href="#admission">অনলাইন ভর্তি</a>
+      <a class="btn" href="https://wa.me/8801342268929" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </section>
+</div>
+
+<!-- FEATURES SECTION -->
+<section id="features">
+<div class="container">
+<h2>আমাদের বিশেষ বৈশিষ্ট্য</h2>
+<div class="grid">
+  <div class="card animate-float">
+    <h3>🎯 ব্যক্তিগত মনোযোগ</h3>
+    <p>প্রতিটি শিক্ষার্থীর জন্য আলাদা যত্ন ও নিবিড় তদারকি।</p>
+  </div>
+  <div class="card animate-float">
+    <h3>👨‍🏫 অভিজ্ঞ শিক্ষক</h3>
+    <p>প্রশিক্ষিত হাফেজ ও দক্ষ কারী শিক্ষক দ্বারা পাঠদান।</p>
+  </div>
+  <div class="card animate-float">
+    <h3>🌍 অনলাইন ক্লাস</h3>
+    <p>বিশ্বের যেকোনো স্থান থেকে নিরবচ্ছিন্নভাবে ক্লাসে অংশগ্রহণ।</p>
+  </div>
+  <div class="card animate-float">
+    <h3>📚 পরিকল্পিত সিলেবাস</h3>
+    <p>নূরানী, নাজেরা, হিফজ ও ইসলামিক শিক্ষার আধুনিক সমন্বয়।</p>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- COURSES SECTION -->
+<section id="courses">
+<div class="container">
+<h2>আমাদের কোর্সসমূহ</h2>
+<div class="grid">
+  <div class="card">
+    <h3>নূরানী</h3>
+    <p>আরবি হরফ চেনা, সঠিক উচ্চারণ ও প্রাথমিক শিক্ষা।</p>
+  </div>
+  <div class="card">
+    <h3>নাজেরা</h3>
+    <p>শুদ্ধ উচ্চারণে সাবলীল কুরআন তিলাওয়াত অনুশীলন।</p>
+  </div>
+  <div class="card">
+    <h3>হিফজ</h3>
+    <p>পরিকল্পিত ও সুশৃঙ্খল উপায়ে সম্পূর্ণ কুরআন মুখস্থ শিক্ষা।</p>
+  </div>
+  <div class="card">
+    <h3>ইসলামিক শিক্ষা</h3>
+    <p>দৈনন্দিন প্রয়োজনীয় দোয়া, কালিমা ও জরুরি মাসআলা-মাসাইল।</p>
+  </div>
+</div>
+</div>
+</section>
+
 <!-- LEARNING STEPS -->
 <section id="learningSteps">
   <div class="container">
     <h2>পড়াশোনার ধাপসমূহ</h2>
-
     <div class="grid">
       <div class="card">
         <h3>ধাপ ১: আরবি শিক্ষা</h3>
@@ -161,7 +270,7 @@ hr{
         <h3>ধাপ ৬: হিফজ</h3>
         <p>নতুন সবক, সবকপারা ও আমুখতা।</p>
       </div>
-      <div class="card">
+      <div class="card" style="grid-column: span 2;">
         <h3>ধাপ ৭: দাওর</h3>
         <p>সম্পূর্ণ কুরআন পুনরাবৃত্তি ও মজবুতকরণ।</p>
       </div>
@@ -169,201 +278,20 @@ hr{
   </div>
 </section>
 
-<!-- TEACHER EVALUATION -->
-<section id="teacherEvaluation">
-  <div class="container">
-    <h2>শিক্ষক মূল্যায়ন</h2>
-    <div class="panel">
-      <p>শিক্ষকের পাঠদান সম্পর্কে আপনার মতামত দিন।</p>
-
-      <form id="evaluationForm">
-        <label>শিক্ষকের UID</label>
-        <input id="evaluationTeacherUid" required>
-
-        <label>শিক্ষার্থীর নাম</label>
-        <input id="evaluationStudentName" required>
-
-        <label>পাঠদানের মান</label>
-        <select id="evaluationRating" required>
-          <option value="">নির্বাচন করুন</option>
-          <option value="5">৫ - অত্যন্ত ভালো</option>
-          <option value="4">৪ - ভালো</option>
-          <option value="3">৩ - মোটামুটি</option>
-          <option value="2">২ - উন্নতি প্রয়োজন</option>
-          <option value="1">১ - অসন্তোষজনক</option>
-        </select>
-
-        <label>আপনার মন্তব্য</label>
-        <textarea id="evaluationComment" rows="4"
-          maxlength="1000" placeholder="আপনার মতামত লিখুন"></textarea>
-
-        <button class="btn" type="submit">মূল্যায়ন জমা দিন</button>
-        <p id="evaluationMessage" class="status"></p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- FREE TRIAL -->
-<section id="trialClass">
-  <div class="container">
-    <h2>ফ্রি ট্রায়াল ক্লাস বুকিং</h2>
-    <div class="panel">
-      <p>ভর্তির আগে বিনামূল্যে পরিচিতিমূলক ক্লাসের জন্য আবেদন করুন।</p>
-
-      <form id="trialForm">
-        <label>শিক্ষার্থীর নাম</label>
-        <input id="trialName" required maxlength="100">
-
-        <label>অভিভাবকের নাম</label>
-        <input id="trialGuardian" required maxlength="100">
-
-        <label>WhatsApp / মোবাইল নম্বর</label>
-        <input id="trialMobile" type="tel" required maxlength="25">
-
-        <label>পছন্দের কোর্স</label>
-        <select id="trialCourse" required>
-          <option value="">নির্বাচন করুন</option>
-          <option>নূরানী কায়দা</option>
-          <option>নাজেরা</option>
-          <option>হিফজ</option>
-          <option>তাজবিদ</option>
-          <option>ইসলামিক শিক্ষা</option>
-        </select>
-
-        <label>পছন্দের তারিখ</label>
-        <input id="trialDate" type="date" required>
-
-        <label>পছন্দের সময়</label>
-        <input id="trialTime" type="time" required>
-
-        <button class="btn" type="submit">ট্রায়াল বুকিং জমা দিন</button>
-        <p id="trialMessage" class="status"></p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- PARENT MONITORING -->
-<section id="parentMonitoring">
-  <div class="container">
-    <h2>অভিভাবক মনিটরিং</h2>
-    <div class="panel">
-      <h3>সন্তানের পড়াশোনার অগ্রগতি</h3>
-      <p>অভিভাবক Login করার পর সন্তানের দৈনিক পড়ার রিপোর্ট দেখতে পারবেন।</p>
-      <div id="parentProgress">
-        অভিভাবক Login করার পর তথ্য দেখা যাবে।
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PARENT DASHBOARD -->
-<section id="parentDashboard" class="hidden">
-  <div class="container">
-    <h2>Parent Dashboard</h2>
-    <div class="panel">
-      <h3>সন্তানের পড়াশোনার রিপোর্ট</h3>
-      <div id="parentChildrenProgress">
-        রিপোর্ট লোড হচ্ছে...
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero" id="home">
-<h1 style="color:#f5cb60">
-আধুনিক অনলাইন কুরআন একাডেমি
-</h1>
-<p>বিশুদ্ধ কুরআন শিক্ষা, সুন্দর ভবিষ্যৎ</p>
-<p>দেশ-বিদেশের শিক্ষার্থীদের জন্য অনলাইন কুরআন শিক্ষা।</p>
-
-<a class="btn" href="#admission">অনলাইন ভর্তি</a>
-
-<a class="btn"
-href="https://wa.me/8801342268929"
-target="_blank"
-rel="noopener">
-WhatsApp
-</a>
-</section>
-
-<section id="features">
-<div class="container">
-<h2>আমাদের বিশেষ বৈশিষ্ট্য</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>🎯 ব্যক্তিগত মনোযোগ</h3>
-<p>প্রতিটি শিক্ষার্থীর জন্য আলাদা যত্ন।</p>
-</div>
-
-<div class="card">
-<h3>👨‍🏫 অভিজ্ঞ শিক্ষক</h3>
-<p>প্রশিক্ষিত হাফেজ ও কারী শিক্ষক।</p>
-</div>
-
-<div class="card">
-<h3>🌍 অনলাইন ক্লাস</h3>
-<p>বিশ্বের যেকোনো স্থান থেকে শিক্ষা।</p>
-</div>
-
-<div class="card">
-<h3>📚 পরিকল্পিত সিলেবাস</h3>
-<p>নূরানী, নাজেরা, হিফজ ও ইসলামিক শিক্ষা।</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<section id="courses">
-<div class="container">
-<h2>আমাদের কোর্স</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>নূরানী</h3>
-<p>আরবি হরফ ও প্রাথমিক শিক্ষা।</p>
-</div>
-
-<div class="card">
-<h3>নাজেরা</h3>
-<p>শুদ্ধ উচ্চারণে কুরআন তিলাওয়াত।</p>
-</div>
-
-<div class="card">
-<h3>হিফজ</h3>
-<p>পরিকল্পিত কুরআন মুখস্থ শিক্ষা।</p>
-</div>
-
-<div class="card">
-<h3>ইসলামিক শিক্ষা</h3>
-<p>দোয়া ও প্রয়োজনীয় মাসআলা।</p>
-</div>
-
-</div>
-</div>
-</section>
-
+<!-- ADMISSION FORM -->
 <section id="admission">
 <div class="container">
 <h2>অনলাইন ভর্তি আবেদন</h2>
-
 <div class="panel">
 <form id="admissionForm">
-
 <label>শিক্ষার্থীর নাম</label>
-<input id="aName" required maxlength="100">
+<input id="aName" required maxlength="100" placeholder="শিক্ষার্থীর নাম লিখুন">
 
 <label>পিতার নাম</label>
-<input id="aFather" required maxlength="100">
+<input id="aFather" required maxlength="100" placeholder="পিতার নাম লিখুন">
 
 <label>মোবাইল নম্বর</label>
-<input id="aMobile" required type="tel" maxlength="25">
+<input id="aMobile" required type="tel" maxlength="25" placeholder="মোবাইল নম্বর লিখুন">
 
 <label>বয়সভিত্তিক গ্রুপ</label>
 <select id="aAge" required>
@@ -383,41 +311,144 @@ WhatsApp
 </select>
 
 <label>দেশ ও ঠিকানা</label>
-<input id="aAddress" required maxlength="300">
+<input id="aAddress" required maxlength="300" placeholder="আপনার ঠিকানা লিখুন">
 
-<button class="btn" id="admissionSubmit" type="submit">
+<button class="btn" id="admissionSubmit" type="submit" style="width: 100%; margin-top: 10px;">
 আবেদন জমা দিন
 </button>
 
-<p id="aMessage" class="status" aria-live="polite"></p>
+<p id="aMessage" class="status" aria-live="polite" style="text-align: center;"></p>
 </form>
 </div>
 </div>
 </section>
 
+<!-- FREE TRIAL -->
+<section id="trialClass">
+  <div class="container">
+    <h2>ফ্রি ট্রায়াল ক্লাস বুকিং</h2>
+    <div class="panel">
+      <p style="text-align: center; margin-bottom: 15px;">ভর্তির আগে বিনামূল্যে পরিচিতিমূলক ক্লাসের জন্য আবেদন করুন।</p>
+
+      <form id="trialForm">
+        <label>শিক্ষার্থীর নাম</label>
+        <input id="trialName" required maxlength="100" placeholder="শিক্ষার্থীর নাম">
+
+        <label>অভিভাবকের নাম</label>
+        <input id="trialGuardian" required maxlength="100" placeholder="অভিভাবকের নাম">
+
+        <label>WhatsApp / মোবাইল নম্বর</label>
+        <input id="trialMobile" type="tel" required maxlength="25" placeholder="নম্বর লিখুন">
+
+        <label>পছন্দের কোর্স</label>
+        <select id="trialCourse" required>
+          <option value="">নির্বাচন করুন</option>
+          <option>নূরানী কায়দা</option>
+          <option>নাজেরা</option>
+          <option>হিফজ</option>
+          <option>তাজবিদ</option>
+          <option>ইসলামিক শিক্ষা</option>
+        </select>
+
+        <label>পছন্দের তারিখ</label>
+        <input id="trialDate" type="date" required>
+
+        <label>পছন্দের সময়</label>
+        <input id="trialTime" type="time" required>
+
+        <button class="btn" type="submit" style="width: 100%; margin-top: 10px;">ট্রায়াল বুকিং জমা দিন</button>
+        <p id="trialMessage" class="status" style="text-align: center;"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHER EVALUATION -->
+<section id="teacherEvaluation">
+  <div class="container">
+    <h2>শিক্ষক মূল্যায়ন</h2>
+    <div class="panel">
+      <p style="text-align: center; margin-bottom: 15px;">শিক্ষকের পাঠদান সম্পর্কে আপনার মতামত দিন।</p>
+
+      <form id="evaluationForm">
+        <label>শিক্ষকের UID</label>
+        <input id="evaluationTeacherUid" required placeholder="শিক্ষকের UID লিখুন">
+
+        <label>শিক্ষার্থীর নাম</label>
+        <input id="evaluationStudentName" required placeholder="শিক্ষার্থীর নাম লিখুন">
+
+        <label>পাঠদানের মান</label>
+        <select id="evaluationRating" required>
+          <option value="">নির্বাচন করুন</option>
+          <option value="5">৫ - অত্যন্ত ভালো</option>
+          <option value="4">৪ - ভালো</option>
+          <option value="3">৩ - মোটামুটি</option>
+          <option value="2">২ - উন্নতি প্রয়োজন</option>
+          <option value="1">১ - অসন্তোষজনক</option>
+        </select>
+
+        <label>আপনার মন্তব্য</label>
+        <textarea id="evaluationComment" rows="4" maxlength="1000" placeholder="আপনার মতামত লিখুন"></textarea>
+
+        <button class="btn" type="submit" style="width: 100%; margin-top: 10px;">মূল্যায়ন জমা দিন</button>
+        <p id="evaluationMessage" class="status" style="text-align: center;"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- PARENT MONITORING -->
+<section id="parentMonitoring">
+  <div class="container">
+    <h2>অভিভাবক মনিটরিং</h2>
+    <div class="panel" style="text-align: center;">
+      <h3>সন্তানের পড়াশোনার অগ্রগতি</h3>
+      <p>অভিভাবক Login করার পর সন্তানের দৈনিক পড়ার রিপোর্ট দেখতে পারবেন।</p>
+      <div id="parentProgress" style="margin-top: 10px; color: #f5cb60;">
+        অভিভাবক Login করার পর তথ্য দেখা যাবে।
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENT DASHBOARD -->
+<section id="parentDashboard" class="hidden">
+  <div class="container">
+    <h2>Parent Dashboard</h2>
+    <div class="panel">
+      <h3>সন্তানের পড়াশোনার রিপোর্ট</h3>
+      <div id="parentChildrenProgress">
+        রিপোর্ট লোড হচ্ছে...
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGIN SECTION -->
 <section id="login">
 <div class="container">
 <h2>Login Portal</h2>
 
 <div class="panel">
 <form id="loginForm">
-
 <label>Email Address</label>
-<input id="email" type="email" autocomplete="username" required>
+<input id="email" type="email" autocomplete="username" required placeholder="example@gmail.com">
 
 <label>Password</label>
-<input id="password" type="password" autocomplete="current-password" required>
+<input id="password" type="password" autocomplete="current-password" required placeholder="********">
 
-<button class="btn" id="loginSubmit" type="submit">
+<button class="btn" id="loginSubmit" type="submit" style="width: 100%; margin-top: 10px;">
 Login করুন
 </button>
 
-<p id="loginMessage" class="status" aria-live="polite"></p>
+<p id="loginMessage" class="status" aria-live="polite" style="text-align: center;"></p>
 </form>
 
-<button class="btn" id="logoutBtn" style="display:none">
-Logout
-</button>
+<div style="text-align: center; margin-top: 15px;">
+  <button class="btn" id="logoutBtn" style="display:none; background: linear-gradient(120deg, #ff8b8b, #c12525); color: white;">
+    Logout
+  </button>
+</div>
 
 </div>
 </div>
@@ -426,10 +457,8 @@ Logout
 <!-- ADMIN DASHBOARD -->
 <section id="adminDashboard" class="hidden">
   <div class="container">
-
     <h2>Admin Dashboard</h2>
 
-    <!-- ADMIN INFORMATION -->
     <div class="panel">
       <h3>প্রশাসকের তথ্য</h3>
       <p id="adminInfo">স্বাগতম, Admin</p>
@@ -441,20 +470,17 @@ Logout
       </div>
     </div>
 
-    <!-- CREATE USER PROFILE -->
     <div class="panel">
       <h3>নতুন User Profile তৈরি</h3>
-
       <form id="profileForm">
-
         <label>User UID</label>
-        <input id="profileUid" required>
+        <input id="profileUid" required placeholder="Firebase UID">
 
         <label>নাম</label>
-        <input id="profileName" required>
+        <input id="profileName" required placeholder="ব্যবহারকারীর নাম">
 
         <label>Email</label>
-        <input id="profileEmail" type="email" required>
+        <input id="profileEmail" type="email" required placeholder="Email">
 
         <label>Role নির্বাচন</label>
         <select id="profileRole" required>
@@ -464,51 +490,34 @@ Logout
           <option value="parent">Parent</option>
         </select>
 
-        <button class="btn" type="submit">
+        <button class="btn" type="submit" style="width: 100%; margin-top: 10px;">
           Profile সংরক্ষণ
         </button>
-
-        <p id="profileMessage" class="status"></p>
+        <p id="profileMessage" class="status" style="text-align: center;"></p>
       </form>
     </div>
 
-    <!-- LINK PARENT WITH STUDENT -->
     <div class="panel">
       <h3>অভিভাবকের সঙ্গে শিক্ষার্থী যুক্ত করুন</h3>
-
       <form id="linkParentStudentForm">
-
         <label>অভিভাবকের Firebase UID</label>
-        <input
-          id="linkParentUid"
-          placeholder="Parent UID লিখুন"
-          required
-        >
+        <input id="linkParentUid" placeholder="Parent UID লিখুন" required>
 
         <label>শিক্ষার্থীর Firebase UID</label>
-        <input
-          id="linkStudentUid"
-          placeholder="Student UID লিখুন"
-          required
-        >
+        <input id="linkStudentUid" placeholder="Student UID লিখুন" required>
 
-        <button class="btn" type="submit">
+        <button class="btn" type="submit" style="width: 100%; margin-top: 10px;">
           শিক্ষার্থী যুক্ত করুন
         </button>
-
-        <p id="linkParentStudentMessage" class="status"></p>
-
+        <p id="linkParentStudentMessage" class="status" style="text-align: center;"></p>
       </form>
     </div>
 
-    <!-- CREATE ZOOM CLASS -->
     <div class="panel">
       <h3>Zoom Class তৈরি</h3>
-
       <form id="classForm">
-
         <label>ক্লাসের নাম</label>
-        <input id="classTitle" required>
+        <input id="classTitle" required placeholder="ক্লাসের শিরোনাম">
 
         <label>কোর্স</label>
         <select id="classCourse" required>
@@ -520,68 +529,46 @@ Logout
         </select>
 
         <label>Teacher UID</label>
-        <input id="classTeacher" required>
+        <input id="classTeacher" required placeholder="Teacher UID">
 
         <label>Student UID (একাধিক হলে কমা দিয়ে লিখুন)</label>
-        <input id="classStudents" required>
+        <input id="classStudents" required placeholder="UID1, UID2">
 
         <label>ক্লাসের তারিখ ও সময়</label>
         <input id="classDate" type="datetime-local" required>
 
         <label>Zoom Meeting Link</label>
-        <input
-          id="zoomLink"
-          type="url"
-          placeholder="https://zoom.us/j/..."
-          required
-        >
+        <input id="zoomLink" type="url" placeholder="https://zoom.us/j/..." required>
 
-        <button class="btn" type="submit">
+        <button class="btn" type="submit" style="width: 100%; margin-top: 10px;">
           ক্লাস তৈরি করুন
         </button>
-
-        <p id="classMessage" class="status"></p>
-
+        <p id="classMessage" class="status" style="text-align: center;"></p>
       </form>
     </div>
-
   </div>
 </section>
 
 <!-- TEACHER DASHBOARD -->
 <section id="teacherDashboard" class="hidden">
   <div class="container">
-
     <h2>Teacher Dashboard</h2>
 
-    <!-- MY CLASSES -->
     <div class="panel">
       <h3>আমার ক্লাসসমূহ</h3>
-
       <div id="teacherClasses">
         <p>ক্লাস লোড হচ্ছে...</p>
       </div>
     </div>
 
-    <!-- ATTENDANCE FORM -->
     <div class="panel">
       <h3>উপস্থিতি জমা দিন</h3>
-
       <form id="attendanceForm">
-
         <label>Class ID</label>
-        <input
-          id="attendanceClassId"
-          required
-          placeholder="Class ID লিখুন"
-        >
+        <input id="attendanceClassId" required placeholder="Class ID লিখুন">
 
         <label>Student UID</label>
-        <input
-          id="attendanceStudentId"
-          required
-          placeholder="Student UID লিখুন"
-        >
+        <input id="attendanceStudentId" required placeholder="Student UID লিখুন">
 
         <label>উপস্থিতি</label>
         <select id="attendanceStatus" required>
@@ -590,28 +577,18 @@ Logout
           <option value="late">বিলম্বে উপস্থিত</option>
         </select>
 
-        <button class="btn" type="submit">
+        <button class="btn" type="submit" style="width: 100%; margin-top: 10px;">
           উপস্থিতি সংরক্ষণ
         </button>
-
-        <p id="attendanceMessage" class="status"></p>
-
+        <p id="attendanceMessage" class="status" style="text-align: center;"></p>
       </form>
     </div>
 
-    <!-- DAILY QURAN READING REPORT -->
     <div class="panel">
       <h3>দৈনিক কুরআন পড়ার রিপোর্ট</h3>
-
       <form id="readingProgressForm">
-
         <label>শিক্ষার্থীর UID</label>
-        <input
-          type="text"
-          id="readingStudentUid"
-          placeholder="শিক্ষার্থীর UID লিখুন"
-          required
-        >
+        <input type="text" id="readingStudentUid" placeholder="শিক্ষার্থীর UID লিখুন" required>
 
         <label>পাঠের ধরন</label>
         <select id="readingLessonType" required>
@@ -623,177 +600,16 @@ Logout
         </select>
 
         <label>আজকের পড়ার বিস্তারিত</label>
-        <textarea
-          id="readingDetails"
-          placeholder="কতটুকু পড়েছে, কোথায় ভুল হয়েছে লিখুন"
-          required
-        ></textarea>
+        <textarea id="readingDetails" placeholder="কতটুকু পড়েছে, কোথায় ভুল হয়েছে লিখুন" required></textarea>
 
-        <button class="btn" type="submit">
+        <button class="btn" type="submit" style="width: 100%; margin-top: 10px;">
           রিপোর্ট জমা দিন
         </button>
-
-        <p
-          id="readingProgressMessage"
-          class="status"
-        ></p>
-
+        <p id="readingProgressMessage" class="status" style="text-align: center;"></p>
       </form>
     </div>
-
   </div>
 </section>
-
-
-
-<!-- STUDENT DASHBOARD -->
-<section id="studentDashboard" class="hidden">
-<div class="container">
-<h2>Student Dashboard</h2>
-
-<div class="panel">
-<h3>আমার প্রোফাইল</h3>
-<div id="studentInfo">
-তথ্য লোড হচ্ছে...
-</div>
-</div>
-
-<div class="panel">
-<h3>আমার অনলাইন ক্লাস</h3>
-<div id="studentClasses">
-ক্লাস লোড হচ্ছে...
-</div>
-</div>
-
-</div>
-</section>
-  <!-- ADMIN DASHBOARD -->
-<section id="adminDashboard" class="hidden">
-<div class="container">
-<h2>Admin Dashboard</h2>
-
-<div class="panel">
-<h3>প্রশাসকের তথ্য</h3>
-<p id="adminInfo">স্বাগতম, Admin</p>
-<hr>
-
-<h3>ভর্তি আবেদনসমূহ</h3>
-<div id="applicationsList">
-<p>আবেদন লোড হচ্ছে...</p>
-</div>
-</div>
-
-<div class="panel">
-<h3>নতুন User Profile তৈরি</h3>
-
-<form id="profileForm">
-
-<label>User UID</label>
-<input id="profileUid" required>
-
-<label>নাম</label>
-<input id="profileName" required>
-
-<label>Email</label>
-<input id="profileEmail" type="email" required>
-
-<label>Role নির্বাচন</label>
-<select id="profileRole" required>
-<option value="">নির্বাচন করুন</option>
-<option value="teacher">Teacher</option>
-<option value="student">Student</option>
-</select>
-
-<button class="btn" type="submit">
-Profile সংরক্ষণ
-</button>
-
-<p id="profileMessage" class="status"></p>
-</form>
-</div>
-
-<div class="panel">
-<h3>Zoom Class তৈরি</h3>
-
-<form id="classForm">
-
-<label>ক্লাসের নাম</label>
-<input id="classTitle" required>
-
-<label>কোর্স</label>
-<select id="classCourse" required>
-<option value="">নির্বাচন করুন</option>
-<option>নূরানী</option>
-<option>নাজেরা</option>
-<option>হিফজ</option>
-<option>ইসলামিক শিক্ষা</option>
-</select>
-
-<label>Teacher UID</label>
-<input id="classTeacher" required>
-
-<label>Student UID (একাধিক হলে কমা দিয়ে লিখুন)</label>
-<input id="classStudents" required>
-
-<label>ক্লাসের তারিখ ও সময়</label>
-<input id="classDate" type="datetime-local" required>
-
-<label>Zoom Meeting Link</label>
-<input id="zoomLink" type="url" placeholder="https://zoom.us/j/..." required>
-
-<button class="btn" type="submit">
-ক্লাস তৈরি করুন
-</button>
-
-<p id="classMessage" class="status"></p>
-</form>
-</div>
-
-</div>
-</section>
-
-
-<!-- TEACHER DASHBOARD -->
-<section id="teacherDashboard" class="hidden">
-<div class="container">
-<h2>Teacher Dashboard</h2>
-
-<div class="panel">
-<h3>আমার ক্লাসসমূহ</h3>
-<div id="teacherClasses">
-<p>ক্লাস লোড হচ্ছে...</p>
-</div>
-</div>
-
-<div class="panel">
-<h3>উপস্থিতি জমা দিন</h3>
-
-<form id="attendanceForm">
-
-<label>Class ID</label>
-<input id="attendanceClassId" required>
-
-<label>Student UID</label>
-<input id="attendanceStudentId" required>
-
-<label>উপস্থিতি</label>
-<select id="attendanceStatus" required>
-<option value="present">উপস্থিত</option>
-<option value="absent">অনুপস্থিত</option>
-<option value="late">বিলম্বে উপস্থিত</option>
-</select>
-
-<button class="btn" type="submit">
-উপস্থিতি সংরক্ষণ
-</button>
-
-<p id="attendanceMessage" class="status"></p>
-</form>
-</div>
-
-</div>
-</section>
-
 
 <!-- STUDENT DASHBOARD -->
 <section id="studentDashboard" class="hidden">
@@ -823,19 +639,18 @@ Profile সংরক্ষণ
 <p>WhatsApp: 01342268929</p>
 <p>© 2026 All Rights Reserved</p>
 </footer>
+
+<!-- FIREBASE & APP SCRIPT -->
 <script type="module">
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 
 import {
- getAuth, signInWithEmailAndPassword, signOut,
- onAuthStateChanged
+ getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 import {
  getFirestore, collection, addDoc, getDoc, doc,
- setDoc, getDocs, query, where, updateDoc,
- serverTimestamp
+ setDoc, getDocs, query, where, updateDoc, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 /* FIREBASE CONFIG */
@@ -849,8 +664,8 @@ const firebaseConfig = {
  measurementId: "G-MYYT1V0RKK"
 };
 
-/* এখানে Admin UID বসাবেন */
-const ADMIN_UID = ";
+/* এখানে আপনার Admin UID বসাবেন */
+const ADMIN_UID = "";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -863,12 +678,13 @@ function message(id, text) {
 }
 
 function showDashboard(role) {
- ["adminDashboard","teacherDashboard","studentDashboard"]
+ ["adminDashboard","teacherDashboard","studentDashboard","parentDashboard"]
  .forEach(id => $(id)?.classList.add("hidden"));
 
  if (role === "admin") $("adminDashboard")?.classList.remove("hidden");
  if (role === "teacher") $("teacherDashboard")?.classList.remove("hidden");
  if (role === "student") $("studentDashboard")?.classList.remove("hidden");
+ if (role === "parent") $("parentDashboard")?.classList.remove("hidden");
 }
 
 function hideDashboards() {
@@ -879,27 +695,21 @@ function safeZoomLink(value) {
  try {
   const url = new URL(value);
   return url.protocol === "https:" &&
-   (url.hostname === "zoom.us" ||
-    url.hostname.endsWith(".zoom.us"));
+   (url.hostname === "zoom.us" || url.hostname.endsWith(".zoom.us"));
  } catch {
   return false;
  }
 }
 
 /* LOGIN */
-$("loginForm").addEventListener("submit", async e => {
+$("loginForm")?.addEventListener("submit", async e => {
  e.preventDefault();
-
  const button = $("loginSubmit");
  button.disabled = true;
  message("loginMessage","Login হচ্ছে...");
 
  try {
-  await signInWithEmailAndPassword(
-   auth,
-   $("email").value.trim(),
-   $("password").value
-  );
+  await signInWithEmailAndPassword(auth, $("email").value.trim(), $("password").value);
   message("loginMessage","সফলভাবে Login হয়েছে।");
  } catch(error) {
   message("loginMessage","Login হয়নি: " + error.message);
@@ -909,13 +719,14 @@ $("loginForm").addEventListener("submit", async e => {
 });
 
 /* LOGOUT */
-$("logoutBtn").addEventListener("click", async () => {
+$("logoutBtn")?.addEventListener("click", async () => {
  await signOut(auth);
 });
 
 /* AUTH STATE */
 onAuthStateChanged(auth, async user => {
- $("logoutBtn").style.display = user ? "inline-block" : "none";
+ const logoutBtn = $("logoutBtn");
+ if (logoutBtn) logoutBtn.style.display = user ? "inline-block" : "none";
 
  if (!user) {
   hideDashboards();
@@ -946,6 +757,9 @@ onAuthStateChanged(auth, async user => {
    showDashboard("student");
    await loadStudentProfile(user.uid);
    await loadStudentClasses(user.uid);
+  } else if (data.role === "parent") {
+   showDashboard("parent");
+   await loadParentProgress(user.uid);
   } else {
    hideDashboards();
   }
@@ -955,9 +769,8 @@ onAuthStateChanged(auth, async user => {
 });
 
 /* ADMISSION FORM */
-$("admissionForm").addEventListener("submit", async e => {
+$("admissionForm")?.addEventListener("submit", async e => {
  e.preventDefault();
-
  const button = $("admissionSubmit");
  button.disabled = true;
  message("aMessage","আবেদন জমা হচ্ছে...");
@@ -976,7 +789,6 @@ $("admissionForm").addEventListener("submit", async e => {
 
   message("aMessage","আলহামদুলিল্লাহ! আবেদন জমা হয়েছে।");
   $("admissionForm").reset();
-
  } catch(error) {
   message("aMessage","আবেদন জমা হয়নি: " + error.message);
  } finally {
@@ -984,9 +796,64 @@ $("admissionForm").addEventListener("submit", async e => {
  }
 });
 
+/* FREE TRIAL BOOKING */
+$("trialForm")?.addEventListener("submit", async e => {
+  e.preventDefault();
+  const btn = $("trialForm").querySelector("button");
+  btn.disabled = true;
+
+  try {
+    await addDoc(collection(db, "trial_requests"), {
+      studentName: $("trialName").value.trim(),
+      guardianName: $("trialGuardian").value.trim(),
+      mobile: $("trialMobile").value.trim(),
+      course: $("trialCourse").value,
+      preferredDate: $("trialDate").value,
+      preferredTime: $("trialTime").value,
+      status: "pending",
+      createdAt: serverTimestamp()
+    });
+
+    message("trialMessage", "আলহামদুলিল্লাহ! ট্রায়াল আবেদন জমা হয়েছে।");
+    $("trialForm").reset();
+  } catch (error) {
+    message("trialMessage", "সমস্যা: " + error.message);
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+/* TEACHER EVALUATION */
+$("evaluationForm")?.addEventListener("submit", async e => {
+  e.preventDefault();
+  const user = auth.currentUser;
+
+  if (!user) {
+    message("evaluationMessage", "আগে Login করুন।");
+    return;
+  }
+
+  try {
+    await addDoc(collection(db, "teacher_evaluations"), {
+      teacherId: $("evaluationTeacherUid").value.trim(),
+      studentName: $("evaluationStudentName").value.trim(),
+      rating: Number($("evaluationRating").value),
+      comment: $("evaluationComment").value.trim(),
+      submittedBy: user.uid,
+      createdAt: serverTimestamp()
+    });
+
+    message("evaluationMessage", "আপনার মূল্যায়ন জমা হয়েছে।");
+    $("evaluationForm").reset();
+  } catch (error) {
+    message("evaluationMessage", "সমস্যা: " + error.message);
+  }
+});
+
 /* LOAD APPLICATIONS */
 async function loadApplications() {
  const box = $("applicationsList");
+ if (!box) return;
  box.textContent = "";
 
  const snapshot = await getDocs(collection(db,"student_records"));
@@ -1020,26 +887,21 @@ async function loadApplications() {
 
    btn.onclick = async () => {
     try {
-     await updateDoc(doc(db,"student_records",item.id),{
-      status:"approved"
-     });
+     await updateDoc(doc(db,"student_records",item.id),{ status:"approved" });
      await loadApplications();
     } catch(error) {
      alert("অনুমোদন হয়নি: " + error.message);
     }
    };
-
    card.append(btn);
   }
-
   box.append(card);
  });
 }
 
 /* CREATE USER PROFILE */
-$("profileForm").addEventListener("submit", async e => {
+$("profileForm")?.addEventListener("submit", async e => {
  e.preventDefault();
-
  try {
   await setDoc(doc(db,"user_profiles",$("profileUid").value.trim()),{
    name:$("profileName").value.trim(),
@@ -1050,16 +912,41 @@ $("profileForm").addEventListener("submit", async e => {
 
   message("profileMessage","Profile সংরক্ষণ হয়েছে।");
   $("profileForm").reset();
-
  } catch(error) {
   message("profileMessage","সমস্যা: " + error.message);
  }
 });
 
-/* CREATE ZOOM CLASS */
-$("classForm").addEventListener("submit", async e => {
- e.preventDefault();
+/* LINK PARENT WITH STUDENT */
+$("linkParentStudentForm")?.addEventListener("submit", async e => {
+  e.preventDefault();
+  try {
+    const parentUid = $("linkParentUid").value.trim();
+    const studentUid = $("linkStudentUid").value.trim();
 
+    const parentRef = doc(db, "user_profiles", parentUid);
+    const parentSnap = await getDoc(parentRef);
+
+    let existingStudents = [];
+    if (parentSnap.exists()) {
+      existingStudents = parentSnap.data().studentIds || [];
+    }
+
+    if (!existingStudents.includes(studentUid)) {
+      existingStudents.push(studentUid);
+    }
+
+    await setDoc(parentRef, { studentIds: existingStudents }, { merge: true });
+    message("linkParentStudentMessage", "সফলভাবে শিক্ষার্থী যুক্ত করা হয়েছে।");
+    $("linkParentStudentForm").reset();
+  } catch(error) {
+    message("linkParentStudentMessage", "সমস্যা: " + error.message);
+  }
+});
+
+/* CREATE ZOOM CLASS */
+$("classForm")?.addEventListener("submit", async e => {
+ e.preventDefault();
  const link = $("zoomLink").value.trim();
 
  if (!safeZoomLink(link)) {
@@ -1068,8 +955,7 @@ $("classForm").addEventListener("submit", async e => {
  }
 
  try {
-  const studentIds = $("classStudents").value
-   .split(",").map(x=>x.trim()).filter(Boolean);
+  const studentIds = $("classStudents").value.split(",").map(x=>x.trim()).filter(Boolean);
 
   await addDoc(collection(db,"classes"),{
    title:$("classTitle").value.trim(),
@@ -1083,7 +969,6 @@ $("classForm").addEventListener("submit", async e => {
 
   message("classMessage","Zoom Class তৈরি হয়েছে।");
   $("classForm").reset();
-
  } catch(error) {
   message("classMessage","সমস্যা: " + error.message);
  }
@@ -1092,13 +977,10 @@ $("classForm").addEventListener("submit", async e => {
 /* TEACHER CLASSES */
 async function loadTeacherClasses(uid) {
  const box = $("teacherClasses");
+ if (!box) return;
  box.textContent = "";
 
- const q = query(
-  collection(db,"classes"),
-  where("teacherId","==",uid)
- );
-
+ const q = query(collection(db,"classes"), where("teacherId","==",uid));
  const snapshot = await getDocs(q);
 
  if(snapshot.empty) {
@@ -1126,6 +1008,8 @@ async function loadTeacherClasses(uid) {
 
   const id = document.createElement("p");
   id.textContent = "Class ID: " + item.id;
+  id.style.fontSize = "12px";
+  id.style.marginTop = "5px";
 
   card.append(title,date,link,id);
   box.append(card);
@@ -1135,25 +1019,22 @@ async function loadTeacherClasses(uid) {
 /* STUDENT PROFILE */
 async function loadStudentProfile(uid) {
  const box = $("studentInfo");
+ if (!box) return;
  const snap = await getDoc(doc(db,"user_profiles",uid));
 
  if(snap.exists()) {
   const data = snap.data();
-  box.textContent = "নাম: " + (data.name || "") +
-   " | Email: " + (data.email || "");
+  box.textContent = "নাম: " + (data.name || "") + " | Email: " + (data.email || "");
  }
 }
 
 /* STUDENT CLASSES */
 async function loadStudentClasses(uid) {
  const box = $("studentClasses");
+ if (!box) return;
  box.textContent = "";
 
- const q = query(
-  collection(db,"classes"),
-  where("studentIds","array-contains",uid)
- );
-
+ const q = query(collection(db,"classes"), where("studentIds","array-contains",uid));
  const snapshot = await getDocs(q);
 
  if(snapshot.empty) {
@@ -1185,9 +1066,8 @@ async function loadStudentClasses(uid) {
 }
 
 /* ATTENDANCE */
-$("attendanceForm").addEventListener("submit", async e => {
+$("attendanceForm")?.addEventListener("submit", async e => {
  e.preventDefault();
-
  const user = auth.currentUser;
  if(!user) return;
 
@@ -1204,8 +1084,7 @@ $("attendanceForm").addEventListener("submit", async e => {
 
   const classData = classSnap.data();
 
-  if(classData.teacherId !== user.uid ||
-     !classData.studentIds.includes(studentId)) {
+  if(classData.teacherId !== user.uid || !classData.studentIds.includes(studentId)) {
    message("attendanceMessage","এই ক্লাসের জন্য অনুমতি নেই।");
    return;
   }
@@ -1220,101 +1099,45 @@ $("attendanceForm").addEventListener("submit", async e => {
 
   message("attendanceMessage","উপস্থিতি সংরক্ষণ হয়েছে।");
   $("attendanceForm").reset();
-
  } catch(error) {
   message("attendanceMessage","সমস্যা: " + error.message);
  }
 });
 
-console.log("Hanafia Academy System Ready");
-</script>
-
-/* FREE TRIAL BOOKING */
-$("trialForm").addEventListener("submit", async e => {
+/* DAILY READING PROGRESS FORM */
+$("readingProgressForm")?.addEventListener("submit", async e => {
   e.preventDefault();
-
-  const btn = $("trialForm").querySelector("button");
-  btn.disabled = true;
-
-  try {
-    await addDoc(collection(db, "trial_requests"), {
-      studentName: $("trialName").value.trim(),
-      guardianName: $("trialGuardian").value.trim(),
-      mobile: $("trialMobile").value.trim(),
-      course: $("trialCourse").value,
-      preferredDate: $("trialDate").value,
-      preferredTime: $("trialTime").value,
-      status: "pending",
-      createdAt: serverTimestamp()
-    });
-
-    message("trialMessage", "আলহামদুলিল্লাহ! ট্রায়াল আবেদন জমা হয়েছে।");
-    $("trialForm").reset();
-  } catch (error) {
-    message("trialMessage", "সমস্যা: " + error.message);
-  } finally {
-    btn.disabled = false;
-  }
-});
-
-
-/* TEACHER EVALUATION */
-$("evaluationForm").addEventListener("submit", async e => {
-  e.preventDefault();
-
   const user = auth.currentUser;
-
   if (!user) {
-    message("evaluationMessage", "আগে Login করুন।");
+    message("readingProgressMessage", "লগইন করা আবশ্যক।");
     return;
   }
 
   try {
-    await addDoc(collection(db, "teacher_evaluations"), {
-      teacherId: $("evaluationTeacherUid").value.trim(),
-      studentName: $("evaluationStudentName").value.trim(),
-      rating: Number($("evaluationRating").value),
-      comment: $("evaluationComment").value.trim(),
-      submittedBy: user.uid,
+    await addDoc(collection(db, "reading_progress"), {
+      studentUid: $("readingStudentUid").value.trim(),
+      teacherId: user.uid,
+      lessonType: $("readingLessonType").value,
+      details: $("readingDetails").value.trim(),
       createdAt: serverTimestamp()
     });
 
-    message("evaluationMessage", "আপনার মূল্যায়ন জমা হয়েছে।");
-    $("evaluationForm").reset();
-  } catch (error) {
-    message("evaluationMessage", "সমস্যা: " + error.message);
+    message("readingProgressMessage", "রিপোর্ট সফলভাবে জমা দেওয়া হয়েছে।");
+    $("readingProgressForm").reset();
+  } catch(error) {
+    message("readingProgressMessage", "সমস্যা: " + error.message);
   }
 });
 
-
-/* TEACHER SUBMITS DAILY READING PROGRESS */
-async function saveReadingProgress(studentUid, lessonType, details) {
-  const user = auth.currentUser;
-
-  if (!user) throw new Error("Login প্রয়োজন");
-
-  await addDoc(collection(db, "reading_progress"), {
-    studentId: studentUid,
-    teacherId: user.uid,
-    lessonType: lessonType,
-    details: details,
-    createdAt: serverTimestamp()
-  });
-}
 /* PARENT DASHBOARD */
-
 async function loadParentProgress(parentUid) {
   const box = $("parentChildrenProgress");
-
   if (!box) return;
 
   box.textContent = "রিপোর্ট লোড হচ্ছে...";
 
   try {
-    const profile = await getDoc(
-      doc(db, "user_profiles", parentUid)
-    );
-
+    const profile = await getDoc(doc(db, "user_profiles", parentUid));
     box.textContent = "";
 
     if (!profile.exists()) {
@@ -1325,60 +1148,46 @@ async function loadParentProgress(parentUid) {
     const studentIds = profile.data().studentIds || [];
 
     if (!studentIds.length) {
-      box.textContent =
-        "এই অভিভাবকের সঙ্গে কোনো শিক্ষার্থী যুক্ত নেই।";
+      box.textContent = "এই অভিভাবকের সঙ্গে কোনো শিক্ষার্থী যুক্ত নেই।";
       return;
     }
 
     for (const studentId of studentIds) {
-
       const q = query(
         collection(db, "reading_progress"),
         where("studentUid", "==", studentId)
       );
 
       const results = await getDocs(q);
-
       const card = document.createElement("div");
       card.className = "notice";
 
       const heading = document.createElement("h3");
-      heading.textContent =
-        "শিক্ষার্থীর UID: " + studentId;
-
+      heading.textContent = "শিক্ষার্থীর UID: " + studentId;
       card.append(heading);
 
       if (results.empty) {
         const p = document.createElement("p");
-        p.textContent =
-          "এখনো পড়ার রিপোর্ট দেওয়া হয়নি।";
+        p.textContent = "এখনো পড়ার রিপোর্ট দেওয়া হয়নি।";
         card.append(p);
-
       } else {
-
         results.forEach(item => {
           const data = item.data();
-
           const p = document.createElement("p");
-
-          p.textContent =
-            "পাঠ: " + (data.lessonType || "") +
-            " | বিস্তারিত: " + (data.details || "");
-
+          p.textContent = "পাঠ: " + (data.lessonType || "") + " | বিস্তারিত: " + (data.details || "");
           card.append(p);
         });
       }
-
       box.append(card);
     }
-
   } catch (error) {
     console.error("Parent progress error:", error);
-
-    box.textContent =
-      "রিপোর্ট লোড করা যায়নি। আবার চেষ্টা করুন।";
+    box.textContent = "রিপোর্ট লোড করা যায়নি। আবার চেষ্টা করুন।";
   }
 }
+
+console.log("Hanafia Academy System Ready");
+</script>
 
 </body>
 </html>

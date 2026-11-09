@@ -422,91 +422,131 @@ Logout
 </div>
 </div>
 </section>
- <!-- ADMIN DASHBOARD -->
+
+<!-- ADMIN DASHBOARD -->
 <section id="adminDashboard" class="hidden">
-<div class="container">
-<h2>Admin Dashboard</h2>
+  <div class="container">
 
-<div class="panel">
-<h3>প্রশাসকের তথ্য</h3>
-<p id="adminInfo">স্বাগতম, Admin</p>
-<hr>
+    <h2>Admin Dashboard</h2>
 
-<h3>ভর্তি আবেদনসমূহ</h3>
-<div id="applicationsList">
-<p>আবেদন লোড হচ্ছে...</p>
-</div>
-</div>
+    <!-- ADMIN INFORMATION -->
+    <div class="panel">
+      <h3>প্রশাসকের তথ্য</h3>
+      <p id="adminInfo">স্বাগতম, Admin</p>
+      <hr>
 
-<div class="panel">
-<h3>নতুন User Profile তৈরি</h3>
+      <h3>ভর্তি আবেদনসমূহ</h3>
+      <div id="applicationsList">
+        <p>আবেদন লোড হচ্ছে...</p>
+      </div>
+    </div>
 
-<form id="profileForm">
+    <!-- CREATE USER PROFILE -->
+    <div class="panel">
+      <h3>নতুন User Profile তৈরি</h3>
 
-<label>User UID</label>
-<input id="profileUid" required>
+      <form id="profileForm">
 
-<label>নাম</label>
-<input id="profileName" required>
+        <label>User UID</label>
+        <input id="profileUid" required>
 
-<label>Email</label>
-<input id="profileEmail" type="email" required>
+        <label>নাম</label>
+        <input id="profileName" required>
 
-<label>Role নির্বাচন</label>
-<select id="profileRole" required>
-<option value="">নির্বাচন করুন</option>
-<option value="teacher">Teacher</option>
-<option value="student">Student</option>
-</select>
+        <label>Email</label>
+        <input id="profileEmail" type="email" required>
 
-<button class="btn" type="submit">
-Profile সংরক্ষণ
-</button>
+        <label>Role নির্বাচন</label>
+        <select id="profileRole" required>
+          <option value="">নির্বাচন করুন</option>
+          <option value="teacher">Teacher</option>
+          <option value="student">Student</option>
+          <option value="parent">Parent</option>
+        </select>
 
-<p id="profileMessage" class="status"></p>
-</form>
-</div>
+        <button class="btn" type="submit">
+          Profile সংরক্ষণ
+        </button>
 
-<div class="panel">
-<h3>Zoom Class তৈরি</h3>
+        <p id="profileMessage" class="status"></p>
+      </form>
+    </div>
 
-<form id="classForm">
+    <!-- LINK PARENT WITH STUDENT -->
+    <div class="panel">
+      <h3>অভিভাবকের সঙ্গে শিক্ষার্থী যুক্ত করুন</h3>
 
-<label>ক্লাসের নাম</label>
-<input id="classTitle" required>
+      <form id="linkParentStudentForm">
 
-<label>কোর্স</label>
-<select id="classCourse" required>
-<option value="">নির্বাচন করুন</option>
-<option>নূরানী</option>
-<option>নাজেরা</option>
-<option>হিফজ</option>
-<option>ইসলামিক শিক্ষা</option>
-</select>
+        <label>অভিভাবকের Firebase UID</label>
+        <input
+          id="linkParentUid"
+          placeholder="Parent UID লিখুন"
+          required
+        >
 
-<label>Teacher UID</label>
-<input id="classTeacher" required>
+        <label>শিক্ষার্থীর Firebase UID</label>
+        <input
+          id="linkStudentUid"
+          placeholder="Student UID লিখুন"
+          required
+        >
 
-<label>Student UID (একাধিক হলে কমা দিয়ে লিখুন)</label>
-<input id="classStudents" required>
+        <button class="btn" type="submit">
+          শিক্ষার্থী যুক্ত করুন
+        </button>
 
-<label>ক্লাসের তারিখ ও সময়</label>
-<input id="classDate" type="datetime-local" required>
+        <p id="linkParentStudentMessage" class="status"></p>
 
-<label>Zoom Meeting Link</label>
-<input id="zoomLink" type="url" placeholder="https://zoom.us/j/..." required>
+      </form>
+    </div>
 
-<button class="btn" type="submit">
-ক্লাস তৈরি করুন
-</button>
+    <!-- CREATE ZOOM CLASS -->
+    <div class="panel">
+      <h3>Zoom Class তৈরি</h3>
 
-<p id="classMessage" class="status"></p>
-</form>
-</div>
+      <form id="classForm">
 
-</div>
+        <label>ক্লাসের নাম</label>
+        <input id="classTitle" required>
+
+        <label>কোর্স</label>
+        <select id="classCourse" required>
+          <option value="">নির্বাচন করুন</option>
+          <option>নূরানী</option>
+          <option>নাজেরা</option>
+          <option>হিফজ</option>
+          <option>ইসলামিক শিক্ষা</option>
+        </select>
+
+        <label>Teacher UID</label>
+        <input id="classTeacher" required>
+
+        <label>Student UID (একাধিক হলে কমা দিয়ে লিখুন)</label>
+        <input id="classStudents" required>
+
+        <label>ক্লাসের তারিখ ও সময়</label>
+        <input id="classDate" type="datetime-local" required>
+
+        <label>Zoom Meeting Link</label>
+        <input
+          id="zoomLink"
+          type="url"
+          placeholder="https://zoom.us/j/..."
+          required
+        >
+
+        <button class="btn" type="submit">
+          ক্লাস তৈরি করুন
+        </button>
+
+        <p id="classMessage" class="status"></p>
+
+      </form>
+    </div>
+
+  </div>
 </section>
-
 
 <!-- TEACHER DASHBOARD -->
 <section id="teacherDashboard" class="hidden">

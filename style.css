@@ -1,8 +1,12 @@
+/* ==========================================
+   HANAFIA FUTURE DARUL QURAN ACADEMY
+   PREMIUM STYLESHEET (style.css)
+========================================== */
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
@@ -10,10 +14,12 @@ html {
 }
 
 body {
-  font-family: "Noto Sans Bengali", Arial, sans-serif;
+  font-family: 'Hind Siliguri', Arial, sans-serif;
   background: #071735;
   color: #ffffff;
   line-height: 1.8;
+  overflow-x: hidden;
+  animation: pageFade 1s ease both;
 }
 
 /* Header */
@@ -22,6 +28,10 @@ header {
   padding: 30px 15px;
   background: linear-gradient(135deg, #061638, #174582);
   border-bottom: 3px solid #d5ad50;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  animation: slideDown 0.8s ease both;
 }
 
 header h1 {
@@ -39,8 +49,9 @@ nav {
   padding: 12px;
   text-align: center;
   position: sticky;
-  top: 0;
-  z-index: 100;
+  top: 102px;
+  z-index: 90;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 nav a {
@@ -49,16 +60,36 @@ nav a {
   padding: 8px 12px;
   display: inline-block;
   font-weight: bold;
+  font-size: 14px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover {
   color: #f5cb60;
+  transform: translateY(-2px);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* Sections */
 section {
   padding: 45px 16px;
-  scroll-margin-top: 65px;
+  scroll-margin-top: 150px;
+  animation: sectionFade 0.8s ease both;
 }
 
 .container {
@@ -72,17 +103,30 @@ h2 {
   text-align: center;
   font-size: 27px;
   margin-bottom: 25px;
+  transition: color 0.3s ease;
+}
+
+h2:hover {
+  color: #d4af37;
 }
 
 h3 {
   color: #f5cb60;
 }
 
-/* Hero */
+p {
+  color: #e2eafa;
+}
+
+/* Hero Section */
 .hero {
   text-align: center;
   padding: 75px 20px;
   background: linear-gradient(145deg, #123d7b, #061638);
+  border-radius: 20px;
+  border: 1px solid rgba(185, 155, 85, 0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  animation: heroReveal 1.2s ease both;
 }
 
 .hero h1 {
@@ -95,7 +139,7 @@ h3 {
   margin: 10px 0;
 }
 
-/* Cards */
+/* Cards & Panels */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -110,16 +154,18 @@ h3 {
   padding: 22px;
   margin-bottom: 18px;
   box-shadow: 0 8px 20px #0005;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .card {
   text-align: center;
-  transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #f5cb60;
+.card:hover,
+.panel:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(212,175,55,0.2);
+  border-color: #ffe28b;
 }
 
 /* Buttons */
@@ -135,15 +181,26 @@ h3 {
   cursor: pointer;
   margin: 7px;
   font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(212,175,55,0.2);
 }
 
 .btn:hover {
-  background: #ffffff;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.4);
+}
+
+.btn:active {
+  transform: scale(0.96);
 }
 
 .btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 /* Forms */
@@ -151,12 +208,15 @@ form {
   width: 100%;
   max-width: 650px;
   margin: auto;
+  animation: formReveal 0.8s ease both;
 }
 
 label {
   display: block;
   color: #f5d37b;
   margin-top: 12px;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 input,
@@ -170,12 +230,16 @@ textarea {
   background: #ffffff;
   color: #111111;
   font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid #f5cb60;
+  outline: none;
+  border-color: #ffe28b;
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.25);
+  transform: scale(1.01);
 }
 
 /* Notices */
@@ -186,11 +250,17 @@ textarea:focus {
   border-radius: 9px;
   margin: 12px 0;
   overflow-wrap: anywhere;
+  animation: noticeReveal 0.7s ease both;
+  border-top: 1px solid rgba(185, 155, 85, 0.3);
+  border-right: 1px solid rgba(185, 155, 85, 0.3);
+  border-bottom: 1px solid rgba(185, 155, 85, 0.3);
 }
 
 .status {
   margin-top: 12px;
   color: #f5cb60;
+  font-weight: bold;
+  animation: statusAppear 0.5s ease;
 }
 
 .muted {
@@ -207,7 +277,8 @@ footer {
   text-align: center;
   padding: 30px 15px;
   background: #041027;
-  border-top: 2px solid #c5a35b;
+  border-top: 2px solid #c5ad50;
+  animation: footerReveal 1s ease both;
 }
 
 footer h3 {
@@ -220,854 +291,84 @@ hr {
   margin: 18px 0;
 }
 
-/* Mobile Responsive */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 25px;
-  }
-
-  .hero {
-    padding: 50px 15px;
-  }
-
-  .hero h1 {
-    font-size: 25px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  nav a {
-    padding: 6px 8px;
-    font-size: 13px;
-  }
-
-  section {
-    padding: 30px 12px;
-  }
-
-  .card,
-  .panel {
-    padding: 16px;
-  }
-
-  h2 {
-    font-size: 23px;
-  }
-}
-/* ===== HAFANIA ANIMATION DESIGN ===== */
-
-/* Page animation */
-body {
-  animation: pageFade 1s ease;
-}
-
-@keyframes pageFade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Header animation */
-header {
-  animation: slideDown 0.8s ease;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-35px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Hero animation */
-.hero h1 {
-  animation: heroText 1s ease;
-}
-
-.hero p {
-  animation: heroText 1.3s ease;
-}
-
-@keyframes heroText {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Section animation */
-section {
-  animation: sectionFade 0.8s ease both;
-}
-
-@keyframes sectionFade {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Card animation */
-.card,
-.panel {
-  transition: transform 0.35s ease,
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
-}
-
-.card:hover,
-.panel:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px #0008;
-  border-color: #ffe28b;
-}
-
-/* Button animation */
-.btn {
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 18px #d5ad5070;
-}
-
-.btn:active {
-  transform: scale(0.96);
-}
-
-/* Navigation animation */
-nav a {
-  transition: color 0.3s ease,
-              transform 0.3s ease;
-}
-
-nav a:hover {
-  transform: translateY(-3px);
-}
-
-/* Form animation */
-form {
-  animation: formFade 0.8s ease;
-}
-
-@keyframes formFade {
-  from {
-    opacity: 0;
-    transform: scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-input,
-select,
-textarea {
-  transition: border-color 0.3s ease,
-              box-shadow 0.3s ease;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: #ffe28b;
-  box-shadow: 0 0 10px #f5cb6050;
-}
-
-/* Dashboard animation */
+/* Dashboards Animation */
 #adminDashboard,
 #teacherDashboard,
 #studentDashboard,
 #parentDashboard {
-  animation: dashboardIn 0.7s ease;
-}
-
-@keyframes dashboardIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Notice animation */
-.notice {
-  animation: noticeIn 0.5s ease both;
-}
-
-@keyframes noticeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Footer */
-footer {
-  animation: footerFade 1s ease;
-}
-
-@keyframes footerFade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Mobile animation */
-@media (max-width: 600px) {
-  .card:hover,
-  .panel:hover {
-    transform: none;
-  }
-
-  .btn:hover {
-    transform: none;
-  }
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-/* =================================
-   PREMIUM DASHBOARD ANIMATIONS
-================================= */
-
-/* Dashboard Background */
-#adminDashboard,
-#teacherDashboard,
-#parentDashboard,
-#studentDashboard {
   animation: dashboardReveal 0.9s ease both;
 }
 
-@keyframes dashboardReveal {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Dashboard Heading */
-#adminDashboard h2,
-#teacherDashboard h2 {
-  color: #d4af37;
-  text-align: center;
-  animation: headingGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes headingGlow {
-  from {
-    text-shadow: 0 0 2px #d4af37;
-  }
-  to {
-    text-shadow: 0 0 14px #d4af37;
-  }
-}
-
-/* Premium Panel Design */
-#adminDashboard .panel,
-#teacherDashboard .panel,
-#parentDashboard .panel,
-#studentDashboard .panel {
-  background: linear-gradient(
-    145deg,
-    #101d35,
-    #172b4d
-  );
-
-  border: 1px solid rgba(212,175,55,0.35);
-  border-radius: 18px;
-  padding: 22px;
-  margin: 22px 0;
-
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-
-  animation: panelAppear 0.8s ease both;
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
-}
-
-#adminDashboard .panel:hover,
-#teacherDashboard .panel:hover {
-  transform: translateY(-5px);
-  border-color: #d4af37;
-  box-shadow: 0 12px 30px rgba(212,175,55,0.15);
-}
-
-@keyframes panelAppear {
-  from {
-    opacity: 0;
-    transform: translateY(35px) scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Panel Headings */
-.panel h3 {
-  color: #e7c65a;
-  margin-bottom: 18px;
-}
-
-/* Input Animation */
-.panel input,
-.panel select,
-.panel textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 13px;
-  margin: 8px 0 17px;
-
-  border: 1px solid #526783;
-  border-radius: 10px;
-
-  background: #0b1629;
-  color: #ffffff;
-
-  transition: all 0.3s ease;
-}
-
-.panel input:focus,
-.panel select:focus,
-.panel textarea:focus {
-  outline: none;
-  border-color: #d4af37;
-
-  box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
-
-  transform: scale(1.01);
-}
-
-/* Labels */
-.panel label {
-  display: block;
-  color: #f1d98b;
-  font-weight: 600;
-}
-
-/* Premium Button */
-.panel .btn {
-  background: linear-gradient(
-    135deg,
-    #b68b20,
-    #f3d36a
-  );
-
-  color: #10203a;
-  border: none;
-  border-radius: 10px;
-
-  padding: 13px 22px;
-  font-weight: bold;
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(212,175,55,0.2);
-}
-
-.panel .btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 22px rgba(212,175,55,0.4);
-}
-
-.panel .btn:active {
-  transform: scale(0.96);
-}
-
-/* Status Animation */
-.status {
-  animation: statusAppear 0.5s ease;
-}
-
-@keyframes statusAppear {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Notice Cards */
-.notice {
-  border-left: 4px solid #d4af37;
-  border-radius: 10px;
-  padding: 15px;
-  margin: 12px 0;
-
-  background: rgba(255,255,255,0.06);
-
-  animation: noticeSlide 0.6s ease both;
-}
-
-@keyframes noticeSlide {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Horizontal Divider */
-#adminDashboard hr {
-  border: none;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #d4af37,
-    transparent
-  );
-  margin: 22px 0;
-}
-
-/* Mobile Responsive */
-@media (max-width: 600px) {
-  #adminDashboard .panel,
-  #teacherDashboard .panel {
-    padding: 16px;
-    border-radius: 14px;
-  }
-
-  .panel .btn {
-    width: 100%;
-  }
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  #adminDashboard *,
-  #teacherDashboard *,
-  #parentDashboard *,
-  #studentDashboard * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
 /* ==========================================
-   HANAFIA FUTURE ACADEMY
-   PREMIUM WEBSITE ANIMATION
+   KEYFRAME ANIMATIONS
 ========================================== */
 
-/* 1. Website Smooth Loading */
-html {
-  scroll-behavior: smooth;
+@keyframes pageFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-body {
-  animation: websiteLoad 1s ease both;
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-35px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes websiteLoad {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* 2. Header Animation */
-header {
-  animation: headerDrop 0.8s ease both;
-}
-
-@keyframes headerDrop {
-  from {
-    opacity: 0;
-    transform: translateY(-35px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 3. Navigation Animation */
-nav a {
-  position: relative;
-  transition: 0.3s ease;
-}
-
-nav a:hover {
-  color: #d4af37;
-  transform: translateY(-2px);
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 2px;
-  background: #d4af37;
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* 4. Hero Section */
-.hero {
-  animation: heroReveal 1.2s ease both;
+@keyframes sectionFade {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes heroReveal {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero h1 {
-  animation: heroTitle 1s ease both;
-}
-
-@keyframes heroTitle {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.hero p {
-  animation: heroText 1.3s ease both;
-}
-
-@keyframes heroText {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 5. All Sections */
-section {
-  animation: sectionReveal 0.8s ease both;
-}
-
-@keyframes sectionReveal {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 6. Cards Animation */
-.card,
-.feature-card,
-.course-card,
-.panel {
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
-}
-
-.card:hover,
-.feature-card:hover,
-.course-card:hover,
-.panel:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(212,175,55,0.16);
-  border-color: #d4af37;
-}
-
-/* 7. Image Animation */
-.card img,
-.course-card img,
-.feature-card img {
-  transition: transform 0.5s ease;
-}
-
-.card:hover img,
-.course-card:hover img,
-.feature-card:hover img {
-  transform: scale(1.04);
-}
-
-/* 8. Buttons */
-button,
-.btn {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-button:hover,
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
-}
-
-button:active,
-.btn:active {
-  transform: scale(0.96);
-}
-
-/* 9. Form Animation */
-form {
-  animation: formReveal 0.8s ease both;
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes formReveal {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-input,
-select,
-textarea {
-  transition: all 0.3s ease;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-  border-color: #d4af37;
-  box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
-}
-
-/* 10. Login Animation */
-#loginForm {
-  animation: loginAppear 0.9s ease both;
-}
-
-@keyframes loginAppear {
-  from {
-    opacity: 0;
-    transform: scale(0.94);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* 11. Admission Animation */
-#admissionForm {
-  animation: admissionAppear 1s ease both;
-}
-
-@keyframes admissionAppear {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 12. Dashboard Cards */
-#adminDashboard .panel,
-#teacherDashboard .panel,
-#studentDashboard .panel,
-#parentDashboard .panel {
-  animation: dashboardCard 0.8s ease both;
-}
-
-@keyframes dashboardCard {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 13. Notice Animation */
-.notice {
-  animation: noticeReveal 0.7s ease both;
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes noticeReveal {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-/* 14. Footer Animation */
-footer {
-  animation: footerReveal 1s ease both;
+@keyframes statusAppear {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes footerReveal {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* 15. Golden Highlight */
-h1,
-h2,
-h3 {
-  transition: color 0.3s ease;
+@keyframes dashboardReveal {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-h2:hover,
-h3:hover {
-  color: #d4af37;
-}
+/* ==========================================
+   RESPONSIVE & ACCESSIBILITY
+========================================== */
 
-/* 16. WhatsApp Floating Button */
-.whatsapp,
-.whatsapp-btn {
-  animation: whatsappPulse 2s infinite;
-}
-
-@keyframes whatsappPulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
-}
-
-/* 17. Mobile Optimization */
 @media (max-width: 600px) {
-  .card:hover,
-  .feature-card:hover,
-  .course-card:hover,
-  .panel:hover {
-    transform: none;
-  }
-
-  button,
-  .btn {
-    min-height: 44px;
-  }
+  header h1 { font-size: 25px; }
+  .hero { padding: 50px 15px; }
+  .hero h1 { font-size: 25px; }
+  .grid { grid-template-columns: 1fr; }
+  nav a { padding: 6px 8px; font-size: 13px; }
+  section { padding: 30px 12px; }
+  .card, .panel { padding: 16px; }
+  h2 { font-size: 23px; }
+  .card:hover, .panel:hover { transform: none; }
+  .btn:hover { transform: none; }
 }
 
-/* 18. Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
-  }
-}
-/* ANIMATION TEST */
-
-body {
-  animation: testPage 2s ease-in-out;
-}
-
-@keyframes testPage {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.panel {
-  animation: testPanel 1.5s ease both !important;
-}
-
-@keyframes testPanel {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
+    scroll-behavior: auto !important;
   }
 }

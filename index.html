@@ -131,19 +131,28 @@ p {
   gap: 20px;
 }
 
-.card,
-.panel {
+.card {
   background: linear-gradient(145deg, #153e7c, #081a3b);
   border: 1px solid #c6a24e;
   border-radius: 15px;
   padding: 22px;
   margin-bottom: 18px;
   box-shadow: 0 8px 20px #0005;
+  text-align: center;
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-.card {
-  text-align: center;
+.panel {
+  background: linear-gradient(145deg, #153e7c, #081a3b);
+  border: 1px solid #c6a24e;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 18px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 6px 15px #0005;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .card:hover,
@@ -323,6 +332,7 @@ hr {
   <a href="#learningSteps">পড়াশোনার ধাপ</a>
   <a href="#courses">কোর্সসমূহ</a>
   <a href="#features">বৈশিষ্ট্য</a>
+  <a href="#paymentInfo">ফি ও পেমেন্ট</a>
   <a href="#admission">ভর্তি</a>
   <a href="#trialClass">ফ্রি ট্রায়াল</a>
   <a href="#teacherEvaluation">মূল্যায়ন</a>
@@ -423,19 +433,19 @@ hr {
 <div class="grid">
   <div class="card">
     <h3>নূরানী</h3>
-    <p>আরবি হরফ চেনা, সঠিক উচ্চারণ ও প্রাথমিক শিক্ষা。</p>
+    <p>আরবি হরফ চেনা, সঠিক উচ্চারণ ও প্রাথমিক শিক্ষা।</p>
   </div>
   <div class="card">
     <h3>নাজেরা</h3>
-    <p>শুদ্ধ উচ্চারণে সাবলীল কুরআন তিলাওয়াত অনুশীলন。</p>
+    <p>শুদ্ধ উচ্চারণে সাবলীল কুরআন তিলাওয়াত অনুশীলন।</p>
   </div>
   <div class="card">
     <h3>হিফজ</h3>
-    <p>পরিকল্পিত ও সুশৃঙ্খল উপায়ে সম্পূর্ণ কুরআন মুখস্থ শিক্ষা。</p>
+    <p>পরিকল্পিত ও সুশৃঙ্খল উপায়ে সম্পূর্ণ কুরআন মুখস্থ শিক্ষা।</p>
   </div>
   <div class="card">
     <h3>ইসলামিক শিক্ষা</h3>
-    <p>দৈনন্দিন প্রয়োজনীয় দোয়া, কালিমা ও জরুরি মাসআলা-মাসাইল。</p>
+    <p>দৈনন্দিন প্রয়োজনীয় দোয়া, কালিমা ও জরুরি মাসআলা-মাসাইল।</p>
   </div>
 </div>
 </div>
@@ -448,22 +458,67 @@ hr {
 <div class="grid">
   <div class="card">
     <h3>🎯 ব্যক্তিগত মনোযোগ</h3>
-    <p>প্রতিটি শিক্ষার্থীর জন্য আলাদা যত্ন ও নিবিড় তদারকি。</p>
+    <p>প্রতিটি শিক্ষার্থীর জন্য আলাদা যত্ন ও নিবিড় তদারকি।</p>
   </div>
   <div class="card">
     <h3>👨‍🏫 অভিজ্ঞ শিক্ষক</h3>
-    <p>প্রশিক্ষিত হাফেজ ও দক্ষ কারী শিক্ষক দ্বারা পাঠদান。</p>
+    <p>প্রশিক্ষিত হাফেজ ও দক্ষ কারী শিক্ষক দ্বারা পাঠদান।</p>
   </div>
   <div class="card">
     <h3>🌍 অনলাইন ক্লাস</h3>
-    <p>বিশ্বের যেকোনো স্থান থেকে নিরবচ্ছিন্নভাবে ক্লাসে অংশগ্রহণ。</p>
+    <p>বিশ্বের যেকোনো স্থান থেকে নিরবচ্ছিন্নভাবে ক্লাসে অংশগ্রহণ।</p>
   </div>
   <div class="card">
     <h3>📚 পরিকল্পিত সিলেবাস</h3>
-    <p>নূরানী, নাজেরা, হিফজ ও ইসলামিক শিক্ষার আধুনিক সমন্বয়。</p>
+    <p>নূরানী, নাজেরা, হিফজ ও ইসলামিক শিক্ষার আধুনিক সমন্বয়।</p>
   </div>
 </div>
 </div>
+</section>
+
+<!-- FEES & PAYMENT SECTION (ফি, হাদিয়া ও পেমেন্ট পদ্ধতি) -->
+<section id="paymentInfo">
+  <div class="container">
+    <h2>হাদিয়া, ফি ও পেমেন্ট পদ্ধতি</h2>
+    
+    <div class="grid">
+      <div class="card">
+        <h3>👥 ব্যাচ ক্লাস</h3>
+        <p style="font-size: 20px; color: #f5cb60; font-weight: bold; margin: 10px 0;">১,২৫০ টাকা / মাস</p>
+        <p>সপ্তাহে ৩ দিন নিয়মিত ক্লাস।</p>
+      </div>
+
+      <div class="card">
+        <h3>👤 ওয়ান-টু-ওয়ান (৩ দিন)</h3>
+        <p style="font-size: 20px; color: #f5cb60; font-weight: bold; margin: 10px 0;">২,৫০০ টাকা / মাস</p>
+        <p>ডিসকাউন্টে (প্রথম মাস একসাথে): <strong>২,২০০ টাকা</strong></p>
+      </div>
+
+      <div class="card">
+        <h3>👤 ওয়ান-টু-ওয়ান (৬ দিন)</h3>
+        <p style="font-size: 20px; color: #f5cb60; font-weight: bold; margin: 10px 0;">৫,০০০ টাকা / মাস</p>
+        <p>ডিসকাউন্টে (প্রথম মাস একসাথে): <strong>৪,৩০০ টাকা</strong></p>
+      </div>
+
+      <div class="card">
+        <h3>📝 এডমিশন ও অন্যান্য</h3>
+        <p style="font-size: 18px; color: #f5cb60; font-weight: bold; margin: 10px 0;">এডমিশন ফি: ৫০০ টাকা</p>
+        <p>ভর্তি ও প্রথম মাসের ফি একসাথে পরিশোধ করলে বিশেষ ডিসকাউন্ট!</p>
+      </div>
+    </div>
+
+    <!-- বিকাশ ও নগদ পেমেন্ট নম্বর প্যানেল -->
+    <div class="panel" style="text-align: center; margin-top: 20px;">
+      <h3>বিকাশ ও নগদ (পার্সোনাল) নম্বর</h3>
+      <p style="font-size: 22px; color: #f5cb60; font-weight: bold; margin: 12px 0;">
+        <i class="fa-solid fa-wallet"></i> ০১৭৩২৬৬৮২৮৩ (01732668283)
+      </p>
+      <p style="color: #e2eafa; max-width: 700px; margin: auto;">
+        📌 <strong>নিয়মাবলী:</strong> প্রতি মাসের ৫ তারিখের মধ্যে বিকাশ, নগদ বা ব্যাংক ট্রান্সফারের মাধ্যমে হাদিয়া পরিশোধ করতে হবে। পেমেন্ট করার পর ট্রানজেকশন আইডি (TrxID) সংরক্ষণ করে WhatsApp-এ যোগাযোগ করুন।
+      </p>
+    </div>
+
+  </div>
 </section>
 
 <!-- ADMISSION FORM -->
@@ -1346,7 +1401,7 @@ async function loadParentProgress(parentUid) {
 
       const results = await getDocs(q);
       const card = document.createElement("div");
-      card.className, "notice";
+      card.className = "notice";
 
       const heading = document.createElement("h3");
       heading.textContent = "শিক্ষার্থীর UID: " + studentId;

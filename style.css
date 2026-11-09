@@ -146,19 +146,29 @@ p {
   gap: 20px;
 }
 
-.card,
-.panel {
+.card {
   background: linear-gradient(145deg, #153e7c, #081a3b);
   border: 1px solid #c6a24e;
   border-radius: 15px;
   padding: 22px;
   margin-bottom: 18px;
   box-shadow: 0 8px 20px #0005;
+  text-align: center;
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-.card {
-  text-align: center;
+/* ড্যাশবোর্ড ও ফর্ম প্যানেলের সাইজ ছোট ও কম্প্যাক্ট করার জন্য আপডেট করা হলো */
+.panel {
+  background: linear-gradient(145deg, #153e7c, #081a3b);
+  border: 1px solid #c6a24e;
+  border-radius: 12px;
+  padding: 16px; /* প্যাডিং কমানো হয়েছে */
+  margin-bottom: 15px;
+  max-width: 750px; /* প্যানেলের চওড়া সীমিত করা হয়েছে */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 6px 15px #0005;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .card:hover,
@@ -359,7 +369,7 @@ hr {
   .grid { grid-template-columns: 1fr; }
   nav a { padding: 6px 8px; font-size: 13px; }
   section { padding: 30px 12px; }
-  .card, .panel { padding: 16px; }
+  .card, .panel { padding: 14px; }
   h2 { font-size: 23px; }
   .card:hover, .panel:hover { transform: none; }
   .btn:hover { transform: none; }

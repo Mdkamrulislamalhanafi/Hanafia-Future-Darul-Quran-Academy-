@@ -22,10 +22,10 @@ body {
   animation: pageFade 1s ease both;
 }
 
-/* Header (মোবাইলে ভেঙে যাওয়া রোধ করার জন্য ফন্ট সাইজ সামঞ্জস্য করা হয়েছে) */
+/* Header (লোগো এবং সাইজ ছোট করার স্টাইল) */
 header {
   text-align: center;
-  padding: 22px 15px;
+  padding: 20px 10px;
   background: linear-gradient(135deg, #061638, #174582);
   border-bottom: 3px solid #d5ad50;
   position: sticky;
@@ -34,23 +34,35 @@ header {
   animation: slideDown 0.8s ease both;
 }
 
+/* লোগো সাইজ ও মার্জিন নিয়ন্ত্রণ */
+.logo-container {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.site-logo {
+  width: 50px;
+  height: auto;
+}
+
 header h1 {
   color: #f5cb60;
-  font-size: 24px;
+  font-size: 22px !important;
   margin-bottom: 4px;
   font-weight: 700;
+  line-height: 1.4;
 }
 
 header h3 {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 13px !important;
   font-weight: 400;
 }
 
 /* Navigation (মেনুগুলো সুন্দরভাবে পাশাপাশি ও ফ্লেক্সিবল করার জন্য) */
 nav {
   background: #0b2450;
-  padding: 8px 5px;
+  padding: 10px 5px;
   text-align: center;
   position: sticky;
   top: 85px;
@@ -59,18 +71,19 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
 }
 
 nav a {
   color: #ffffff;
   text-decoration: none;
-  padding: 6px 10px;
+  padding: 5px 8px !important;
   display: inline-block;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 12px !important;
   border-radius: 4px;
   position: relative;
+  white-space: nowrap;
   transition: all 0.3s ease;
 }
 
@@ -372,8 +385,8 @@ hr {
 ========================================== */
 
 @media (max-width: 600px) {
-  header h1 { font-size: 20px; }
-  header h3 { font-size: 13px; }
+  header h1 { font-size: 20px !important; }
+  header h3 { font-size: 13px !important; }
   .hero { padding: 40px 15px; }
   .hero h1 { font-size: 22px; }
   .grid { grid-template-columns: 1fr; }
@@ -391,33 +404,4 @@ hr {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-/* Header Fix for Mobile */
-header {
-  text-align: center;
-  padding: 20px 10px;
-}
-
-header h1 {
-  font-size: 22px !important; /* লেখা ছোট করে এক লাইনে বা সুন্দরভাবে রাখার জন্য */
-  line-height: 1.4;
-}
-
-header h3 {
-  font-size: 13px !important;
-}
-
-/* Navigation Menu Fix for Mobile */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-  padding: 10px 5px;
-}
-
-nav a {
-  font-size: 12px !important;
-  padding: 5px 8px !important;
-  white-space: nowrap; /* লেখা যেন ভেঙে নিচে না নামে */
 }

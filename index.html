@@ -8,329 +8,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <!-- Google Fonts (Bangla Support) -->
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Hind Siliguri', Arial, sans-serif;
-  background: #071735;
-  color: #ffffff;
-  line-height: 1.8;
-  overflow-x: hidden;
-  animation: pageFade 1s ease;
-}
-
-header {
-  text-align: center;
-  padding: 35px 15px;
-  background: linear-gradient(135deg, #061638, #174582);
-  border-bottom: 3px solid #d5ad50;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  animation: slideDown 0.8s ease;
-}
-
-header h1 {
-  color: #f5cb60;
-  font-size: 30px;
-  margin-bottom: 8px;
-}
-
-header h3 {
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-/* Navigation */
-nav {
-  background: #0b2450;
-  padding: 12px;
-  text-align: center;
-  position: sticky;
-  top: 115px;
-  z-index: 90;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 8px 12px;
-  display: inline-block;
-  font-weight: bold;
-  font-size: 14px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-nav a:hover {
-  color: #f5cb60;
-  transform: translateY(-2px);
-}
-
-/* Sections */
-section {
-  padding: 45px 16px;
-  scroll-margin-top: 150px;
-  animation: sectionFade 0.8s ease both;
-}
-
-.container {
-  width: 100%;
-  max-width: 1100px;
-  margin: auto;
-}
-
-h2 {
-  color: #f5cb60;
-  text-align: center;
-  font-size: 27px;
-  margin-bottom: 25px;
-}
-
-h3 {
-  color: #f5cb60;
-}
-
-p {
-  color: #e2eafa;
-}
-
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 75px 20px;
-  background: linear-gradient(145deg, #123d7b, #061638);
-  border-radius: 20px;
-  border: 1px solid rgba(185, 155, 85, 0.3);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  animation: heroReveal 1.2s ease both;
-}
-
-.hero h1 {
-  color: #f5cb60;
-  font-size: 34px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  margin: 10px 0;
-}
-
-/* Cards & Panels */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.card {
-  background: linear-gradient(145deg, #153e7c, #081a3b);
-  border: 1px solid #c6a24e;
-  border-radius: 15px;
-  padding: 22px;
-  margin-bottom: 18px;
-  box-shadow: 0 8px 20px #0005;
-  text-align: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-}
-
-.panel {
-  background: linear-gradient(145deg, #153e7c, #081a3b);
-  border: 1px solid #c6a24e;
-  border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 18px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 6px 15px #0005;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-}
-
-.card:hover,
-.panel:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(212,175,55,0.2);
-  border-color: #ffe28b;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  background: linear-gradient(120deg, #ffe28b, #c18c25);
-  color: #102247;
-  padding: 12px 22px;
-  border: none;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-  margin: 7px;
-  font-size: 15px;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
-}
-
-.btn:active {
-  transform: scale(0.96);
-}
-
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* Forms */
-form {
-  width: 100%;
-  max-width: 650px;
-  margin: auto;
-  animation: formReveal 0.8s ease both;
-}
-
-label {
-  display: block;
-  color: #f5d37b;
-  margin-top: 12px;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 13px;
-  margin: 7px 0;
-  border: 1px solid #c5a35b;
-  border-radius: 8px;
-  background: #ffffff;
-  color: #111111;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-  border-color: #ffe28b;
-  box-shadow: 0 0 0 3px rgba(212,175,55,0.25);
-}
-
-/* Notices */
-.notice {
-  padding: 15px;
-  background: #102c5a;
-  border-left: 4px solid #f5cb60;
-  border-radius: 9px;
-  margin: 12px 0;
-  overflow-wrap: anywhere;
-  animation: noticeReveal 0.7s ease both;
-  border-top: 1px solid rgba(185, 155, 85, 0.3);
-  border-right: 1px solid rgba(185, 155, 85, 0.3);
-  border-bottom: 1px solid rgba(185, 155, 85, 0.3);
-}
-
-.status {
-  margin-top: 12px;
-  color: #f5cb60;
-  font-weight: bold;
-}
-
-.muted {
-  color: #c9d5eb;
-  font-size: 13px;
-}
-
-.hidden {
-  display: none !important;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 30px 15px;
-  background: #041027;
-  border-top: 2px solid #c5a35b;
-  animation: footerReveal 1s ease both;
-}
-
-footer h3 {
-  margin-bottom: 10px;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid #8d7542;
-  margin: 18px 0;
-}
-
-/* Dashboards Animation */
-#adminDashboard,
-#teacherDashboard,
-#studentDashboard,
-#parentDashboard {
-  animation: dashboardReveal 0.9s ease both;
-}
-
-/* Keyframes */
-@keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slideDown { from { opacity: 0; transform: translateY(-35px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes sectionFade { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes heroReveal { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes formReveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes noticeReveal { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
-@keyframes footerReveal { from { opacity: 0; } to { opacity: 1; } }
-@keyframes dashboardReveal { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
-
-/* Mobile Responsive */
-@media (max-width: 600px) {
-  header h1 { font-size: 22px; }
-  header h3 { font-size: 14px; }
-  .hero { padding: 50px 15px; }
-  .hero h1 { font-size: 25px; }
-  .grid { grid-template-columns: 1fr; }
-  nav a { padding: 6px 8px; font-size: 13px; }
-  section { padding: 30px 12px; }
-  .card, .panel { padding: 16px; }
-  h2 { font-size: 23px; }
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-</style>
+<!-- External CSS File -->
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- HEADER SECTION -->
 <header>
   <h1>হানাফিয়া ফিউচার দারুল কুরআন একাডেমি</h1>
   <h3>Hanafia Future Darul Quran Academy</h3>
 </header>
  
+<!-- NAVIGATION -->
 <nav>
   <a href="#home">হোম</a>
   <a href="#educationDepartments">শিক্ষার বিভাগ</a>
@@ -363,13 +53,13 @@ hr {
   </section>
 </div>
 
-<!-- EDUCATION DEPARTMENTS SECTION (শিক্ষার বিভাগ) -->
+<!-- EDUCATION DEPARTMENTS SECTION -->
 <section id="educationDepartments">
 <div class="container">
   <div style="text-align: center; margin-bottom: 30px;">
     <span style="border: 1px solid #d5ad50; padding: 6px 18px; border-radius: 20px; font-size: 14px; color: #f5cb60; background: rgba(213,173,80,0.05);">✦ আমাদের শিক্ষার বিভাগ ✦</span>
     <h2 style="font-size: 32px; margin-top: 15px; color: #f5cb60;">সমকালীন প্রযুক্তির ছায়াতলে</h2>
-    <p style="max-width: 650px; margin: auto; font-size: 16px; color: #cbd5e1;">शुद्ध কুরআন শিক্ষা, নৈতিক চরিত্র গঠন ও সুন্নাহ ভিত্তিক জীবন গড়ার এক অনন্য অনলাইন একাডেমি।</p>
+    <p style="max-width: 650px; margin: auto; font-size: 16px; color: #cbd5e1;">শুদ্ধ কুরআন শিক্ষা, নৈতিক চরিত্র গঠন ও সুন্নাহ ভিত্তিক জীবন গড়ার এক অনন্য অনলাইন একাডেমি।</p>
   </div>
   
   <div class="grid">
@@ -393,7 +83,7 @@ hr {
 </div>
 </section>
 
-<!-- LEARNING STEPS SECTION (পড়াশোনার ধাপসমূহ) -->
+<!-- LEARNING STEPS SECTION -->
 <section id="learningSteps">
   <div class="container">
     <h2>পড়াশোনার ধাপসমূহ</h2>
@@ -481,7 +171,7 @@ hr {
 </div>
 </section>
 
-<!-- FEES & PAYMENT SECTION (ফি, হাদিয়া ও পেমেন্ট পদ্ধতি) -->
+<!-- FEES & PAYMENT SECTION -->
 <section id="paymentInfo">
   <div class="container">
     <h2>হাদিয়া, ফি ও পেমেন্ট পদ্ধতি</h2>
@@ -512,11 +202,10 @@ hr {
       </div>
     </div>
 
-    <!-- বিকাশ ও নগদ পেমেন্ট নম্বর প্যানেল -->
     <div class="panel" style="text-align: center; margin-top: 20px;">
       <h3>বিকাশ ও নগদ (পার্সোনাল) নম্বর</h3>
       <p style="font-size: 22px; color: #f5cb60; font-weight: bold; margin: 12px 0;">
-        <i class="fa-solid fa-wallet"></i> ০১৭zIndex৬৬৮২৮৩ (01732668283)
+        <i class="fa-solid fa-wallet"></i> ০১৭৩২৬৬৮২৮৩ (01732668283)
       </p>
       <p style="color: #e2eafa; max-width: 700px; margin: auto;">
         📌 <strong>নিয়মাবলী:</strong> প্রতি মাসের ৫ তারিখের মধ্যে বিকাশ, নগদ বা ব্যাংক ট্রান্সফারের মাধ্যমে হাদিয়া পরিশোধ করতে হবে। পেমেন্ট করার পর ট্রানজেকশন আইডি (TrxID) সংরক্ষণ করে WhatsApp-এ যোগাযোগ করুন।
@@ -881,11 +570,12 @@ Login করুন
 </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-<h3>Hanafia Future Darul Quran Academy</h3>
-<p>Learn Quran • Build Future</p>
-<p>WhatsApp: 01342268929</p>
-<p>© 2026 All Rights Reserved</p>
+  <h3>Hanafia Future Darul Quran Academy</h3>
+  <p>Learn Quran • Build Future</p>
+  <p>WhatsApp: 01342268929</p>
+  <p>© 2026 All Rights Reserved</p>
 </footer>
 
 <!-- FIREBASE & APP SCRIPT -->
@@ -1351,7 +1041,7 @@ $("attendanceForm")?.addEventListener("submit", async e => {
 });
 
 /* DAILY READING PROGRESS FORM */
-$("readingProgressForm")?.addEventListener("submit", async e => {
+$("readingProgressForm")?.addEventListener("submit", async e =>  {
   e.preventDefault();
   const user = auth.currentUser;
   if (!user) {

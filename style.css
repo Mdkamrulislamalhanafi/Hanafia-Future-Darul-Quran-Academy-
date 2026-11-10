@@ -392,3 +392,32 @@ hr {
     scroll-behavior: auto !important;
   }
 }
+/* Header Fix for Mobile */
+header {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+header h1 {
+  font-size: 22px !important; /* লেখা ছোট করে এক লাইনে বা সুন্দরভাবে রাখার জন্য */
+  line-height: 1.4;
+}
+
+header h3 {
+  font-size: 13px !important;
+}
+
+/* Navigation Menu Fix for Mobile */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 5px;
+}
+
+nav a {
+  font-size: 12px !important;
+  padding: 5px 8px !important;
+  white-space: nowrap; /* লেখা যেন ভেঙে নিচে না নামে */
+}

@@ -593,6 +593,289 @@ Login করুন
 </div>
 </section>
 
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>৮ ধাপে কায়দা ও কুরআন শিক্ষা | Hanafia Future Darul Quran Academy</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ font-family:"Noto Sans Bengali",Arial,sans-serif;
+ background:#f4f8f5;color:#18352b;line-height:1.8
+}
+header{
+ background:linear-gradient(135deg,#064e3b,#087653);
+ color:white;text-align:center;padding:35px 15px
+}
+header h1{font-size:27px}
+header p{color:#d1fae5;margin-top:8px}
+.container{max-width:1050px;margin:auto;padding:20px}
+.intro{text-align:center;padding:25px 10px}
+.intro h2{color:#087653;font-size:25px}
+.level-grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ gap:18px
+}
+.card{
+ background:white;border-radius:15px;padding:20px;
+ box-shadow:0 4px 15px #0000000c;border:1px solid #e2eee7
+}
+.number{
+ background:#087653;color:white;width:42px;height:42px;
+ display:flex;align-items:center;justify-content:center;
+ border-radius:50%;font-size:19px;font-weight:bold
+}
+.card h3{margin:10px 0;color:#087653}
+.card p{font-size:14px;color:#52645b}
+.info{
+ display:flex;justify-content:space-between;
+ padding:10px 0;margin:10px 0;
+ border-top:1px solid #e8eee9;border-bottom:1px solid #e8eee9;
+ font-size:13px
+}
+.btn{
+ display:block;text-align:center;text-decoration:none;
+ background:#087653;color:white;padding:11px;
+ border-radius:8px;margin-top:12px;border:0;
+ cursor:pointer;width:100%;font-size:15px
+}
+.btn:hover{background:#064e3b}
+.details{
+ display:none;background:white;margin-top:25px;
+ border-radius:15px;padding:22px;
+ box-shadow:0 4px 15px #00000010
+}
+.details h2{color:#087653;margin-bottom:10px}
+.details h3{color:#087653;margin:18px 0 7px}
+.details ul{padding-left:23px}
+.details li{margin:5px 0}
+.badge{
+ display:inline-block;background:#e4f5eb;
+ color:#087653;padding:5px 12px;border-radius:20px;
+ font-size:13px;margin:5px 3px
+}
+.nav-buttons{display:flex;gap:10px;margin-top:20px}
+.nav-buttons button{flex:1}
+.trial{
+ background:#e5f4eb;padding:25px;text-align:center;
+ border-radius:15px;margin:25px 0
+}
+footer{
+ background:#073d30;color:white;text-align:center;
+ padding:30px 15px;margin-top:30px
+}
+footer a{color:#a7f3d0;text-decoration:none}
+@media(max-width:600px){
+ header h1{font-size:22px}
+ .container{padding:12px}
+ .details{padding:15px}
+ .nav-buttons{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>হানাফিয়্যা ফিউচার দারুল কুরআন একাডেমী</h1>
+<p>Hanafia Future Darul Quran Academy</p>
+<p>আধুনিক প্রযুক্তির ছোঁয়ায় ঘরে বসেই কুরআন ও সুন্নাহর সঠিক শিক্ষা</p>
+</header>
+
+<div class="container">
+
+<div class="intro">
+<h2>আট ধাপে কায়দা ও কুরআন শিক্ষা</h2>
+<p>শূন্য থেকে সহীহ কুরআন তিলাওয়াত পর্যন্ত একটি পরিকল্পিত শিক্ষাযাত্রা।</p>
+</div>
+
+<div class="level-grid" id="levels"></div>
+
+<div class="details" id="details">
+<div id="detailContent"></div>
+<div class="nav-buttons">
+<button class="btn" onclick="changeLevel(-1)">← আগের লেভেল</button>
+<button class="btn" onclick="changeLevel(1)">পরের লেভেল →</button>
+</div>
+<button class="btn" onclick="closeDetails()">সব লেভেল দেখুন</button>
+</div>
+
+<div class="trial">
+<h2>আপনার সন্তান কোন লেভেলে পড়বে?</h2>
+<p>ফ্রি ট্রায়াল ক্লাসে শিক্ষক শিক্ষার্থীর বর্তমান দক্ষতা যাচাই করে উপযুক্ত লেভেল নির্ধারণ করবেন।</p>
+<a class="btn" href="https://futureummahacademy.com/" target="_blank">ফ্রি ট্রায়াল বুক করুন</a>
+</div>
+
+</div>
+
+<footer>
+<h2>হানাফিয়্যা ফিউচার দারুল কুরআন একাডেমী</h2>
+<p>Hanafia Future Darul Quran Academy</p>
+<p>কুরআনের নূরে আলোকিত হোক আপনার সন্তানের হৃদয়।</p>
+<p>© 2026 All Rights Reserved</p>
+<a href="https://futureummahacademy.com/">আমাদের ওয়েবসাইট</a>
+</footer>
+
+<script>
+const levels = [
+
+{
+title:"কায়দা লেভেল ১",
+time:"প্রায় ২ মাস",classes:"২৬টি ক্লাস",
+summary:"হরফ পরিচিতি, নোকতা, হরফের রূপ, মুরাক্কাব ও শুদ্ধ উচ্চারণ।",
+lesson:"কায়দা পৃষ্ঠা ১–৯",
+quran:["শুদ্ধভাবে সালাম","আউযুবিল্লাহ ও বিসমিল্লাহ","কালিমা তায়্যিবাহ অর্থসহ","সূরা কাউসার"],
+extra:["সত্য কথা বলা","ইসলামের ভিত্তি","আমাদের সৃষ্টিকর্তা","আমাদের নবী","মুসলিমদের পরিচয়","নামাযের পরিচয়","নামাযের গুরুত্ব ও ফজিলত","অযুর প্র্যাকটিক্যাল পদ্ধতি (প্রথম অংশ)"],
+syllabus:["১.১ হরফ ও নোকতা — পৃষ্ঠা ১–২","১.২ হরফের রূপ ও উচ্চারণ — পৃষ্ঠা ৩–৬","১.৩ মুরাক্কাব ও হরফ চেনা — পৃষ্ঠা ৭–৯"]
+},
+
+{
+title:"কায়দা লেভেল ২",
+time:"প্রায় ২ মাস",classes:"২৬টি ক্লাস",
+summary:"যবর, যের ও পেশসহ হরকতের অধ্যায় এবং মাখরাজ শুদ্ধ করা।",
+lesson:"কায়দা পৃষ্ঠা ১০–১৯",
+quran:["কালিমায় শাহাদাহ অর্থসহ","তাকবির ও রুকু থেকে ওঠার দোয়া","সানা","রুকু ও সিজদার দোয়া","সূরা ইখলাস","সূরা নাস","খাওয়ার শুরুর দোয়া","খাওয়ার শেষের দোয়া"],
+extra:["মা-বাবার সাথে সদ্ব্যবহার ও রাগ সংবরণ","নবী-রাসূলের পরিচয়","নবিদের নাম শুনলে কী বলতে হয়","সাহাবী কারা","সাহাবীদের নাম শুনলে কী বলতে হয়","আমাদের ধর্মীয় গ্রন্থ কুরআন","পাঁচ ওয়াক্ত নামাযের নাম ও সময়","অযুর পূর্ণাঙ্গ প্র্যাকটিক্যাল অনুশীলন"],
+syllabus:["২.১ যবর — পৃষ্ঠা ১০–১২","২.২ মাখরাজ — পৃষ্ঠা ১৩–১৫","২.৩ যের — পৃষ্ঠা ১৬–১৭","২.৪ পেশ — পৃষ্ঠা ১৮–১৯"]
+},
+
+{
+title:"কায়দা লেভেল ৩",
+time:"প্রায় ২ মাস",classes:"২৬টি ক্লাস",
+summary:"জযম, ক্বলক্বলা, লীন, তানবীন ও তাশদীদসহ পড়তে শেখা।",
+lesson:"কায়দা পৃষ্ঠা ২০–২৯",
+quran:["দরুদ শরীফ","তাশাহহুদ","সূরা ফাতিহা","অযুর ফরজ","খাওয়ার শুরুতে ভুলে গেলে দোয়া","ঘুমের আগের দোয়া","অযু ভঙ্গের কারণ","আগের সূরাগুলোর রিভিশন"],
+extra:["হাই দিলে করণীয়","অনুমতি ছাড়া অন্যের কিছু না ধরা","অন্যকে কষ্ট না দেওয়া","গীবত না করা","ঈমানী মুফাসসাল","কবর, জান্নাত ও জাহান্নাম","নামাযের রাকাত সংখ্যা","নামাযের পূর্ণ প্র্যাকটিক্যাল পদ্ধতি"],
+syllabus:["৩.১ জযম — পৃষ্ঠা ২০–২১","৩.২ ক্বলক্বলা ও সতর্কতা — পৃষ্ঠা ২২–২৩","৩.৩ লীন — পৃষ্ঠা ২৪","৩.৪ দুই যবর, দুই যের, দুই পেশ — পৃষ্ঠা ২৫–২৭","৩.৫ তানবীন ও তাশদীদ — পৃষ্ঠা ২৮–২৯"]
+},
+
+{
+title:"কায়দা লেভেল ৪",
+time:"প্রায় ২ মাস",classes:"২৬টি ক্লাস",
+summary:"মাদ, গুন্নাহ, ওয়াকফ ও আল্লাহ শব্দের উচ্চারণসহ পুরো কায়দা শেষ করা।",
+lesson:"কায়দা পৃষ্ঠা ৩০–৪৩",
+quran:["দোয়ায়ে মাসূরা","সূরা ফালাক","ঘুম থেকে ওঠার দোয়া","ওয়াশরুমে প্রবেশ ও বের হওয়ার দোয়া","ঘর থেকে বের হওয়ার দোয়া","মা-বাবার জন্য দোয়া","নামাযের ফরজসমূহ"],
+extra:["মা-বাবার সাথে সদ্ব্যবহার","সত্য কথা বলা","অযু ও নামাযের ভুল সংশোধন","নামাযের করণীয় ও বর্জনীয়","মসজিদের আদব","পাক-নাপাক ও পরিচ্ছন্নতার সুন্নাহ"],
+syllabus:["৪.১ মাদ্দ (এক আলিফ পর্যন্ত) — পৃষ্ঠা ৩০–৩৩","৪.২ তিন ও চার আলিফ মাদ্দ — পৃষ্ঠা ৩৪–৩৫","৪.৩ গুন্নাহ — পৃষ্ঠা ৩৬–৩৯","৪.৪ আল্লাহ শব্দ ও ওয়াকফ — পৃষ্ঠা ৪০–৪২","৪.৫ আলিফে যায়েদা — পৃষ্ঠা ৪৩"]
+},
+
+{
+title:"কায়দা লেভেল ৫",
+time:"প্রায় ১ মাস",classes:"১৩টি ক্লাস",
+summary:"সম্পূর্ণ কায়দা রিভিশন, পড়ার ধারা মজবুত করা ও কুরআন দেখে ছোট সূরা পড়ার প্রস্তুতি।",
+lesson:"কায়দা রিভিশন ও চূড়ান্ত মূল্যায়ন",
+quran:["সূরা ফাতিহা কুরআন দেখে পড়া","সূরা ইখলাস কুরআন দেখে পড়া","সূরা কাউসার কুরআন দেখে পড়া","সূরা নাস কুরআন দেখে পড়া","সূরা ফালাক কুরআন দেখে পড়া","আগের সব সূরা ও দোয়ার রিভিশন"],
+extra:["সম্পূর্ণ কায়দার রিভিশন","অযু ও নামাযের রিভিশন","লেভেল ১–৪-এর পরীক্ষা","সম্পূর্ণ কায়দার চূড়ান্ত পরীক্ষা"],
+syllabus:["সম্পূর্ণ কায়দা পুনরায় পড়া","পূর্বের সকল অধ্যায়ের অনুশীলন","কুরআন দেখে ছোট সূরা পড়ার সূচনা","চূড়ান্ত পরীক্ষা"]
+},
+
+{
+title:"কায়দা লেভেল ৬",
+time:"প্রায় ৪ মাস",classes:"৫২টি ক্লাস",
+summary:"বেসিক তাজবীদসহ আমপারা (৩০তম পারা) পড়তে শেখা।",
+lesson:"আমপারা (৩০তম পারা)",
+quran:["সূরা লাহাব","সূরা কাফিরুন","সূরা কুরাইশ","সূরা ফীল","সূরা মাঊন","হাঁচির দোয়া ও করণীয়","ঘরে প্রবেশের দোয়া","গাড়িতে আরোহণের দোয়া","দোয়ায়ে কুনূত","নামাযের ওয়াজিবসমূহ"],
+extra:["মা-বাবার সাথে সদ্ব্যবহার","অন্যকে কষ্ট না দেওয়া","রাগ সংবরণ","ব্যাখ্যাসহ নামাযের ওয়াজিব","সাহু সিজদা","অযু ভঙ্গের কারণ","নামায ভঙ্গের কারণ","সিরাতুন্নবি ও সাহাবিদের জীবনী"],
+syllabus:["আমপারার নির্বাচিত সূরা","বেসিক তাজবীদের নিয়ম","সেজদায়ে তিলাওয়াতের আলোচনা","লেভেল শেষে পরীক্ষা"]
+},
+
+{
+title:"কায়দা লেভেল ৭",
+time:"প্রায় ৬ মাস",classes:"৭৮টি ক্লাস",
+summary:"কুরআনের ২১–২৯ পারা তিলাওয়াত এবং নির্বাচিত সূরা ও আয়াত মুখস্থ।",
+lesson:"কুরআন ২১–২৯ পারা",
+quran:["আয়াতুল কুরসি","সূরা বাকারার শেষ দুই আয়াত","সূরা হাশরের শেষ তিন আয়াত","সূরা ইয়াসিনের প্রথম অংশ","সূরা হুমাযাহ","সূরা আসর","সূরা তাকাসুর","সূরা কদর","সূরা রহমানের প্রথম অংশ","ইস্তেগফার","মসজিদে প্রবেশ ও বের হওয়ার দোয়া","আযানের পরবর্তী দোয়া","কাপড় পরিধানের দোয়া","অযুর শুরু ও শেষের দোয়া"],
+extra:["ইসলামিক ম্যানার্স","বিদআতের আলোচনা","হাদিসের ব্যাখ্যা","রোজা","সদকায়ে ফিতর","যাকাত","নামাযের সুন্নতে মুয়াক্কাদা ১২টি"],
+syllabus:["কুরআনের ২১–২৯ পারা তিলাওয়াত","নির্বাচিত সূরা ও আয়াত মুখস্থ","দোয়া ও মাসনুন আমল","লেভেল শেষে পরীক্ষা"]
+},
+
+{
+title:"কায়দা লেভেল ৮",
+time:"প্রায় ৬ মাস",classes:"৭৮টি ক্লাস",
+summary:"কুরআনের ১–২০ পারা তিলাওয়াত করে সম্পূর্ণ কুরআন নাজেরা শেষ করা।",
+lesson:"কুরআন ১–২০ পারা",
+quran:["সূরা দোহা","সূরা আলাম নাশরাহ","সূরা তীন","সূরা কারিয়া","সূরা জিলজাল","সাইয়্যেদুল ইস্তেগফার","জানাজার দোয়া","বাজারে প্রবেশের দোয়া","বৃষ্টির দোয়া","ফল খাওয়ার দোয়া","দাওয়াত খাওয়ার দোয়া","ঋণ থেকে মুক্তির দোয়া","মোনাজাতের ১০টি দোয়া","সকাল-সন্ধ্যার ১০টি দোয়া","নিজে সুস্থ হওয়ার দোয়া","রোগী দেখার দোয়া"],
+extra:["জানাযার নামাযের পদ্ধতি","ইসলামের দুই ঈদ","কোরবানির বিস্তারিত আলোচনা","হজ্জ সম্পর্কে বিস্তারিত","হালাল-হারাম","বৃদ্ধাশ্রম"],
+syllabus:["কুরআনের ১–২০ পারা তিলাওয়াত","সম্পূর্ণ কুরআন নাজেরা সমাপ্তি","নির্বাচিত সূরা ও দোয়া","সকাল-সন্ধ্যার আমল","চূড়ান্ত মূল্যায়ন"]
+}
+
+];
+
+const grid=document.getElementById("levels");
+
+levels.forEach((l,i)=>{
+ grid.innerHTML+=`
+ <div class="card">
+ <div class="number">০${i+1}</div>
+ <h3>${l.title}</h3>
+ <p>${l.summary}</p>
+ <div class="info">
+ <span>◷ ${l.time}</span>
+ <span>▤ ${l.classes}</span>
+ </div>
+ <button class="btn" onclick="showLevel(${i})">বিস্তারিত দেখুন →</button>
+ </div>`;
+});
+
+let current=0;
+
+function makeList(items){
+ return `<ul>${items.map(x=>`<li>✓ ${x}</li>`).join("")}</ul>`;
+}
+
+function showLevel(i){
+ current=i;
+ const l=levels[i];
+ const d=document.getElementById("details");
+
+ document.getElementById("detailContent").innerHTML=`
+ <span class="badge">লেভেল ${i+1}</span>
+ <h2>${l.title}</h2>
+ <p>${l.summary}</p>
+ <div class="info">
+ <span>◷ ${l.time}</span>
+ <span>▤ ${l.classes}</span>
+ <span>✓ পরীক্ষা</span>
+ </div>
+
+ <h3>এই লেভেলে যা শিখবে</h3>
+ <p>${l.lesson}</p>
+ ${makeList(l.quran)}
+
+ <h3>কুরআন ও ব্যবহারিক ইসলামিক শিক্ষা</h3>
+ ${makeList(l.extra)}
+
+ <h3>সিলেবাসের সংক্ষিপ্ত রূপরেখা</h3>
+ ${makeList(l.syllabus)}
+
+ <div class="trial">
+ <h3>এই লেভেলটি উপযুক্ত কি না নিশ্চিত নন?</h3>
+ <p>ফ্রি ট্রায়াল ক্লাসে শিক্ষক শিক্ষার্থীর বর্তমান অবস্থা যাচাই করে উপযুক্ত লেভেল নির্ধারণ করবেন।</p>
+ <a class="btn" href="https://futureummahacademy.com/" target="_blank">ফ্রি ট্রায়াল বুক করুন</a>
+ </div>
+ `;
+
+ d.style.display="block";
+ d.scrollIntoView({behavior:"smooth"});
+}
+
+function changeLevel(direction){
+ let next=current+direction;
+ if(next>=0 && next<levels.length){
+ showLevel(next);
+ }
+}
+
+function closeDetails(){
+ document.getElementById("details").style.display="none";
+ document.getElementById("levels").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
 <!-- FOOTER -->
 <footer>
   <h3>Hanafia Future Darul Quran Academy</h3>

@@ -406,7 +406,6 @@ hr {
   }
 }
 
-<style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
  font-family:"Noto Sans Bengali",Arial,sans-serif;
@@ -479,4 +478,140 @@ footer a{color:#a7f3d0;text-decoration:none}
  .container{padding:12px}
  .details{padding:15px}
  .nav-buttons{flex-direction:column}
+}
+
+/* =========================================
+   HFDQA - PREMIUM MULTI COLOR SECTIONS
+========================================= */
+
+/* সাধারণ Section */
+section {
+  border-radius: 18px;
+  margin: 12px auto;
+}
+
+/* শিক্ষার বিভাগ - নীল */
+#departments {
+  background: linear-gradient(135deg, #102d59, #164b78);
+  border: 1px solid #3b82b8;
+}
+
+/* পড়াশোনার ধাপ - বেগুনি */
+#steps {
+  background: linear-gradient(135deg, #30245e, #513b83);
+  border: 1px solid #a78bfa;
+}
+
+/* কোর্সসমূহ - সবুজ */
+#courses {
+  background: linear-gradient(135deg, #064e3b, #087653);
+  border: 1px solid #34d399;
+}
+
+/* বিশেষ বৈশিষ্ট্য - কমলা */
+#features {
+  background: linear-gradient(135deg, #713b18, #a65324);
+  border: 1px solid #fbbf24;
+}
+
+/* ফি ও পেমেন্ট - সোনালি */
+#fees {
+  background: linear-gradient(135deg, #594315, #80601b);
+  border: 1px solid #f5cb60;
+}
+
+/* ভর্তি ফরম - আকাশি */
+#admission {
+  background: linear-gradient(135deg, #123d68, #155e75);
+  border: 1px solid #38bdf8;
+}
+
+/* ফ্রি ট্রায়াল - গোলাপি */
+#trial {
+  background: linear-gradient(135deg, #702b50, #913b68);
+  border: 1px solid #f9a8d4;
+}
+
+/* শিক্ষক মূল্যায়ন - বেগুনি */
+#evaluation {
+  background: linear-gradient(135deg, #38275f, #55418a);
+  border: 1px solid #c4b5fd;
+}
+
+/* অভিভাবক মনিটরিং - টিল */
+#parent {
+  background: linear-gradient(135deg, #064e4a, #087e78);
+  border: 1px solid #5eead4;
+}
+
+/* Parent Dashboard */
+#parentDashboard {
+  background: linear-gradient(135deg, #064e4a, #087e78);
+  border: 1px solid #5eead4;
+}
+
+/* Login - নীল */
+#login {
+  background: linear-gradient(135deg, #102d59, #164b78);
+  border: 1px solid #60a5fa;
+}
+
+/* Admin Dashboard - রাজকীয় নীল */
+#adminDashboard {
+  background: linear-gradient(135deg, #102a58, #174b85);
+  border: 2px solid #60a5fa;
+}
+
+/* Teacher Dashboard - বেগুনি */
+#teacherDashboard {
+  background: linear-gradient(135deg, #39265e, #65419a);
+  border: 2px solid #c4b5fd;
+}
+
+/* Student Dashboard - সবুজ */
+#studentDashboard {
+  background: linear-gradient(135deg, #064e3b, #087653);
+  border: 2px solid #34d399;
+}
+
+/* প্রতিটি কার্ড */
+.card {
+  background: linear-gradient(145deg, #194477, #10294e);
+  border: 1px solid #d5ad50;
+}
+
+/* Card Heading */
+.card h3 {
+  color: #ffe28b;
+}
+
+/* Panel */
+.panel {
+  background: linear-gradient(145deg, #173c6b, #0b2144);
+  border: 1px solid #d5ad50;
+}
+
+/* Dashboard-এর ভেতরের ফর্ম */
+#adminDashboard .panel,
+#teacherDashboard .panel,
+#studentDashboard .panel,
+#parentDashboard .panel {
+  background: rgba(5, 17, 43, 0.65);
+}
+
+/* সব Section-এর Heading */
+section h2 {
+  color: #ffe28b;
+}
+
+/* Mobile */
+@media(max-width:600px) {
+  section {
+    border-radius: 12px;
+    margin: 8px auto;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -30,6 +30,29 @@ header h3{font-size:14px!important}
 #levelDetails .level-actions{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
 #levelDetails .level-trial{margin-top:22px;padding:18px;border-radius:12px;background:rgba(213,173,80,.08);text-align:center}
 #levelDetails .level-trial p{margin-bottom:12px}
+
+/* হিফজ পাঠ্যক্রম এবং এক নজরে সেকশনের জন্য কার্ড স্টাইল */
+.hifz-syllabus-grid, .quick-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.syllabus-card, .overview-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(213,173,80,0.3);
+  border-radius: 16px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.syllabus-card h3 { color: #f5cb60; margin: 0; font-size: 18px; }
+.syllabus-card p { margin: 0; color: #cbd5e1; line-height: 1.7; }
+.overview-card { text-align: center; background: rgba(213,173,80,0.04); }
+.overview-card h3 { color: #f5cb60; margin: 0; font-size: 18px; }
+.overview-card p { margin: 0; font-size: 20px; font-weight: bold; color: #fff; }
+
 @media(max-width:600px){#learningSteps .level-grid{grid-template-columns:1fr}#levelDetails{padding:16px}#levelDetails .level-actions .btn{flex:1}}
 </style>
 </head>
@@ -46,6 +69,8 @@ header h3{font-size:14px!important}
 <nav>
   <a href="#home">হোম</a>
   <a href="#educationDepartments">শিক্ষার বিভাগ</a>
+  <a href="#quickOverview">এক নজরে</a>
+  <a href="#hifzCurriculum">হিফজ পাঠ্যক্রম</a>
   <a href="#learningSteps">পড়াশোনার ধাপ</a>
   <a href="#courses">কোর্সসমূহ</a>
   <a href="#features">বৈশিষ্ট্য</a>
@@ -69,6 +94,27 @@ header h3{font-size:14px!important}
 </section>
 </div>
 
+<!-- এক নজরে সেকশন -->
+<section id="quickOverview">
+<div class="container">
+  <h2 style="text-align:center;color:#f5cb60">এক নজরে কোর্স তথ্য</h2>
+  <div class="quick-overview-grid">
+    <div class="overview-card">
+      <h3>সময়কাল</h3>
+      <p>প্রতিদিন ১–২ ঘণ্টা</p>
+    </div>
+    <div class="overview-card">
+      <h3>বয়স</h3>
+      <p>ছোট-বড় সবার জন্য</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap">
+    <a class="btn" href="#trialClass">ফ্রি ট্রায়াল ক্লাস বুক করুন</a>
+    <a class="btn" href="#admission" style="background:transparent;border:1px solid #d5ad50;color:#f5cb60">ভর্তি হোন</a>
+  </div>
+</div>
+</section>
+
 <section id="educationDepartments">
 <div class="container">
   <div style="text-align:center;margin-bottom:30px">
@@ -81,6 +127,33 @@ header h3{font-size:14px!important}
     <div class="card"><h3>🧠 হিফজুল কুরআন বিভাগ</h3><p>পরিকল্পিত উপায়ে সম্পূর্ণ কুরআন মুখস্থ করার বিশেষ তত্ত্বাবধান ও হিফজ প্রোগ্রাম।</p></div>
     <div class="card"><h3>🎙️ তাজভীদ ও কিরাআত</h3><p>নিয়মকানুন মেনে সুন্দর ও সুরভিত কণ্ঠে কুরআন তিলাওয়াতের উন্নত প্রশিক্ষণ।</p></div>
     <div class="card"><h3>🌍 ইসলামী ও নৈতিক শিক্ষা</h3><p>দৈনন্দিন দোয়া, জরুরি মাসআলা-মাসায়েল এবং সুন্নাহভিত্তিক জীবনগঠন শিক্ষা।</p></div>
+  </div>
+</div>
+</section>
+
+<!-- হিফজের পাঠ্যক্রম সেকশন (আলাদা আলাদা কার্ডে সাজানো) -->
+<section id="hifzCurriculum">
+<div class="container">
+  <h2 style="text-align:center;color:#f5cb60">হিফজের পাঠ্যক্রম ও ধাপসমূহ</h2>
+  <p style="text-align:center;margin-bottom:25px;color:#cbd5e1">শিক্ষার্থীর যোগ্যতা, তিলাওয়াত ও পূর্বপ্রস্তুতি অনুযায়ী নির্বাচিত সূরা/আমপারা অথবা পূর্ণ কুরআন হিফযের পরিকল্পনা করা হবে।</p>
+  
+  <div class="hifz-syllabus-grid">
+    <div class="syllabus-card">
+      <h3>ধাপ ১ — প্রস্তুতি ও তিলাওয়াত যাচাই</h3>
+      <p>মাখরাজ, প্রয়োজনীয় তাজউইদ, তিলাওয়াতের শুদ্ধতা এবং পূর্বে মুখস্থ করা অংশ যাচাই করে উপযুক্ত পরিকল্পনা নির্ধারণ।</p>
+    </div>
+    <div class="syllabus-card">
+      <h3>ধাপ ২ — নির্বাচিত সূরা ও আমপারা</h3>
+      <p>শিক্ষার্থীর সক্ষমতা অনুযায়ী ছোট সূরা ও আমপারার নির্ধারিত অংশ মুখস্থ করা এবং নিয়মিত শোনানো।</p>
+    </div>
+    <div class="syllabus-card">
+      <h3>ধাপ ৩ — নতুন সবক, সাবকি ও মানজিল</h3>
+      <p>নতুন মুখস্থ (সবক), সাম্প্রতিক মুখস্থের পুনরাবৃত্তি (সাবকি) এবং পুরোনো মুখস্থ অংশের চর্চা (মানজিল)।</p>
+    </div>
+    <div class="syllabus-card">
+      <h3>ধাপ ৪ — পূর্ণ কুরআন হিফয</h3>
+      <p>প্রস্তুতি ও অগ্রগতি উপযুক্ত হলে পূর্ণ কুরআন মুখস্থের ধারাবাহিক পরিকল্পনা, নিয়মিত পুনরাবৃত্তি ও মূল্যায়ন।</p>
+    </div>
   </div>
 </div>
 </section>
@@ -143,485 +216,4 @@ header h3{font-size:14px!important}
 <label>পিতার নাম</label><input id="aFather" required maxlength="100" placeholder="পিতার নাম লিখুন">
 <label>মোবাইল নম্বর</label><input id="aMobile" required type="tel" maxlength="25" placeholder="মোবাইল নম্বর লিখুন">
 <label>বয়সভিত্তিক গ্রুপ</label><select id="aAge" required><option value="">নির্বাচন করুন</option><option>৫-৮ বছর</option><option>৯-১৪ বছর</option><option>১৫ বছর ও তদূর্ধ্ব</option></select>
-<label>কোর্স</label><select id="aCourse" required><option value="">নির্বাচন করুন</option><option>নূরানী</option><option>নাজেরা</option><option>হিফজ</option><option>ইসলামিক শিক্ষা</option></select>
-<label>দেশ ও ঠিকানা</label><input id="aAddress" required maxlength="300" placeholder="আপনার ঠিকানা লিখুন">
-<button class="btn" id="admissionSubmit" type="submit" style="width:100%;margin-top:10px">আবেদন জমা দিন</button>
-<p id="aMessage" class="status" aria-live="polite" style="text-align:center"></p>
-</form></div></div></section>
-
-<section id="trialClass"><div class="container">
-<h2>ফ্রি ট্রায়াল ক্লাস বুকিং</h2><div class="panel">
-<p style="text-align:center;margin-bottom:15px">ভর্তির আগে বিনামূল্যে পরিচিতিমূলক ক্লাসের জন্য আবেদন করুন।</p>
-<form id="trialForm">
-<label>শিক্ষার্থীর নাম</label><input id="trialName" required maxlength="100" placeholder="শিক্ষার্থীর নাম">
-<label>অভিভাবকের নাম</label><input id="trialGuardian" required maxlength="100" placeholder="অভিভাবকের নাম">
-<label>WhatsApp / মোবাইল নম্বর</label><input id="trialMobile" type="tel" required maxlength="25" placeholder="নম্বর লিখুন">
-<label>পছন্দের কোর্স</label><select id="trialCourse" required><option value="">নির্বাচন করুন</option><option>নূরানী কায়দা</option><option>নাজেরা</option><option>হিফজ</option><option>তাজবিদ</option><option>ইসলামিক শিক্ষা</option></select>
-<label>পছন্দের তারিখ</label><input id="trialDate" type="date" required>
-<label>পছন্দের সময়</label><input id="trialTime" type="time" required>
-<button class="btn" type="submit" style="width:100%;margin-top:10px">ট্রায়াল বুকিং জমা দিন</button>
-<p id="trialMessage" class="status" style="text-align:center"></p>
-</form></div></div></section>
-
-<section id="teacherEvaluation"><div class="container">
-<h2>শিক্ষক মূল্যায়ন</h2><div class="panel">
-<p style="text-align:center;margin-bottom:15px">শিক্ষকের পাঠদান সম্পর্কে আপনার মতামত দিন।</p>
-<form id="evaluationForm">
-<label>শিক্ষকের UID</label><input id="evaluationTeacherUid" required placeholder="শিক্ষকের UID লিখুন">
-<label>শিক্ষার্থীর নাম</label><input id="evaluationStudentName" required placeholder="শিক্ষার্থীর নাম লিখুন">
-<label>পাঠদানের মান</label><select id="evaluationRating" required><option value="">নির্বাচন করুন</option><option value="5">৫ - অত্যন্ত ভালো</option><option value="4">৪ - ভালো</option><option value="3">৩ - মোটামুটি</option><option value="2">২ - উন্নতি প্রয়োজন</option><option value="1">১ - অসন্তোষজনক</option></select>
-<label>আপনার মন্তব্য</label><textarea id="evaluationComment" rows="4" maxlength="1000" placeholder="আপনার মতামত লিখুন"></textarea>
-<button class="btn" type="submit" style="width:100%;margin-top:10px">মূল্যায়ন জমা দিন</button><p id="evaluationMessage" class="status" style="text-align:center"></p>
-</form></div></div></section>
-
-<section id="parentMonitoring"><div class="container">
-<h2>অভিভাবক মনিটরিং</h2><div class="panel" style="text-align:center">
-<h3>সন্তানের পড়াশোনার অগ্রগতি</h3><p>অভিভাবক Login করার পর সন্তানের দৈনিক পড়ার রিপোর্ট দেখতে পারবেন।</p>
-<div id="parentProgress" style="margin-top:10px;color:#f5cb60">অভিভাবক Login করার পর তথ্য দেখা যাবে।</div>
-</div></div></section>
-
-<section id="parentDashboard" class="hidden"><div class="container">
-<h2>Parent Dashboard</h2><div class="panel"><h3>সন্তানের পড়াশোনার রিপোর্ট</h3><div id="parentChildrenProgress">রিপোর্ট লোড হচ্ছে...</div></div>
-</div></section>
-
-<section id="login"><div class="container">
-<h2>Login Portal</h2><div class="panel"><form id="loginForm">
-<label>Email Address</label><input id="email" type="email" autocomplete="username" required placeholder="example@gmail.com">
-<label>Password</label><input id="password" type="password" autocomplete="current-password" required placeholder="********">
-<button class="btn" id="loginSubmit" type="submit" style="width:100%;margin-top:10px">Login করুন</button>
-<p id="loginMessage" class="status" aria-live="polite" style="text-align:center"></p>
-</form>
-<div style="text-align:center;margin-top:15px"><button class="btn" id="logoutBtn" type="button" style="display:none;background:linear-gradient(120deg,#ff8b8b,#c12525);color:white">Logout</button></div>
-</div></div></section>
-
-<section id="adminDashboard" class="hidden"><div class="container">
-<h2>Admin Dashboard</h2>
-<div class="panel"><h3>প্রশাসকের তথ্য</h3><p id="adminInfo">স্বাগতম, Admin</p><hr><h3>ভর্তি আবেদনসমূহ</h3><div id="applicationsList"><p>আবেদন লোড হচ্ছে...</p></div></div>
-<div class="panel"><h3>নতুন User Profile তৈরি</h3><form id="profileForm">
-<label>User UID</label><input id="profileUid" required placeholder="Firebase UID">
-<label>নাম</label><input id="profileName" required placeholder="ব্যবহারকারীর নাম">
-<label>Email</label><input id="profileEmail" type="email" required placeholder="Email">
-<label>Role নির্বাচন</label><select id="profileRole" required><option value="">নির্বাচন করুন</option><option value="teacher">Teacher</option><option value="student">Student</option><option value="parent">Parent</option></select>
-<button class="btn" type="submit" style="width:100%;margin-top:10px">Profile সংরক্ষণ</button><p id="profileMessage" class="status" style="text-align:center"></p>
-</form></div>
-<div class="panel"><h3>অভিভাবকের সঙ্গে শিক্ষার্থী যুক্ত করুন</h3><form id="linkParentStudentForm">
-<label>অভিভাবকের Firebase UID</label><input id="linkParentUid" placeholder="Parent UID লিখুন" required>
-<label>শিক্ষার্থীর Firebase UID</label><input id="linkStudentUid" placeholder="Student UID লিখুন" required>
-<button class="btn" type="submit" style="width:100%;margin-top:10px">শিক্ষার্থী যুক্ত করুন</button><p id="linkParentStudentMessage" class="status" style="text-align:center"></p>
-</form></div>
-<div class="panel"><h3>Zoom Class তৈরি</h3><form id="classForm">
-<label>ক্লাসের নাম</label><input id="classTitle" required placeholder="ক্লাসের শিরোনাম">
-<label>কোর্স</label><select id="classCourse" required><option value="">নির্বাচন করুন</option><option>নূরানী</option><option>নাজেরা</option><option>হিফজ</option><option>ইসলামিক শিক্ষা</option></select>
-<label>Teacher UID</label><input id="classTeacher" required placeholder="Teacher UID">
-<label>Student UID (একাধিক হলে কমা দিয়ে লিখুন)</label><input id="classStudents" required placeholder="UID1, UID2">
-<label>ক্লাসের তারিখ ও সময়</label><input id="classDate" type="datetime-local" required>
-<label>Zoom Meeting Link</label><input id="zoomLink" type="url" placeholder="https://zoom.us/j/..." required>
-<button class="btn" type="submit" style="width:100%;margin-top:10px">ক্লাস তৈরি করুন</button><p id="classMessage" class="status" style="text-align:center"></p>
-</form></div>
-</div></section>
-
-<section id="teacherDashboard" class="hidden"><div class="container">
-<h2>Teacher Dashboard</h2>
-<div class="panel"><h3>আমার ক্লাসসমূহ</h3><div id="teacherClasses"><p>ক্লাস লোড হচ্ছে...</p></div></div>
-<div class="panel"><h3>উপস্থিতি জমা দিন</h3><form id="attendanceForm">
-<label>Class ID</label><input id="attendanceClassId" required placeholder="Class ID লিখুন">
-<label>Student UID</label><input id="attendanceStudentId" required placeholder="Student UID লিখুন">
-<label>উপস্থিতি</label><select id="attendanceStatus" required><option value="present">উপস্থিত</option><option value="absent">অনুপস্থিত</option><option value="late">বিলম্বে উপস্থিত</option></select>
-<button class="btn" type="submit" style="width:100%;margin-top:10px">উপস্থিতি সংরক্ষণ</button><p id="attendanceMessage" class="status" style="text-align:center"></p>
-</form></div>
-<div class="panel"><h3>দৈনিক কুরআন পড়ার রিপোর্ট</h3><form id="readingProgressForm">
-<label>শিক্ষার্থীর UID</label><input type="text" id="readingStudentUid" placeholder="শিক্ষার্থীর UID লিখুন" required>
-<label>পাঠের ধরন</label><select id="readingLessonType" required><option value="">নির্বাচন করুন</option><option value="নূরানী">নূরানী</option><option value="নাজেরা">নাজেরা</option><option value="হিফজ">হিফজ</option><option value="তাজবিদ">তাজবিদ</option></select>
-<label>আজকের পড়ার বিস্তারিত</label><textarea id="readingDetails" placeholder="কতটুকু পড়েছে, কোথায় ভুল হয়েছে লিখুন" required></textarea>
-<button class="btn" type="submit" style="width:100%;margin-top:10px">রিপোর্ট জমা দিন</button><p id="readingProgressMessage" class="status" style="text-align:center"></p>
-</form></div>
-</div></section>
-
-<section id="studentDashboard" class="hidden"><div class="container">
-<h2>Student Dashboard</h2>
-<div class="panel"><h3>আমার প্রোফাইল</h3><div id="studentInfo">তথ্য লোড হচ্ছে...</div></div>
-<div class="panel"><h3>আমার অনলাইন ক্লাস</h3><div id="studentClasses">ক্লাস লোড হচ্ছে...</div></div>
-</div></section>
-
-<footer>
-  <h3>হানাফিয়্যা ফিউচার দারুল কুরআন একাডেমী</h3>
-  <p>Hanafia Future Darul Quran Academy</p>
-  <p>কুরআনের নূরে আলোকিত হোক আপনার সন্তানের হৃদয়।</p>
-  <p><strong>অফিস লোকেশন:</strong> Central Plaza — ২৩১, বেগম রোকেয়া সরণি, মিরপুর।</p>
-  <p><strong>WhatsApp:</strong> <a href="https://wa.me/8801342268929" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">01342268929</a></p>
-  <p>© 2026 All Rights Reserved</p>
-</footer>
-
-<script>
-const levels = [
-{title:"কায়দা লেভেল ১",time:"প্রায় ২ মাস",classes:"২৬টি ক্লাস",summary:"হরফ পরিচিতি, নোকতা, হরফের রূপ, মুরাক্কাব ও শুদ্ধ উচ্চারণ।",lesson:"কায়দা পৃষ্ঠা ১–৯",quran:["শুদ্ধভাবে সালাম","আউযুবিল্লাহ ও বিসমিল্লাহ","কালিমা তায়্যিবাহ অর্থসহ","সূরা কাউসার"],extra:["সত্য কথা বলা","ইসলামের ভিত্তি","আমাদের সৃষ্টিকর্তা","আমাদের নবী","মুসলিমদের পরিচয়","নামাযের পরিচয়","নামাযের গুরুত্ব ও ফজিলত","অযুর প্র্যাকটিক্যাল পদ্ধতি (প্রথম অংশ)"],syllabus:["১.১ হরফ ও নোকতা — পৃষ্ঠা ১–২","১.২ হরফের রূপ ও উচ্চারণ — পৃষ্ঠা ৩–৬","১.৩ মুরাক্কাব ও হরফ চেনা — পৃষ্ঠা ৭–৯"]},
-{title:"কায়দা লেভেল ২",time:"প্রায় ২ মাস",classes:"২৬টি ক্লাস",summary:"যবর, যের ও পেশসহ হরকতের অধ্যায় এবং মাখরাজ শুদ্ধ করা।",lesson:"কায়দা পৃষ্ঠা ১০–১৯",quran:["কালিমায় শাহাদাহ অর্থসহ","তাকবির ও রুকু থেকে ওঠার দোয়া","সানা","রুকু ও সিজদার দোয়া","সূরা ইখলাস","সূরা নাস","খাওয়ার শুরুর দোয়া","খাওয়ার শেষের দোয়া"],extra:["মা-বাবার সাথে সদ্ব্যবহার ও রাগ সংবরণ","নবী-রাসূলের পরিচয়","নবিদের নাম শুনলে কী বলতে হয়","সাহাবী কারা","সাহাবীদের নাম শুনলে কী বলতে হয়","আমাদের ধর্মীয় গ্রন্থ কুরআন","পাঁচ ওয়াক্ত নামাযের নাম ও সময়","অযুর পূর্ণাঙ্গ প্র্যাকটিক্যাল অনুশীলন"],syllabus:["২.১ যবর — পৃষ্ঠা ১০–১২","২.২ মাখরাজ — পৃষ্ঠা ১৩–১৫","২.৩ যের — পৃষ্ঠা ১৬–১৭","২.৪ পেশ — পৃষ্ঠা ১৮–১৯"]},
-{title:"কায়দা লেভেল ৩",time:"প্রায় ২ মাস",classes:"২৬টি ক্লাস",summary:"জযম, ক্বলক্বলা, লীন, তানবীন ও তাশদীদসহ পড়তে শেখা।",lesson:"কায়দা পৃষ্ঠা ২০–২৯",quran:["দরুদ শরীফ","তাশাহহুদ","সূরা ফাতিহা","অযুর ফরজ","খাওয়ার শুরুতে ভুলে গেলে দোয়া","ঘুমের আগের দোয়া","অযু ভঙ্গের কারণ","আগের সূরাগুলোর রিভিশন"],extra:["হাই দিলে করণীয়","অনুমতি ছাড়া অন্যের কিছু না ধরা","অন্যকে কষ্ট না দেওয়া","গীবত না করা","ঈমানী মুফাসসাল","কবর, জান্নাত ও জাহান্নাম","নামাযের রাকাত সংখ্যা","নামাযের পূর্ণ প্র্যাকটিক্যাল পদ্ধতি"],syllabus:["৩.১ জযম — পৃষ্ঠা ২০–২১","৩.২ ক্বলক্বলা ও সতর্কতা — পৃষ্ঠা ২২–২৩","৩.৩ লীন — পৃষ্ঠা ২৪","৩.৪ দুই যবর, দুই যের, দুই পেশ — পৃষ্ঠা ২৫–২৭","৩.৫ তানবীন ও তাশদীদ — পৃষ্ঠা ২৮–২৯"]},
-{title:"কায়দা লেভেল ৪",time:"প্রায় ২ মাস",classes:"২৬টি ক্লাস",summary:"মাদ, গুন্নাহ, ওয়াকফ ও আল্লাহ শব্দের উচ্চারণসহ পুরো কায়দা শেষ করা।",lesson:"কায়দা পৃষ্ঠা ৩০–৪৩",quran:["দোয়ায়ে মাসূরা","সূরা ফালাক","ঘুম থেকে ওঠার দোয়া","ওয়াশরুমে প্রবেশ ও বের হওয়ার দোয়া","ঘর থেকে বের হওয়ার দোয়া","মা-বাবার জন্য দোয়া","নামাযের ফরজসমূহ"],extra:["মা-বাবার সাথে সদ্ব্যবহার","সত্য কথা বলা","অযু ও নামাযের ভুল সংশোধন","নামাযের করণীয় ও বর্জনীয়","মসজিদের আদব","পাক-নাপাক ও পরিচ্ছন্নতার সুন্নাহ"],syllabus:["৪.১ মাদ্দ (এক আলিফ পর্যন্ত) — পৃষ্ঠা ৩০–৩৩","৪.২ তিন ও চার আলিফ মাদ্দ — পৃষ্ঠা ৩৪–৩৫","৪.৩ গুন্নাহ — পৃষ্ঠা ৩৬–৩৯","৪.৪ আল্লাহ শব্দ ও ওয়াকফ — পৃষ্ঠা ৪০–৪২","৪.৫ আলিফে যায়েদা — পৃষ্ঠা ৪৩"]},
-{title:"কায়দা লেভেল ৫",time:"প্রায় ১ মাস",classes:"১৩টি ক্লাস",summary:"সম্পূর্ণ কায়দা রিভিশন, পড়ার ধারা মজবুত করা ও কুরআন দেখে ছোট সূরা পড়ার প্রস্তুতি।",lesson:"কায়দা রিভিশন ও চূড়ান্ত মূল্যায়ন",quran:["সূরা ফাতিহা কুরআন দেখে পড়া","সূরা ইখলাস কুরআন দেখে পড়া","সূরা কাউসার কুরআন দেখে পড়া","সূরা নাস কুরআন দেখে পড়া","সূরা ফালাক কুরআন দেখে পড়া","আগের সব সূরা ও দোয়ার রিভিশন"],extra:["সম্পূর্ণ কায়দার রিভিশন","অযু ও নামাযের রিভিশন","লেভেল ১–৪-এর পরীক্ষা","সম্পূর্ণ কায়দার চূড়ান্ত পরীক্ষা"],syllabus:["সম্পূর্ণ কায়দা পুনরায় পড়া","পূর্বের সকল অধ্যায়ের অনুশীলন","কুরআন দেখে ছোট সূরা পড়ার সূচনা","চূড়ান্ত পরীক্ষা"]},
-{title:"আমপারা লেভেল ৬",time:"প্রায় ৪ মাস",classes:"৫২টি ক্লাস",summary:"বেসিক তাজবীদসহ আমপারা (৩০তম পারা) পড়তে শেখা।",lesson:"আমপারা (৩০তম পারা)",quran:["সূরা লাহাব","সূরা কাফিরুন","সূরা কুরাইশ","সূরা ফীল","সূরা মাঊন","হাঁচির দোয়া ও করণীয়","ঘরে প্রবেশের দোয়া","গাড়িতে আরোহণের দোয়া","দোয়ায়ে কুনূত","নামাযের ওয়াজিবসমূহ"],extra:["মা-বাবার সাথে সদ্ব্যবহার","অন্যকে কষ্ট না দেওয়া","রাগ সংবরণ","ব্যাখ্যাসহ নামাযের ওয়াজিব","সাহু সিজদা","অযু ভঙ্গের কারণ","নামায ভঙ্গের কারণ","সিরাতুন্নবি ও সাহাবিদের জীবনী"],syllabus:["আমপারার নির্বাচিত সূরা","বেসিক তাজবীদের নিয়ম","সেজদায়ে তিলাওয়াতের আলোচনা","লেভেল শেষে পরীক্ষা"]},
-{title:"কুরআন নাজেরা লেভেল ৭",time:"প্রায় ৬ মাস",classes:"৭৮টি ক্লাস",summary:"কুরআনের ২১–২৯ পারা তিলাওয়াত এবং নির্বাচিত সূরা ও আয়াত মুখস্থ।",lesson:"কুরআন ২১–২৯ পারা",quran:["আয়াতুল কুরসি","সূরা বাকারার শেষ দুই আয়াত","সূরা হাশরের শেষ তিন আয়াত","সূরা ইয়াসিনের প্রথম অংশ","সূরা হুমাযাহ","সূরা আসর","সূরা তাকাসুর","সূরা কদর","সূরা রহমানের প্রথম অংশ","ইস্তেগফার","মসজিদে প্রবেশ ও বের হওয়ার দোয়া","আযানের পরবর্তী দোয়া","কাপড় পরিধানের দোয়া","অযুর শুরু ও শেষের দোয়া"],extra:["ইসলামিক ম্যানার্স","বিদআতের আলোচনা","হাদিসের ব্যাখ্যা","রোজা","সদকায়ে ফিতর","যাকাত","নামাযের সুন্নতে মুয়াক্কাদা ১২টি"],syllabus:["কুরআনের ২১–২৯ পারা তিলাওয়াত","নির্বাচিত সূরা ও আয়াত মুখস্থ","দোয়া ও মাসনুন আমল","লেভেল শেষে পরীক্ষা"]},
-{title:"কুরআন নাজেরা লেভেল ৮",time:"প্রায় ৬ মাস",classes:"৭৮টি ক্লাস",summary:"কুরআনের ১–২০ পারা তিলাওয়াত করে সম্পূর্ণ কুরআন নাজেরা শেষ করা।",lesson:"কুরআন ১–২০ পারা",quran:["সূরা দোহা","সূরা আলাম নাশরাহ","সূরা তীন","সূরা কারিয়া","সূরা জিলজাল","সাইয়্যেদুল ইস্তেগফার","জানাজার দোয়া","বাজারে প্রবেশের দোয়া","বৃষ্টির দোয়া","ফল খাওয়ার দোয়া","দাওয়াত খাওয়ার দোয়া","ঋণ থেকে মুক্তির দোয়া","মোনাজাতের ১০টি দোয়া","সকাল-সন্ধ্যার ১০টি দোয়া","নিজে সুস্থ হওয়ার দোয়া","রোগী দেখার দোয়া"],extra:["জানাযার নামাযের পদ্ধতি","ইসলামের দুই ঈদ","কোরবানির বিস্তারিত আলোচনা","হজ্জ সম্পর্কে বিস্তারিত","হালাল-হারাম","বৃদ্ধদের যত্ন ও সম্মান"],syllabus:["কুরআনের ১–২০ পারা তিলাওয়াত","সম্পূর্ণ কুরআন নাজেরা সমাপ্তি","নির্বাচিত সূরা ও দোয়া","সকাল-সন্ধ্যার আমল","চূড়ান্ত মূল্যায়ন"]}
-];
-
-const levelGrid = document.getElementById("levelGrid");
-let currentLevel = 0;
-
-function renderLevels(){
-  levelGrid.innerHTML = "";
-  levels.forEach((level,index)=>{
-    const card = document.createElement("article");
-    card.className = "level-card";
-    const number = document.createElement("div");
-    number.className = "level-number";
-    number.textContent = "০" + (index+1);
-    const heading = document.createElement("h3");
-    heading.textContent = level.title;
-    const summary = document.createElement("p");
-    summary.textContent = level.summary;
-    const meta = document.createElement("div");
-    meta.className = "level-meta";
-    meta.textContent = "◷ " + level.time + "  |  ▤ " + level.classes;
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "btn";
-    button.textContent = "বিস্তারিত দেখুন →";
-    button.addEventListener("click",()=>showLevel(index));
-    card.append(number,heading,summary,meta,button);
-    levelGrid.append(card);
-  });
-}
-
-function makeList(items){
-  const ul = document.createElement("ul");
-  items.forEach(item=>{
-    const li = document.createElement("li");
-    li.textContent = "✓ " + item;
-    ul.append(li);
-  });
-  return ul;
-}
-
-function showLevel(index){
-  if(index<0 || index>=levels.length) return;
-  currentLevel = index;
-  const level = levels[index];
-  const box = document.getElementById("levelDetailContent");
-  box.innerHTML = "";
-
-  const badge = document.createElement("span");
-  badge.className = "level-badge";
-  badge.textContent = "লেভেল " + (index+1);
-  const title = document.createElement("h2");
-  title.textContent = level.title;
-  const summary = document.createElement("p");
-  summary.textContent = level.summary;
-  const meta = document.createElement("p");
-  meta.className = "level-meta";
-  meta.textContent = "সময়: " + level.time + " | ক্লাস: " + level.classes;
-  const lessonTitle = document.createElement("h3");
-  lessonTitle.textContent = "এই লেভেলে যা শিখবে";
-  const lesson = document.createElement("p");
-  lesson.textContent = level.lesson;
-  const quranTitle = document.createElement("h3");
-  quranTitle.textContent = "কুরআন, সূরা ও দোয়া";
-  const extraTitle = document.createElement("h3");
-  extraTitle.textContent = "কুরআন ও ব্যবহারিক ইসলামিক শিক্ষা";
-  const syllabusTitle = document.createElement("h3");
-  syllabusTitle.textContent = "সিলেবাসের সংক্ষিপ্ত রূপরেখা";
-  box.append(badge,title,summary,meta,lessonTitle,lesson,makeList(level.quran),extraTitle,makeList(level.extra),syllabusTitle,makeList(level.syllabus));
-
-  const trial = document.createElement("div");
-  trial.className = "level-trial";
-  const trialHeading = document.createElement("h3");
-  trialHeading.textContent = "এই লেভেলটি উপযুক্ত কি না নিশ্চিত নন?";
-  const trialText = document.createElement("p");
-  trialText.textContent = "ফ্রি ট্রায়াল ক্লাসে শিক্ষক শিক্ষার্থীর বর্তমান অবস্থা যাচাই করে উপযুক্ত লেভেল নির্ধারণ করবেন।";
-  const trialLink = document.createElement("a");
-  trialLink.className = "btn";
-  trialLink.href = "#trialClass";
-  trialLink.textContent = "ফ্রি ট্রায়াল বুক করুন";
-  trial.append(trialHeading,trialText,trialLink);
-  box.append(trial);
-
-  document.getElementById("levelDetails").style.display = "block";
-  document.getElementById("levelDetails").scrollIntoView({behavior:"smooth",block:"start"});
-}
-function changeLevel(direction){showLevel(currentLevel+direction);}
-function closeLevelDetails(){
-  document.getElementById("levelDetails").style.display = "none";
-  document.getElementById("levelGrid").scrollIntoView({behavior:"smooth",block:"start"});
-}
-renderLevels();
-</script>
-
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
-import { getFirestore, collection, addDoc, getDoc, doc, setDoc, getDocs, query, where, updateDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
-
-const firebaseConfig = {
- apiKey: "AIzaSyCkivjlMyvCA3dVMzqt4VfBlS45LT0FObo",
- authDomain: "hanafia-future-academy.firebaseapp.com",
- projectId: "hanafia-future-academy",
- storageBucket: "hanafia-future-academy.firebasestorage.app",
- messagingSenderId: "97046937102",
- appId: "1:97046937102:web:38ed6a351b318959c0865f",
- measurementId: "G-MYYT1V0RKK"
-};
-
-/* এখানে আপনার Admin Firebase UID বসাবেন */
-const ADMIN_UID = "0OzF4NqUBhhUUN2f6cu0IxfKqHh1";
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const $ = id => document.getElementById(id);
-
-function message(id,text){if($(id)) $(id).textContent=text;}
-function showDashboard(role){
- ["adminDashboard","teacherDashboard","studentDashboard","parentDashboard"].forEach(id=>$(id)?.classList.add("hidden"));
- if(role==="admin") $("adminDashboard")?.classList.remove("hidden");
- if(role==="teacher") $("teacherDashboard")?.classList.remove("hidden");
- if(role==="student") $("studentDashboard")?.classList.remove("hidden");
- if(role==="parent") $("parentDashboard")?.classList.remove("hidden");
-}
-function hideDashboards(){showDashboard("");}
-function safeZoomLink(value){
- try{const url=new URL(value);return url.protocol==="https:"&&(url.hostname==="zoom.us"||url.hostname.endsWith(".zoom.us"));}
- catch{return false;}
-}
-
-/* LOGIN */
-$("loginForm")?.addEventListener("submit",async e=>{
- e.preventDefault();
- const button=$("loginSubmit");button.disabled=true;message("loginMessage","Login হচ্ছে...");
- try{await signInWithEmailAndPassword(auth,$("email").value.trim(),$("password").value);message("loginMessage","সফলভাবে Login হয়েছে।");}
- catch(error){message("loginMessage","Login হয়নি: "+error.message);}
- finally{button.disabled=false;}
-});
-
-/* LOGOUT */
-$("logoutBtn")?.addEventListener("click",async()=>{
- try{await signOut(auth);message("loginMessage","Logout সম্পন্ন হয়েছে।");}
- catch(error){message("loginMessage","Logout হয়নি: "+error.message);}
-});
-
-/* AUTH STATE */
-onAuthStateChanged(auth,async user=>{
- const logoutBtn=$("logoutBtn");
- if(logoutBtn) logoutBtn.style.display=user?"inline-block":"none";
- if(!user){hideDashboards();return;}
- try{
-  if(ADMIN_UID && user.uid===ADMIN_UID){showDashboard("admin");await loadApplications();return;}
-  const profile=await getDoc(doc(db,"user_profiles",user.uid));
-  if(!profile.exists()){message("loginMessage","আপনার Profile এখনো তৈরি হয়নি।");hideDashboards();return;}
-  const data=profile.data();
-  if(data.role==="teacher"){showDashboard("teacher");await loadTeacherClasses(user.uid);}
-  else if(data.role==="student"){showDashboard("student");await loadStudentProfile(user.uid);await loadStudentClasses(user.uid);}
-  else if(data.role==="parent"){showDashboard("parent");await loadParentProgress(user.uid);}
-  else hideDashboards();
- }catch(error){message("loginMessage","তথ্য লোড হয়নি: "+error.message);}
-});
-
-/* ADMISSION FORM */
-$("admissionForm")?.addEventListener("submit",async e=>{
- e.preventDefault();const button=$("admissionSubmit");button.disabled=true;message("aMessage","আবেদন জমা হচ্ছে...");
- try{
-  await addDoc(collection(db,"student_records"),{
-   studentName:$("aName").value.trim(),fatherName:$("aFather").value.trim(),
-   mobile:$("aMobile").value.trim(),ageGroup:$("aAge").value,course:$("aCourse").value,
-   address:$("aAddress").value.trim(),status:"pending",createdAt:serverTimestamp()
-  });
-  message("aMessage","আলহামদুলিল্লাহ! আবেদন জমা হয়েছে।");$("admissionForm").reset();
- }catch(error){message("aMessage","আবেদন জমা হয়নি: "+error.message);}
- finally{button.disabled=false;}
-});
-
-/* FREE TRIAL BOOKING */
-$("trialForm")?.addEventListener("submit",async e=>{
- e.preventDefault();const btn=$("trialForm").querySelector("button");btn.disabled=true;
- try{
-  await addDoc(collection(db,"trial_requests"),{
-   studentName:$("trialName").value.trim(),guardianName:$("trialGuardian").value.trim(),
-   mobile:$("trialMobile").value.trim(),course:$("trialCourse").value,
-   preferredDate:$("trialDate").value,preferredTime:$("trialTime").value,
-   status:"pending",createdAt:serverTimestamp()
-  });
-  message("trialMessage","আলহামদুলিল্লাহ! ট্রায়াল আবেদন জমা হয়েছে।");$("trialForm").reset();
- }catch(error){message("trialMessage","সমস্যা: "+error.message);}
- finally{btn.disabled=false;}
-});
-
-/* TEACHER EVALUATION */
-$("evaluationForm")?.addEventListener("submit",async e=>{
- e.preventDefault();const user=auth.currentUser;
- if(!user){message("evaluationMessage","আগে Login করুন।");return;}
- try{
-  await addDoc(collection(db,"teacher_evaluations"),{
-   teacherId:$("evaluationTeacherUid").value.trim(),studentName:$("evaluationStudentName").value.trim(),
-   rating:Number($("evaluationRating").value),comment:$("evaluationComment").value.trim(),
-   submittedBy:user.uid,createdAt:serverTimestamp()
-  });
-  message("evaluationMessage","আপনার মূল্যায়ন জমা হয়েছে।");$("evaluationForm").reset();
- }catch(error){message("evaluationMessage","সমস্যা: "+error.message);}
-});
-
-/* LOAD APPLICATIONS */
-async function loadApplications(){
- const box=$("applicationsList");if(!box)return;box.textContent="";
- const snapshot=await getDocs(collection(db,"student_records"));
- if(snapshot.empty){box.textContent="কোনো আবেদন পাওয়া যায়নি।";return;}
- snapshot.forEach(item=>{
-  const data=item.data();const card=document.createElement("div");card.className="notice";
-  const title=document.createElement("h3");title.textContent=data.studentName||"নাম নেই";
-  const details=document.createElement("p");
-  details.textContent="পিতা: "+(data.fatherName||"")+" | মোবাইল: "+(data.mobile||"")+" | কোর্স: "+(data.course||"")+" | অবস্থা: "+(data.status||"pending");
-  card.append(title,details);
-  if(data.status!=="approved"){
-   const btn=document.createElement("button");btn.className="btn";btn.textContent="অনুমোদন করুন";
-   btn.onclick=async()=>{
-    try{await updateDoc(doc(db,"student_records",item.id),{status:"approved"});await loadApplications();}
-    catch(error){alert("অনুমোদন হয়নি: "+error.message);}
-   };
-   card.append(btn);
-  }
-  box.append(card);
- });
-}
-
-/* CREATE USER PROFILE */
-$("profileForm")?.addEventListener("submit",async e=>{
- e.preventDefault();
- try{
-  await setDoc(doc(db,"user_profiles",$("profileUid").value.trim()),{
-   name:$("profileName").value.trim(),email:$("profileEmail").value.trim(),
-   role:$("profileRole").value,createdAt:serverTimestamp()
-  });
-  message("profileMessage","Profile সংরক্ষণ হয়েছে।");$("profileForm").reset();
- }catch(error){message("profileMessage","সমস্যা: "+error.message);}
-});
-
-/* LINK PARENT WITH STUDENT */
-$("linkParentStudentForm")?.addEventListener("submit",async e=>{
- e.preventDefault();
- try{
-  const parentUid=$("linkParentUid").value.trim();const studentUid=$("linkStudentUid").value.trim();
-  const parentRef=doc(db,"user_profiles",parentUid);const parentSnap=await getDoc(parentRef);
-  let existingStudents=[];
-  if(parentSnap.exists()) existingStudents=parentSnap.data().studentIds||[];
-  if(!existingStudents.includes(studentUid)) existingStudents.push(studentUid);
-  await setDoc(parentRef,{studentIds:existingStudents},{merge:true});
-  message("linkParentStudentMessage","সফলভাবে শিক্ষার্থী যুক্ত করা হয়েছে।");$("linkParentStudentForm").reset();
- }catch(error){message("linkParentStudentMessage","সমস্যা: "+error.message);}
-});
-
-/* CREATE ZOOM CLASS */
-$("classForm")?.addEventListener("submit",async e=>{
- e.preventDefault();const link=$("zoomLink").value.trim();
- if(!safeZoomLink(link)){message("classMessage","সঠিক Zoom Meeting Link দিন।");return;}
- try{
-  const studentIds=$("classStudents").value.split(",").map(x=>x.trim()).filter(Boolean);
-  await addDoc(collection(db,"classes"),{
-   title:$("classTitle").value.trim(),course:$("classCourse").value,
-   teacherId:$("classTeacher").value.trim(),studentIds,
-   classDate:$("classDate").value,zoomLink:link,createdAt:serverTimestamp()
-  });
-  message("classMessage","Zoom Class তৈরি হয়েছে।");$("classForm").reset();
- }catch(error){message("classMessage","সমস্যা: "+error.message);}
-});
-
-/* TEACHER CLASSES */
-async function loadTeacherClasses(uid){
- const box=$("teacherClasses");if(!box)return;box.textContent="";
- const q=query(collection(db,"classes"),where("teacherId","==",uid));const snapshot=await getDocs(q);
- if(snapshot.empty){box.textContent="আপনার কোনো ক্লাস নেই।";return;}
- snapshot.forEach(item=>{
-  const data=item.data();const card=document.createElement("div");card.className="notice";
-  const title=document.createElement("h3");title.textContent=data.title||"ক্লাস";
-  const date=document.createElement("p");date.textContent="সময়: "+(data.classDate||"");
-  const link=document.createElement("a");link.className="btn";link.textContent="Join Zoom Class";
-  link.href=data.zoomLink;link.target="_blank";link.rel="noopener";
-  const id=document.createElement("p");id.textContent="Class ID: "+item.id;id.style.fontSize="12px";id.style.marginTop="5px";
-  card.append(title,date,link,id);box.append(card);
- });
-}
-
-/* STUDENT PROFILE */
-async function loadStudentProfile(uid){
- const box=$("studentInfo");if(!box)return;const snap=await getDoc(doc(db,"user_profiles",uid));
- if(snap.exists()){const data=snap.data();box.textContent="নাম: "+(data.name||"")+" | Email: "+(data.email||"");}
-}
-
-/* STUDENT CLASSES */
-async function loadStudentClasses(uid){
- const box=$("studentClasses");if(!box)return;box.textContent="";
- const q=query(collection(db,"classes"),where("studentIds","array-contains",uid));const snapshot=await getDocs(q);
- if(snapshot.empty){box.textContent="আপনার কোনো ক্লাস নির্ধারণ করা হয়নি।";return;}
- snapshot.forEach(item=>{
-  const data=item.data();const card=document.createElement("div");card.className="notice";
-  const title=document.createElement("h3");title.textContent=data.title||"ক্লাস";
-  const date=document.createElement("p");date.textContent="সময়: "+(data.classDate||"");
-  const link=document.createElement("a");link.className="btn";link.textContent="Join Zoom Class";
-  link.href=data.zoomLink;link.target="_blank";link.rel="noopener";
-  card.append(title,date,link);box.append(card);
- });
-}
-
-/* ATTENDANCE */
-$("attendanceForm")?.addEventListener("submit",async e=>{
- e.preventDefault();const user=auth.currentUser;if(!user)return;
- try{
-  const classId=$("attendanceClassId").value.trim();const studentId=$("attendanceStudentId").value.trim();
-  const classSnap=await getDoc(doc(db,"classes",classId));
-  if(!classSnap.exists()){message("attendanceMessage","ক্লাস পাওয়া যায়নি।");return;}
-  const classData=classSnap.data();
-  if(classData.teacherId!==user.uid||!(classData.studentIds||[]).includes(studentId)){
-   message("attendanceMessage","এই ক্লাসের জন্য অনুমতি নেই।");return;
-  }
-  await addDoc(collection(db,"attendance"),{
-   classId,studentId,teacherId:user.uid,status:$("attendanceStatus").value,createdAt:serverTimestamp()
-  });
-  message("attendanceMessage","উপস্থিতি সংরক্ষণ হয়েছে।");$("attendanceForm").reset();
- }catch(error){message("attendanceMessage","সমস্যা: "+error.message);}
-});
-
-/* DAILY READING PROGRESS */
-$("readingProgressForm")?.addEventListener("submit",async e=>{
- e.preventDefault();const user=auth.currentUser;
- if(!user){message("readingProgressMessage","লগইন করা আবশ্যক।");return;}
- try{
-  await addDoc(collection(db,"reading_progress"),{
-   studentUid:$("readingStudentUid").value.trim(),teacherId:user.uid,
-   lessonType:$("readingLessonType").value,details:$("readingDetails").value.trim(),
-   createdAt:serverTimestamp()
-  });
-  message("readingProgressMessage","রিপোর্ট সফলভাবে জমা দেওয়া হয়েছে।");$("readingProgressForm").reset();
- }catch(error){message("readingProgressMessage","সমস্যা: "+error.message);}
-});
-
-/* PARENT DASHBOARD */
-async function loadParentProgress(parentUid){
- const box=$("parentChildrenProgress");if(!box)return;box.textContent="রিপোর্ট লোড হচ্ছে...";
- try{
-  const profile=await getDoc(doc(db,"user_profiles",parentUid));box.textContent="";
-  if(!profile.exists()){box.textContent="অভিভাবকের Profile পাওয়া যায়নি।";return;}
-  const studentIds=profile.data().studentIds||[];
-  if(!studentIds.length){box.textContent="এই অভিভাবকের সঙ্গে কোনো শিক্ষার্থী যুক্ত নেই।";return;}
-  for(const studentId of studentIds){
-   const q=query(collection(db,"reading_progress"),where("studentUid","==",studentId));
-   const results=await getDocs(q);const card=document.createElement("div");card.className="notice";
-   const heading=document.createElement("h3");heading.textContent="শিক্ষার্থীর UID: "+studentId;card.append(heading);
-   if(results.empty){const p=document.createElement("p");p.textContent="এখনো পড়ার রিপোর্ট দেওয়া হয়নি।";card.append(p);}
-   else results.forEach(item=>{
-    const data=item.data();const p=document.createElement("p");
-    p.textContent="পাঠ: "+(data.lessonType||"")+" | বিস্তারিত: "+(data.details||"");card.append(p);
-   });
-   box.append(card);
-  }
- }catch(error){console.error("Parent progress error:",error);box.textContent="রিপোর্ট লোড করা যায়নি। আবার চেষ্টা করুন।";}
-}
-console.log("Hanafia Academy System Ready");
-</script>
-</body>
-</html>
+<label>কোর্স</label><select id="aCourse" required><option value="">নির্বাচন করুন</option><option>নূরানী</option><option

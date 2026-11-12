@@ -1,6 +1,7 @@
+
 /* ==========================================
    HANAFIA FUTURE DARUL QURAN ACADEMY
-   PREMIUM STYLESHEET (style.css)
+   PREMIUM MULTI COLOR THEME
 ========================================== */
 
 * {
@@ -14,7 +15,7 @@ html {
 }
 
 body {
-  font-family: 'Hind Siliguri', Arial, sans-serif;
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', Arial, sans-serif;
   background: #071735;
   color: #ffffff;
   line-height: 1.8;
@@ -22,11 +23,11 @@ body {
   animation: pageFade 1s ease both;
 }
 
-/* Header (লোগো এবং সাইজ ছোট করার স্টাইল) */
+/* HEADER */
 header {
   text-align: center;
   padding: 20px 10px;
-  background: linear-gradient(135deg, #061638, #174582);
+  background: linear-gradient(135deg, #071735, #123d7b);
   border-bottom: 3px solid #d5ad50;
   position: sticky;
   top: 0;
@@ -34,7 +35,6 @@ header {
   animation: slideDown 0.8s ease both;
 }
 
-/* লোগো সাইজ ও মার্জিন নিয়ন্ত্রণ */
 .logo-container {
   text-align: center;
   margin-bottom: 8px;
@@ -59,7 +59,11 @@ header h3 {
   font-weight: 400;
 }
 
-/* Navigation (মেনুগুলো সুন্দরভাবে পাশাপাশি ও ফ্লেক্সিবল করার জন্য) */
+header p {
+  color: #dbeafe;
+}
+
+/* NAVIGATION */
 nav {
   background: #0b2450;
   padding: 10px 5px;
@@ -77,10 +81,10 @@ nav {
 nav a {
   color: #ffffff;
   text-decoration: none;
-  padding: 5px 8px !important;
+  padding: 5px 8px;
   display: inline-block;
   font-weight: bold;
-  font-size: 12px !important;
+  font-size: 12px;
   border-radius: 4px;
   position: relative;
   white-space: nowrap;
@@ -89,7 +93,7 @@ nav a {
 
 nav a:hover {
   color: #f5cb60;
-  background: rgba(213, 173, 80, 0.1);
+  background: rgba(213,173,80,0.1);
   transform: translateY(-2px);
 }
 
@@ -108,10 +112,13 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Sections */
+/* SECTIONS */
 section {
   padding: 45px 16px;
   scroll-margin-top: 150px;
+  border-radius: 18px;
+  margin: 12px auto;
+  color: #ffffff;
   animation: sectionFade 0.8s ease both;
 }
 
@@ -122,11 +129,10 @@ section {
 }
 
 h2 {
-  color: #f5cb60;
+  color: #ffe28b;
   text-align: center;
   font-size: 27px;
   margin-bottom: 25px;
-  transition: color 0.3s ease;
 }
 
 h2:hover {
@@ -134,20 +140,71 @@ h2:hover {
 }
 
 h3 {
-  color: #f5cb60;
+  color: #ffe28b;
 }
 
 p {
-  color: #e2eafa;
+  color: #ffffff;
 }
 
-/* Hero Section */
+/* SECTION COLOR THEMES */
+
+/* নীল */
+#departments,
+#login {
+  background: linear-gradient(135deg, #102d59, #164b78);
+  border: 1px solid #60a5fa;
+}
+
+/* বেগুনি */
+#steps,
+#evaluation,
+#teacherDashboard {
+  background: linear-gradient(135deg, #30245e, #513b83);
+  border: 1px solid #c4b5fd;
+}
+
+/* সবুজ */
+#courses,
+#parent,
+#parentDashboard,
+#studentDashboard {
+  background: linear-gradient(135deg, #064e3b, #087653);
+  border: 1px solid #34d399;
+}
+
+/* গোলাপি */
+#trial,
+#features {
+  background: linear-gradient(135deg, #702b50, #913b68);
+  border: 1px solid #f9a8d4;
+}
+
+/* সোনালি */
+#fees {
+  background: linear-gradient(135deg, #594315, #80601b);
+  border: 1px solid #f5cb60;
+}
+
+/* ভর্তি */
+#admission {
+  background: linear-gradient(135deg, #123d68, #155e75);
+  border: 1px solid #38bdf8;
+}
+
+/* ADMIN DASHBOARD */
+#adminDashboard {
+  background: linear-gradient(135deg, #102a58, #174b85);
+  border: 2px solid #60a5fa;
+}
+
+/* HERO */
 .hero {
   text-align: center;
   padding: 75px 20px;
   background: linear-gradient(145deg, #123d7b, #061638);
   border-radius: 20px;
-  border: 1px solid rgba(185, 155, 85, 0.3);
+  border: 1px solid rgba(185,155,85,0.3);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   animation: heroReveal 1.2s ease both;
 }
@@ -162,27 +219,59 @@ p {
   margin: 10px 0;
 }
 
-/* Cards & Panels */
-.grid {
+/* GRID */
+.grid,
+.level-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
+/* CARD - চার রঙ */
 .card {
   background: linear-gradient(145deg, #153e7c, #081a3b);
-  border: 1px solid #c6a24e;
+  border: 1px solid #d5ad50;
   border-radius: 15px;
   padding: 22px;
   margin-bottom: 18px;
   box-shadow: 0 8px 20px #0005;
   text-align: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  color: #ffffff;
 }
 
+.grid > .card:nth-child(4n+1),
+.level-grid > .card:nth-child(4n+1) {
+  background: linear-gradient(135deg, #DB78B8, #A83D86);
+}
+
+.grid > .card:nth-child(4n+2),
+.level-grid > .card:nth-child(4n+2) {
+  background: linear-gradient(135deg, #16845B, #075E45);
+}
+
+.grid > .card:nth-child(4n+3),
+.level-grid > .card:nth-child(4n+3) {
+  background: linear-gradient(135deg, #1769C2, #073B82);
+}
+
+.grid > .card:nth-child(4n+4),
+.level-grid > .card:nth-child(4n+4) {
+  background: linear-gradient(135deg, #713DB5, #432078);
+}
+
+.card h3 {
+  color: #ffffff;
+}
+
+.card p {
+  color: #ffffff;
+}
+
+/* PANEL */
 .panel {
   background: linear-gradient(145deg, #153e7c, #081a3b);
-  border: 1px solid #c6a24e;
+  border: 1px solid #d5ad50;
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 15px;
@@ -190,7 +279,7 @@ p {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 6px 15px #0005;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  color: #ffffff;
 }
 
 .card:hover,
@@ -200,7 +289,26 @@ p {
   border-color: #ffe28b;
 }
 
-/* Buttons */
+/* DEEP BLUE TEXT BACKGROUND */
+.text-area,
+.content-box,
+.description,
+.text-panel {
+  background: #071B46 !important;
+  color: #ffffff !important;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #294c80;
+}
+
+.text-area p,
+.content-box p,
+.description p,
+.text-panel p {
+  color: #ffffff;
+}
+
+/* BUTTONS */
 .btn {
   display: inline-block;
   background: linear-gradient(120deg, #ffe28b, #c18c25);
@@ -213,8 +321,6 @@ p {
   cursor: pointer;
   margin: 7px;
   font-size: 15px;
-  position: relative;
-  overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(212,175,55,0.2);
 }
@@ -232,10 +338,9 @@ p {
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
-  box-shadow: none;
 }
 
-/* Forms */
+/* FORMS */
 form {
   width: 100%;
   max-width: 650px;
@@ -245,7 +350,7 @@ form {
 
 label {
   display: block;
-  color: #f5d37b;
+  color: #ffe28b;
   margin-top: 12px;
   font-weight: 500;
   font-size: 14px;
@@ -271,28 +376,25 @@ textarea:focus {
   outline: none;
   border-color: #ffe28b;
   box-shadow: 0 0 0 3px rgba(212,175,55,0.25);
-  transform: scale(1.01);
 }
 
-/* Notices */
+/* NOTICE */
 .notice {
   padding: 15px;
-  background: #102c5a;
+  background: #071B46;
+  color: #ffffff;
   border-left: 4px solid #f5cb60;
   border-radius: 9px;
   margin: 12px 0;
   overflow-wrap: anywhere;
+  border: 1px solid rgba(185,155,85,0.3);
   animation: noticeReveal 0.7s ease both;
-  border-top: 1px solid rgba(185, 155, 85, 0.3);
-  border-right: 1px solid rgba(185, 155, 85, 0.3);
-  border-bottom: 1px solid rgba(185, 155, 85, 0.3);
 }
 
 .status {
   margin-top: 12px;
   color: #f5cb60;
   font-weight: bold;
-  animation: statusAppear 0.5s ease;
 }
 
 .muted {
@@ -304,17 +406,119 @@ textarea:focus {
   display: none !important;
 }
 
-/* Footer */
+/* CURRICULUM */
+.number {
+  background: #071B46;
+  color: #ffffff;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 19px;
+  font-weight: bold;
+  border: 1px solid #d5ad50;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin: 10px 0;
+  border-top: 1px solid #8d7542;
+  border-bottom: 1px solid #8d7542;
+  font-size: 13px;
+}
+
+.details {
+  display: none;
+  background: #071B46;
+  color: #ffffff;
+  margin-top: 25px;
+  border-radius: 15px;
+  padding: 22px;
+  border: 1px solid #d5ad50;
+  box-shadow: 0 4px 15px #0005;
+}
+
+.details h2,
+.details h3 {
+  color: #ffe28b;
+}
+
+.details li {
+  margin: 5px 0;
+  color: #ffffff;
+}
+
+.details ul {
+  padding-left: 23px;
+}
+
+.badge {
+  display: inline-block;
+  background: #071B46;
+  color: #ffe28b;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin: 5px 3px;
+  border: 1px solid #d5ad50;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.nav-buttons button {
+  flex: 1;
+}
+
+/* TRIAL BOX */
+.trial {
+  background: linear-gradient(135deg, #702b50, #913b68);
+  color: #ffffff;
+  padding: 25px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 25px 0;
+  border: 1px solid #f9a8d4;
+}
+
+/* DASHBOARD PANELS */
+#adminDashboard .panel,
+#teacherDashboard .panel,
+#studentDashboard .panel,
+#parentDashboard .panel {
+  background: #071B46;
+  color: #ffffff;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
   padding: 30px 15px;
   background: #041027;
+  color: #ffffff;
   border-top: 2px solid #c5ad50;
-  animation: footerReveal 1s ease both;
+  margin-top: 30px;
 }
 
 footer h3 {
+  color: #ffe28b;
   margin-bottom: 10px;
+}
+
+footer p {
+  color: #ffffff;
+}
+
+footer a {
+  color: #a7f3d0;
+  text-decoration: none;
 }
 
 hr {
@@ -323,18 +527,7 @@ hr {
   margin: 18px 0;
 }
 
-/* Dashboards Animation */
-#adminDashboard,
-#teacherDashboard,
-#studentDashboard,
-#parentDashboard {
-  animation: dashboardReveal 0.9s ease both;
-}
-
-/* ==========================================
-   KEYFRAME ANIMATIONS
-========================================== */
-
+/* ANIMATIONS */
 @keyframes pageFade {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -365,14 +558,12 @@ hr {
   to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes statusAppear {
-  from { opacity: 0; transform: translateX(-10px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes footerReveal {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* DASHBOARD ANIMATION */
+#adminDashboard,
+#teacherDashboard,
+#studentDashboard,
+#parentDashboard {
+  animation: dashboardReveal 0.9s ease both;
 }
 
 @keyframes dashboardReveal {
@@ -380,328 +571,71 @@ hr {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ==========================================
-   RESPONSIVE & ACCESSIBILITY
-========================================== */
-
+/* RESPONSIVE MOBILE */
 @media (max-width: 600px) {
-  header h1 { font-size: 20px !important; }
-  header h3 { font-size: 13px !important; }
-  .hero { padding: 40px 15px; }
-  .hero h1 { font-size: 22px; }
-  .grid { grid-template-columns: 1fr; }
-  nav a { padding: 5px 7px; font-size: 12px; }
-  section { padding: 30px 12px; }
-  .card, .panel { padding: 14px; }
-  h2 { font-size: 22px; }
-  .card:hover, .panel:hover { transform: none; }
-  .btn:hover { transform: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  header h1 {
+    font-size: 20px !important;
   }
-}
 
-*{margin:0;padding:0;box-sizing:border-box}
-body{
- font-family:"Noto Sans Bengali",Arial,sans-serif;
- background:#f4f8f5;color:#18352b;line-height:1.8
-}
-header{
- background:linear-gradient(135deg,#064e3b,#087653);
- color:white;text-align:center;padding:35px 15px
-}
-header h1{font-size:27px}
-header p{color:#d1fae5;margin-top:8px}
-.container{max-width:1050px;margin:auto;padding:20px}
-.intro{text-align:center;padding:25px 10px}
-.intro h2{color:#087653;font-size:25px}
-.level-grid{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
- gap:18px
-}
-.card{
- background:white;border-radius:15px;padding:20px;
- box-shadow:0 4px 15px #0000000c;border:1px solid #e2eee7
-}
-.number{
- background:#087653;color:white;width:42px;height:42px;
- display:flex;align-items:center;justify-content:center;
- border-radius:50%;font-size:19px;font-weight:bold
-}
-.card h3{margin:10px 0;color:#087653}
-.card p{font-size:14px;color:#52645b}
-.info{
- display:flex;justify-content:space-between;
- padding:10px 0;margin:10px 0;
- border-top:1px solid #e8eee9;border-bottom:1px solid #e8eee9;
- font-size:13px
-}
-.btn{
- display:block;text-align:center;text-decoration:none;
- background:#087653;color:white;padding:11px;
- border-radius:8px;margin-top:12px;border:0;
- cursor:pointer;width:100%;font-size:15px
-}
-.btn:hover{background:#064e3b}
-.details{
- display:none;background:white;margin-top:25px;
- border-radius:15px;padding:22px;
- box-shadow:0 4px 15px #00000010
-}
-.details h2{color:#087653;margin-bottom:10px}
-.details h3{color:#087653;margin:18px 0 7px}
-.details ul{padding-left:23px}
-.details li{margin:5px 0}
-.badge{
- display:inline-block;background:#e4f5eb;
- color:#087653;padding:5px 12px;border-radius:20px;
- font-size:13px;margin:5px 3px
-}
-.nav-buttons{display:flex;gap:10px;margin-top:20px}
-.nav-buttons button{flex:1}
-.trial{
- background:#e5f4eb;padding:25px;text-align:center;
- border-radius:15px;margin:25px 0
-}
-footer{
- background:#073d30;color:white;text-align:center;
- padding:30px 15px;margin-top:30px
-}
-footer a{color:#a7f3d0;text-decoration:none}
-@media(max-width:600px){
- header h1{font-size:22px}
- .container{padding:12px}
- .details{padding:15px}
- .nav-buttons{flex-direction:column}
-}
+  header h3 {
+    font-size: 13px !important;
+  }
 
-/* =========================================
-   HFDQA - PREMIUM MULTI COLOR SECTIONS
-========================================= */
+  .hero {
+    padding: 40px 15px;
+  }
 
-/* সাধারণ Section */
-section {
-  border-radius: 18px;
-  margin: 12px auto;
-}
+  .hero h1 {
+    font-size: 22px;
+  }
 
-/* শিক্ষার বিভাগ - নীল */
-#departments {
-  background: linear-gradient(135deg, #102d59, #164b78);
-  border: 1px solid #3b82b8;
-}
+  .grid,
+  .level-grid {
+    grid-template-columns: 1fr;
+  }
 
-/* পড়াশোনার ধাপ - বেগুনি */
-#steps {
-  background: linear-gradient(135deg, #30245e, #513b83);
-  border: 1px solid #a78bfa;
-}
+  nav a {
+    padding: 5px 7px;
+    font-size: 12px;
+  }
 
-/* কোর্সসমূহ - সবুজ */
-#courses {
-  background: linear-gradient(135deg, #064e3b, #087653);
-  border: 1px solid #34d399;
-}
-
-/* বিশেষ বৈশিষ্ট্য - কমলা */
-#features {
-  background: linear-gradient(135deg, #713b18, #a65324);
-  border: 1px solid #fbbf24;
-}
-
-/* ফি ও পেমেন্ট - সোনালি */
-#fees {
-  background: linear-gradient(135deg, #594315, #80601b);
-  border: 1px solid #f5cb60;
-}
-
-/* ভর্তি ফরম - আকাশি */
-#admission {
-  background: linear-gradient(135deg, #123d68, #155e75);
-  border: 1px solid #38bdf8;
-}
-
-/* ফ্রি ট্রায়াল - গোলাপি */
-#trial {
-  background: linear-gradient(135deg, #702b50, #913b68);
-  border: 1px solid #f9a8d4;
-}
-
-/* শিক্ষক মূল্যায়ন - বেগুনি */
-#evaluation {
-  background: linear-gradient(135deg, #38275f, #55418a);
-  border: 1px solid #c4b5fd;
-}
-
-/* অভিভাবক মনিটরিং - টিল */
-#parent {
-  background: linear-gradient(135deg, #064e4a, #087e78);
-  border: 1px solid #5eead4;
-}
-
-/* Parent Dashboard */
-#parentDashboard {
-  background: linear-gradient(135deg, #064e4a, #087e78);
-  border: 1px solid #5eead4;
-}
-
-/* Login - নীল */
-#login {
-  background: linear-gradient(135deg, #102d59, #164b78);
-  border: 1px solid #60a5fa;
-}
-
-/* Admin Dashboard - রাজকীয় নীল */
-#adminDashboard {
-  background: linear-gradient(135deg, #102a58, #174b85);
-  border: 2px solid #60a5fa;
-}
-
-/* Teacher Dashboard - বেগুনি */
-#teacherDashboard {
-  background: linear-gradient(135deg, #39265e, #65419a);
-  border: 2px solid #c4b5fd;
-}
-
-/* Student Dashboard - সবুজ */
-#studentDashboard {
-  background: linear-gradient(135deg, #064e3b, #087653);
-  border: 2px solid #34d399;
-}
-
-/* প্রতিটি কার্ড */
-.card {
-  background: linear-gradient(145deg, #194477, #10294e);
-  border: 1px solid #d5ad50;
-}
-
-/* Card Heading */
-.card h3 {
-  color: #ffe28b;
-}
-
-/* Panel */
-.panel {
-  background: linear-gradient(145deg, #173c6b, #0b2144);
-  border: 1px solid #d5ad50;
-}
-
-/* Dashboard-এর ভেতরের ফর্ম */
-#adminDashboard .panel,
-#teacherDashboard .panel,
-#studentDashboard .panel,
-#parentDashboard .panel {
-  background: rgba(5, 17, 43, 0.65);
-}
-
-/* সব Section-এর Heading */
-section h2 {
-  color: #ffe28b;
-}
-
-/* Mobile */
-@media(max-width:600px) {
   section {
+    padding: 30px 12px;
     border-radius: 12px;
     margin: 8px auto;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
+  .card,
+  .panel {
+    padding: 14px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .card:hover,
+  .panel:hover,
+  .btn:hover {
+    transform: none;
+  }
+
+  .details {
+    padding: 15px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
   }
 }
 
-/* ===== HFDQA Multi Color Premium Theme ===== */
-
-/* মূল ব্যাকগ্রাউন্ড */
-html, body {
-    background: #071B46 !important;
-    color: #ffffff;
-}
-
-/* সব সেকশনের ব্যাকগ্রাউন্ড */
-section {
-    background: #071B46;
-    color: #ffffff;
-    padding: 20px;
-}
-
-/* কলাম ও কার্ডের আলাদা রং */
-.grid > :nth-child(4n+1),
-.grid .card:nth-child(4n+1) {
-    background: linear-gradient(135deg, #DB78B8, #A83D86) !important;
-}
-
-.grid > :nth-child(4n+2),
-.grid .card:nth-child(4n+2) {
-    background: linear-gradient(135deg, #16845B, #075E45) !important;
-}
-
-.grid > :nth-child(4n+3),
-.grid .card:nth-child(4n+3) {
-    background: linear-gradient(135deg, #1769C2, #073B82) !important;
-}
-
-.grid > :nth-child(4n+4),
-.grid .card:nth-child(4n+4) {
-    background: linear-gradient(135deg, #713DB5, #432078) !important;
-}
-
-/* কার্ড ডিজাইন */
-.card, .panel {
-    color: #ffffff !important;
-    border: 1px solid #D6B45A;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-}
-
-/* লেখার নিচে Deep Blue Background */
-h1, h2, h3, h4,
-p, li, label {
-    color: #ffffff;
-}
-
-.text-area,
-.content-box,
-.description,
-.text-panel {
-    background: #071B46 !important;
-    color: #ffffff !important;
-    padding: 12px;
-    border-radius: 10px;
-}
-
-/* হেডার */
-header, nav {
-    background: #071B46 !important;
-    color: #ffffff;
-}
-
-/* বাটন */
-button, .btn {
-    background: #D6B45A !important;
-    color: #071B46 !important;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    padding: 10px 18px;
-}
-
-/* ফুটার */
-footer {
-    background: #04112E !important;
-    color: #ffffff !important;
-}
-
-/* মোবাইল */
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

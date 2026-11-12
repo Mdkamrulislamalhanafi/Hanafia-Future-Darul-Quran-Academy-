@@ -1,4 +1,3 @@
-
 /* ==========================================
    HANAFIA FUTURE DARUL QURAN ACADEMY
    PREMIUM MULTI COLOR THEME
@@ -120,6 +119,7 @@ section {
   margin: 12px auto;
   color: #ffffff;
   animation: sectionFade 0.8s ease both;
+  background: #071735;
 }
 
 .container {
@@ -145,57 +145,6 @@ h3 {
 
 p {
   color: #ffffff;
-}
-
-/* SECTION COLOR THEMES */
-
-/* নীল */
-#departments,
-#login {
-  background: linear-gradient(135deg, #102d59, #164b78);
-  border: 1px solid #60a5fa;
-}
-
-/* বেগুনি */
-#steps,
-#evaluation,
-#teacherDashboard {
-  background: linear-gradient(135deg, #30245e, #513b83);
-  border: 1px solid #c4b5fd;
-}
-
-/* সবুজ */
-#courses,
-#parent,
-#parentDashboard,
-#studentDashboard {
-  background: linear-gradient(135deg, #064e3b, #087653);
-  border: 1px solid #34d399;
-}
-
-/* গোলাপি */
-#trial,
-#features {
-  background: linear-gradient(135deg, #702b50, #913b68);
-  border: 1px solid #f9a8d4;
-}
-
-/* সোনালি */
-#fees {
-  background: linear-gradient(135deg, #594315, #80601b);
-  border: 1px solid #f5cb60;
-}
-
-/* ভর্তি */
-#admission {
-  background: linear-gradient(135deg, #123d68, #155e75);
-  border: 1px solid #38bdf8;
-}
-
-/* ADMIN DASHBOARD */
-#adminDashboard {
-  background: linear-gradient(135deg, #102a58, #174b85);
-  border: 2px solid #60a5fa;
 }
 
 /* HERO */
@@ -227,58 +176,66 @@ p {
   gap: 20px;
 }
 
-/* CARD - চার রঙ */
+/* CARD - স্ক্রিনশটের সাথে মিলিয়ে ফিক্সড স্টাইল */
 .card {
-  background: linear-gradient(145deg, #153e7c, #081a3b);
+  background: linear-gradient(145deg, #0d234a, #071735);
   border: 1px solid #d5ad50;
-  border-radius: 15px;
-  padding: 22px;
+  border-radius: 20px;
+  padding: 24px;
   margin-bottom: 18px;
-  box-shadow: 0 8px 20px #0005;
-  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  text-align: left;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   color: #ffffff;
 }
 
+/* ৪টি কার্ডের জন্য স্ক্রিনশট স্টাইল অনুযায়ী কালার মিক্স */
 .grid > .card:nth-child(4n+1),
 .level-grid > .card:nth-child(4n+1) {
-  background: linear-gradient(135deg, #DB78B8, #A83D86);
+  background: linear-gradient(135deg, #102d59, #071b46);
+  border-color: #60a5fa;
 }
 
 .grid > .card:nth-child(4n+2),
 .level-grid > .card:nth-child(4n+2) {
-  background: linear-gradient(135deg, #16845B, #075E45);
+  background: linear-gradient(135deg, #064e3b, #071b46);
+  border-color: #34d399;
 }
 
 .grid > .card:nth-child(4n+3),
 .level-grid > .card:nth-child(4n+3) {
-  background: linear-gradient(135deg, #1769C2, #073B82);
+  background: linear-gradient(135deg, #30245e, #071b46);
+  border-color: #c4b5fd;
 }
 
 .grid > .card:nth-child(4n+4),
 .level-grid > .card:nth-child(4n+4) {
-  background: linear-gradient(135deg, #713DB5, #432078);
+  background: linear-gradient(135deg, #702b50, #071b46);
+  border-color: #f9a8d4;
 }
 
 .card h3 {
   color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 12px;
 }
 
 .card p {
-  color: #ffffff;
+  color: #e2e8f0;
+  font-size: 15px;
 }
 
 /* PANEL */
 .panel {
-  background: linear-gradient(145deg, #153e7c, #081a3b);
+  background: #071B46;
   border: 1px solid #d5ad50;
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: 15px;
+  padding: 20px;
   margin-bottom: 15px;
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 6px 15px #0005;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
   color: #ffffff;
 }
 
@@ -299,13 +256,6 @@ p {
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #294c80;
-}
-
-.text-area p,
-.content-box p,
-.description p,
-.text-panel p {
-  color: #ffffff;
 }
 
 /* BUTTONS */
@@ -330,22 +280,11 @@ p {
   box-shadow: 0 8px 20px rgba(212,175,55,0.4);
 }
 
-.btn:active {
-  transform: scale(0.96);
-}
-
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-
 /* FORMS */
 form {
   width: 100%;
   max-width: 650px;
   margin: auto;
-  animation: formReveal 0.8s ease both;
 }
 
 label {
@@ -367,7 +306,6 @@ textarea {
   background: #ffffff;
   color: #111111;
   font-size: 16px;
-  transition: all 0.3s ease;
 }
 
 input:focus,
@@ -386,115 +324,7 @@ textarea:focus {
   border-left: 4px solid #f5cb60;
   border-radius: 9px;
   margin: 12px 0;
-  overflow-wrap: anywhere;
   border: 1px solid rgba(185,155,85,0.3);
-  animation: noticeReveal 0.7s ease both;
-}
-
-.status {
-  margin-top: 12px;
-  color: #f5cb60;
-  font-weight: bold;
-}
-
-.muted {
-  color: #c9d5eb;
-  font-size: 13px;
-}
-
-.hidden {
-  display: none !important;
-}
-
-/* CURRICULUM */
-.number {
-  background: #071B46;
-  color: #ffffff;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 19px;
-  font-weight: bold;
-  border: 1px solid #d5ad50;
-}
-
-.info {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  margin: 10px 0;
-  border-top: 1px solid #8d7542;
-  border-bottom: 1px solid #8d7542;
-  font-size: 13px;
-}
-
-.details {
-  display: none;
-  background: #071B46;
-  color: #ffffff;
-  margin-top: 25px;
-  border-radius: 15px;
-  padding: 22px;
-  border: 1px solid #d5ad50;
-  box-shadow: 0 4px 15px #0005;
-}
-
-.details h2,
-.details h3 {
-  color: #ffe28b;
-}
-
-.details li {
-  margin: 5px 0;
-  color: #ffffff;
-}
-
-.details ul {
-  padding-left: 23px;
-}
-
-.badge {
-  display: inline-block;
-  background: #071B46;
-  color: #ffe28b;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 13px;
-  margin: 5px 3px;
-  border: 1px solid #d5ad50;
-}
-
-.nav-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.nav-buttons button {
-  flex: 1;
-}
-
-/* TRIAL BOX */
-.trial {
-  background: linear-gradient(135deg, #702b50, #913b68);
-  color: #ffffff;
-  padding: 25px;
-  text-align: center;
-  border-radius: 15px;
-  margin: 25px 0;
-  border: 1px solid #f9a8d4;
-}
-
-/* DASHBOARD PANELS */
-#adminDashboard .panel,
-#teacherDashboard .panel,
-#studentDashboard .panel,
-#parentDashboard .panel {
-  background: #071B46;
-  color: #ffffff;
 }
 
 /* FOOTER */
@@ -512,130 +342,10 @@ footer h3 {
   margin-bottom: 10px;
 }
 
-footer p {
-  color: #ffffff;
-}
-
-footer a {
-  color: #a7f3d0;
-  text-decoration: none;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid #8d7542;
-  margin: 18px 0;
-}
-
-/* ANIMATIONS */
-@keyframes pageFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-35px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes sectionFade {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes heroReveal {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes formReveal {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes noticeReveal {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-/* DASHBOARD ANIMATION */
-#adminDashboard,
-#teacherDashboard,
-#studentDashboard,
-#parentDashboard {
-  animation: dashboardReveal 0.9s ease both;
-}
-
-@keyframes dashboardReveal {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* RESPONSIVE MOBILE */
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 20px !important;
-  }
-
-  header h3 {
-    font-size: 13px !important;
-  }
-
-  .hero {
-    padding: 40px 15px;
-  }
-
-  .hero h1 {
-    font-size: 22px;
-  }
-
   .grid,
   .level-grid {
     grid-template-columns: 1fr;
-  }
-
-  nav a {
-    padding: 5px 7px;
-    font-size: 12px;
-  }
-
-  section {
-    padding: 30px 12px;
-    border-radius: 12px;
-    margin: 8px auto;
-  }
-
-  .card,
-  .panel {
-    padding: 14px;
-  }
-
-  h2 {
-    font-size: 22px;
-  }
-
-  .card:hover,
-  .panel:hover,
-  .btn:hover {
-    transform: none;
-  }
-
-  .details {
-    padding: 15px;
-  }
-
-  .nav-buttons {
-    flex-direction: column;
-  }
-}
-
-/* ACCESSIBILITY */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }

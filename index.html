@@ -53,6 +53,44 @@ header h3{font-size:14px!important}
 .overview-card h3 { color: #f5cb60; margin: 0; font-size: 18px; }
 .overview-card p { margin: 0; font-size: 20px; font-weight: bold; color: #fff; }
 
+/* নতুন লগইন রোল গ্রিড স্টাইল */
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+.role-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(213, 173, 80, 0.25);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+}
+.role-card i {
+  font-size: 24px;
+  color: #f5cb60;
+  margin-bottom: 8px;
+}
+.role-card h3 {
+  font-size: 16px;
+  color: #f5cb60;
+  margin: 5px 0;
+}
+.role-card p {
+  font-size: 12px;
+  color: #cbd5e1;
+  margin: 0;
+}
+.form-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(213, 173, 80, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
 @media(max-width:600px){#learningSteps .level-grid{grid-template-columns:1fr}#levelDetails{padding:16px}#levelDetails .level-actions .btn{flex:1}}
 </style>
 </head>
@@ -261,15 +299,67 @@ header h3{font-size:14px!important}
 <p id="trialMessage" class="status" style="text-align:center"></p>
 </form></div></div></section>
 
-<section id="login"><div class="container">
-<h2>Login Portal</h2><div class="panel"><form id="loginForm">
-<label>Email Address</label><input id="email" type="email" autocomplete="username" required placeholder="example@gmail.com">
-<label>Password</label><input id="password" type="password" autocomplete="current-password" required placeholder="********">
-<button class="btn" id="loginSubmit" type="submit" style="width:100%;margin-top:10px">Login করুন</button>
-<p id="loginMessage" class="status" aria-live="polite" style="text-align:center"></p>
-</form>
-<div style="text-align:center;margin-top:15px"><button class="btn" id="logoutBtn" type="button" style="display:none;background:linear-gradient(120deg,#ff8b8b,#c12525);color:white">Logout</button></div>
-</div></div></section>
+<!-- আপনার প্রদান করা নতুন লগইন সেকশন এখানে যুক্ত করা হলো -->
+<section id="login" class="section">
+  <div class="container">
+    <h2>একাউন্ট লগইন</h2>
+    <p>আপনার পরিচয় অনুযায়ী লগইন করুন</p>
+
+    <div class="role-grid">
+      <div class="role-card admin-role">
+        <i class="fa-solid fa-user-shield"></i>
+        <h3>Admin</h3>
+        <p>প্রশাসনিক ব্যবস্থাপনা</p>
+      </div>
+
+      <div class="role-card teacher-role">
+        <i class="fa-solid fa-chalkboard-user"></i>
+        <h3>Teacher</h3>
+        <p>শিক্ষক প্যানেল</p>
+      </div>
+
+      <div class="role-card student-role">
+        <i class="fa-solid fa-user-graduate"></i>
+        <h3>Student</h3>
+        <p>শিক্ষার্থী প্যানেল</p>
+      </div>
+
+      <div class="role-card parent-role">
+        <i class="fa-solid fa-users"></i>
+        <h3>Parent</h3>
+        <p>অভিভাবক প্যানেল</p>
+      </div>
+
+      <div class="role-card trainer-role">
+        <i class="fa-solid fa-person-chalkboard"></i>
+        <h3>Trainer</h3>
+        <p>প্রশিক্ষক প্যানেল</p>
+      </div>
+    </div>
+
+    <form id="loginForm" class="form-card">
+      <h3 id="loginTitle">সকল ব্যবহারকারীর লগইন</h3>
+
+      <label>Email Address</label>
+      <input type="email" id="email"
+        placeholder="আপনার Email লিখুন" required>
+
+      <label>Password</label>
+      <input type="password" id="password"
+        placeholder="আপনার Password লিখুন" required>
+
+      <button type="submit" id="loginSubmit" class="btn">
+        Login করুন
+      </button>
+
+      <p id="loginMessage"></p>
+      <button type="button" id="logoutBtn"
+        class="btn" style="display:none">
+        Logout
+      </button>
+    </form>
+  </div>
+</section>
 
 <footer>
   <h3>হানাফিয়্যা ফিউচার দারুল কুরআন একাডেমী</h3>

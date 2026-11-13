@@ -477,3 +477,145 @@ footer p, footer a {
         font-size: 18px !important;
     }
 }
+
+/* ==========================================
+   HFDQA - EVERY FEATURE ICON ANIMATION
+========================================== */
+
+/* সব আইকনের অ্যানিমেশন */
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(8deg);
+  }
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+@keyframes iconSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* প্রতিটি সেকশনের আলাদা আইকন */
+#departments h2::before {
+  content: "📚 ";
+}
+
+#steps h2::before {
+  content: "🪜 ";
+}
+
+#courses h2::before {
+  content: "📖 ";
+}
+
+#features h2::before {
+  content: "⭐ ";
+}
+
+#fees h2::before {
+  content: "💰 ";
+}
+
+#admission h2::before {
+  content: "📝 ";
+}
+
+#trial h2::before {
+  content: "🎓 ";
+}
+
+#evaluation h2::before {
+  content: "🏆 ";
+}
+
+#parent h2::before {
+  content: "👨‍👩‍👧 ";
+}
+
+#login h2::before {
+  content: "🔐 ";
+}
+
+#adminDashboard h2::before {
+  content: "👨‍💼 ";
+}
+
+#teacherDashboard h2::before {
+  content: "👨‍🏫 ";
+}
+
+#studentDashboard h2::before {
+  content: "🎒 ";
+}
+
+#parentDashboard h2::before {
+  content: "👪 ";
+}
+
+/* সেকশন আইকন অ্যানিমেশন */
+section h2::before {
+  display: inline-block;
+  animation: iconFloat 2s ease-in-out infinite;
+}
+
+/* প্রতিটি কার্ডের আলাদা আইকন */
+.grid .card:nth-child(4n+1) h3::before {
+  content: "🌸 ";
+}
+
+.grid .card:nth-child(4n+2) h3::before {
+  content: "🌿 ";
+}
+
+.grid .card:nth-child(4n+3) h3::before {
+  content: "💙 ";
+}
+
+.grid .card:nth-child(4n+4) h3::before {
+  content: "💜 ";
+}
+
+/* কার্ড আইকন অ্যানিমেশন */
+.card h3::before {
+  display: inline-block;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+/* লোগো অ্যানিমেশন */
+.site-logo {
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+/* বাটনের আইকন ও হোভার */
+.btn:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+/* নোটিশের আইকন */
+.notice::before {
+  content: "📢 ";
+  display: inline-block;
+  animation: iconPulse 1.5s ease-in-out infinite;
+}
+
+/* মোবাইলে অ্যানিমেশন ঠিক রাখা */
+@media (max-width: 600px) {
+  section h2::before {
+    animation-duration: 2.5s;
+  }
+
+  .card h3::before {
+    animation-duration: 2.5s;
+  }
+}

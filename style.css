@@ -349,3 +349,131 @@ footer h3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* =====================================
+   HFDQA - LARGE & CLEAR FONT SETTINGS
+===================================== */
+
+/* সাধারণ লেখা */
+body {
+    font-size: 18px !important;
+    line-height: 1.9 !important;
+}
+
+/* প্রধান শিরোনাম */
+h1 {
+    font-size: 32px !important;
+    line-height: 1.5 !important;
+}
+
+h2 {
+    font-size: 29px !important;
+    line-height: 1.5 !important;
+}
+
+h3 {
+    font-size: 24px !important;
+    line-height: 1.6 !important;
+}
+
+h4 {
+    font-size: 21px !important;
+}
+
+/* সাধারণ প্যারাগ্রাফ */
+p, li {
+    font-size: 18px !important;
+    line-height: 1.9 !important;
+}
+
+/* মেনু */
+nav a {
+    font-size: 16px !important;
+    padding: 8px 10px !important;
+}
+
+/* কার্ড ও প্যানেলের লেখা */
+.card, .panel, .details {
+    font-size: 18px !important;
+}
+
+.card h3, .panel h3 {
+    font-size: 23px !important;
+}
+
+/* ফর্মের লেখা */
+label {
+    font-size: 18px !important;
+}
+
+input, select, textarea {
+    font-size: 18px !important;
+    padding: 15px !important;
+}
+
+/* বাটন */
+.btn, button {
+    font-size: 18px !important;
+    padding: 13px 20px !important;
+}
+
+/* ছোট লেখা */
+.muted, .badge, .info, .status {
+    font-size: 16px !important;
+}
+
+/* ফুটার */
+footer {
+    font-size: 17px !important;
+}
+
+footer p, footer a {
+    font-size: 17px !important;
+}
+
+/* মোবাইলের জন্য আরও স্পষ্ট */
+@media (max-width: 600px) {
+    body {
+        font-size: 18px !important;
+    }
+
+    header h1 {
+        font-size: 25px !important;
+    }
+
+    header h3 {
+        font-size: 17px !important;
+    }
+
+    h1 {
+        font-size: 27px !important;
+    }
+
+    h2 {
+        font-size: 25px !important;
+    }
+
+    h3 {
+        font-size: 22px !important;
+    }
+
+    p, li {
+        font-size: 18px !important;
+    }
+
+    nav a {
+        font-size: 15px !important;
+    }
+
+    label, input, select, textarea {
+        font-size: 18px !important;
+    }
+
+    .muted, .badge, .info, .status {
+        font-size: 16px !important;
+    }
+
+    .btn, button {
+        font-size: 18px !important;
+    }
+}

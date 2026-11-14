@@ -31,14 +31,14 @@ header h3{font-size:14px!important}
 #levelDetails .level-trial{margin-top:22px;padding:18px;border-radius:12px;background:rgba(213,173,80,.08);text-align:center}
 #levelDetails .level-trial p{margin-bottom:12px}
 
-/* হিফজ পাঠ্যক্রম এবং অন্যান্য সেকশনের গ্রিড */
+/* গ্রিড ও কার্ড স্টাইলসমূহ */
 .hifz-syllabus-grid, .quick-overview-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
-.syllabus-card, .overview-card, .testimonial-card, .teacher-card, .faq-card {
+.syllabus-card, .overview-card, .testimonial-card, .teacher-card, .faq-card, .dashboard-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(213, 173, 80, 0.3);
   border-radius: 16px;
@@ -53,7 +53,6 @@ header h3{font-size:14px!important}
 .overview-card h3 { color: #f5cb60; margin: 0; font-size: 18px; }
 .overview-card p { margin: 0; font-size: 20px; font-weight: bold; color: #fff; }
 
-/* নতুন সংযোজিত স্টাইলসমূহ */
 .testimonial-card p { color: #cbd5e1; font-style: italic; }
 .testimonial-card h4 { color: #f5cb60; margin: 0; }
 .teacher-card { text-align: center; align-items: center; }
@@ -64,7 +63,18 @@ header h3{font-size:14px!important}
 .faq-card summary { color: #f5cb60; font-weight: bold; font-size: 17px; outline: none; }
 .faq-card p { margin-top: 10px; color: #cbd5e1; line-height: 1.6; }
 
-/* পেমেন্ট লোগো স্টাইল */
+/* ড্যাশবোর্ড বা স্টুডেন্ট প্যানেল এক্সট্রা ফিচার স্টাইল */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.dashboard-card h3 { color: #f5cb60; margin-top: 0; display: flex; align-items: center; gap: 8px; font-size: 18px; }
+.badge-status { background: rgba(37,211,102,0.2); color: #25d366; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; display: inline-block; }
+.badge-unpaid { background: rgba(233,30,99,0.2); color: #ff5252; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; display: inline-block; }
+
+/* পেমেন্ট লোগো */
 .payment-logos { display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
 .pay-badge { background: #fff; color: #172033; padding: 6px 14px; border-radius: 8px; font-weight: bold; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; }
 
@@ -87,7 +97,7 @@ header h3{font-size:14px!important}
 }
 .floating-whatsapp:hover { transform: scale(1.1); }
 
-/* নতুন লগইন রোল গ্রিড স্টাইল */
+/* লগইন রোল গ্রিড */
 .role-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -271,7 +281,7 @@ header h3{font-size:14px!important}
 </div>
 </section>
 
-<!-- শিক্ষক প্যানেল সেকশন (নতুন যুক্ত) -->
+<!-- শিক্ষক প্যানেল সেকশন -->
 <section id="teachers">
 <div class="container">
   <h2 style="text-align:center;color:#f5cb60">আমাদের অভিজ্ঞ শিক্ষকগণ</h2>
@@ -293,7 +303,7 @@ header h3{font-size:14px!important}
 </div>
 </section>
 
-<!-- অভিভাবক রিভিউ সেকশন (নতুন যুক্ত) -->
+<!-- অভিভাবক রিভিউ সেকশন -->
 <section id="testimonials">
 <div class="container">
   <h2 style="text-align:center;color:#f5cb60">অভিভাবকদের মতামত</h2>
@@ -311,7 +321,7 @@ header h3{font-size:14px!important}
 </div>
 </section>
 
-<!-- প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী (FAQ) সেকশন (নতুন যুক্ত) -->
+<!-- প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী (FAQ) সেকশন -->
 <section id="faq">
 <div class="container">
   <h2 style="text-align:center;color:#f5cb60">সাধারণ জিজ্ঞাসা (FAQ)</h2>
@@ -353,6 +363,49 @@ header h3{font-size:14px!important}
   <div class="card"><h3>📚 পরিকল্পিত সিলেবাস</h3><p>নূরানী, নাজেরা, হিফজ ও ইসলামিক শিক্ষার আধুনিক সমন্বয়।</p></div>
 </div></div></section>
 
+<!-- স্টুডেন্ট ড্যাশবোর্ড / লার্নিং ম্যানেজমেন্ট প্রিভিউ (নতুন সংযোজিত ফিচারসমূহ এখানে প্রর্দশিত হবে) -->
+<section id="studentDashboardPreview" style="background: rgba(213,173,80,0.03); padding: 40px 0;">
+<div class="container">
+  <span style="border:1px solid #d5ad50;padding:6px 18px;border-radius:20px;font-size:14px;color:#f5cb60;background:rgba(213,173,80,.05);display:inline-block;margin-bottom:15px">✦ লার্নিং ম্যানেজমেন্ট ফিচার ✦</span>
+  <h2 style="color:#f5cb60;font-size:26px;margin-bottom:10px">শিক্ষার্থী ও অভিভাবক ড্যাশবোর্ড প্রিভিউ</h2>
+  <p style="color:#cbd5e1;margin-bottom:20px">লগইন করার পর শিক্ষার্থীরা নিচের ফিচারগুলো সরাসরি তাদের প্যানেলে দেখতে পাবেন:</p>
+
+  <div class="dashboard-grid">
+    <!-- ১. প্রোগ্রেস রিপোর্ট -->
+    <div class="dashboard-card">
+      <h3><i class="fa-solid fa-chart-line" style="color:#f5cb60"></i> প্রোগ্রেস রিপোর্ট ও কারিকুলাম</h3>
+      <p style="margin:0;color:#cbd5e1">বর্তমান লেভেল: <strong>কায়দা লেভেল ৩</strong></p>
+      <p style="margin:0;color:#cbd5e1">অগ্রগতি: <span class="badge-status">চলমান (৬৫% সম্পন্ন)</span></p>
+      <p style="font-size:13px;color:#a0aec0;margin:0">শিক্ষকের মন্তব্য: মাখরাজ অনেক উন্নতি হয়েছে, নিয়মিত সাবকি পড়তে হবে।</p>
+    </div>
+
+    <!-- ২. লাইভ ক্লাস শিডিউল -->
+    <div class="dashboard-card">
+      <h3><i class="fa-solid fa-calendar-days" style="color:#f5cb60"></i> ক্লাস রুটিন ও শিডিউল</h3>
+      <p style="margin:0;color:#cbd5e1">বার: <strong>শনি, সোম, বুধ</strong></p>
+      <p style="margin:0;color:#cbd5e1">সময়: রাত ৮:০০ টা (বাংলাদেশ সময়)</p>
+      <a href="#" class="btn" style="text-align:center;padding:6px;font-size:14px;margin-top:auto">Zoom লিংকে জয়েন করুন</a>
+    </div>
+
+    <!-- ৩. হোমওয়ার্ক ও অ্যাসাইনমেন্ট -->
+    <div class="dashboard-card">
+      <h3><i class="fa-solid fa-book-open" style="color:#f5cb60"></i> হোমওয়ার্ক অ্যাসাইনমেন্ট</h3>
+      <p style="margin:0;color:#cbd5e1">টাস্ক: <strong>কায়দা পৃষ্ঠা ২১ (জযম ও ক্বলক্বলা)</strong></p>
+      <p style="margin:0;color:#cbd5e1">জমাদানের শেষ সময়: আগামীকাল সকাল ১০টা</p>
+      <span class="badge-status" style="text-align:center">স্ট্যাটাস: পেন্ডিং</span>
+    </div>
+
+    <!-- ৪. ফি পেমেন্ট হিস্ট্রি -->
+    <div class="dashboard-card">
+      <h3><i class="fa-solid fa-receipt" style="color:#f5cb60"></i> ফি ও পেমেন্ট হিস্ট্রি</h3>
+      <p style="margin:0;color:#cbd5e1">চলতি মাস: <strong>নভেম্বর ২০২৬</strong></p>
+      <p style="margin:0;color:#cbd5e1">হাদিয়া স্ট্যাটাস: <span class="badge-unpaid">বকেয়া (৫ তারিখের মধ্যে পরিশোধ করুন)</span></p>
+      <p style="font-size:13px;color:#a0aec0;margin:0">পূর্বের মাসগুলোর রিসিট ডাউনলোড করার অপশন রয়েছে।</p>
+    </div>
+  </div>
+</div>
+</section>
+
 <section id="paymentInfo"><div class="container">
 <h2>হাদিয়া, ফি ও পেমেন্ট পদ্ধতি</h2><div class="grid">
   <div class="card"><h3>👥 ব্যাচ ক্লাস</h3><p style="font-size:20px;color:#f5cb60;font-weight:bold;margin:10px 0">১,২৫০ টাকা / মাস</p><p>সপ্তাহে ৩ দিন নিয়মিত ক্লাস।</p></div>
@@ -364,7 +417,7 @@ header h3{font-size:14px!important}
   <h3>বিকাশ ও নগদ (পার্সোনাল) নম্বর</h3>
   <p style="font-size:22px;color:#f5cb60;font-weight:bold;margin:12px 0"><i class="fa-solid fa-wallet"></i> 01732668283</p>
   
-  <!-- পেমেন্ট লোগো সেকশন (নতুন যুক্ত) -->
+  <!-- পেমেন্ট লোগো সেকশন -->
   <div class="payment-logos">
     <span class="pay-badge"><i class="fa-solid fa-circle-check" style="color:#e91e63"></i> bKash</span>
     <span class="pay-badge"><i class="fa-solid fa-circle-check" style="color:#ff5722"></i> Nagad</span>

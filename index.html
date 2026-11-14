@@ -31,14 +31,14 @@ header h3{font-size:14px!important}
 #levelDetails .level-trial{margin-top:22px;padding:18px;border-radius:12px;background:rgba(213,173,80,.08);text-align:center}
 #levelDetails .level-trial p{margin-bottom:12px}
 
-/* হিফজ পাঠ্যক্রম এবং এক নজরে সেকশনের জন্য কার্ড স্টাইল */
+/* হিফজ পাঠ্যক্রম এবং অন্যান্য সেকশনের গ্রিড */
 .hifz-syllabus-grid, .quick-overview-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
-.syllabus-card, .overview-card {
+.syllabus-card, .overview-card, .testimonial-card, .teacher-card, .faq-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(213, 173, 80, 0.3);
   border-radius: 16px;
@@ -52,6 +52,40 @@ header h3{font-size:14px!important}
 .overview-card { text-align: center; background: rgba(213, 173, 80, 0.04); }
 .overview-card h3 { color: #f5cb60; margin: 0; font-size: 18px; }
 .overview-card p { margin: 0; font-size: 20px; font-weight: bold; color: #fff; }
+
+/* নতুন সংযোজিত স্টাইলসমূহ */
+.testimonial-card p { color: #cbd5e1; font-style: italic; }
+.testimonial-card h4 { color: #f5cb60; margin: 0; }
+.teacher-card { text-align: center; align-items: center; }
+.teacher-img { width: 80px; height: 80px; border-radius: 50%; border: 2px solid #d5ad50; object-fit: cover; }
+.teacher-card h3 { color: #f5cb60; margin: 5px 0 0; }
+.teacher-card span { color: #d5ad50; font-size: 14px; }
+.faq-card details { cursor: pointer; }
+.faq-card summary { color: #f5cb60; font-weight: bold; font-size: 17px; outline: none; }
+.faq-card p { margin-top: 10px; color: #cbd5e1; line-height: 1.6; }
+
+/* পেমেন্ট লোগো স্টাইল */
+.payment-logos { display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
+.pay-badge { background: #fff; color: #172033; padding: 6px 14px; border-radius: 8px; font-weight: bold; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; }
+
+/* ফ্লোটিং হোয়াটসঅ্যাপ বাটন */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25d366;
+  color: #fff;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+.floating-whatsapp:hover { transform: scale(1.1); }
 
 /* নতুন লগইন রোল গ্রিড স্টাইল */
 .role-grid {
@@ -68,21 +102,9 @@ header h3{font-size:14px!important}
   text-align: center;
   color: #fff;
 }
-.role-card i {
-  font-size: 24px;
-  color: #f5cb60;
-  margin-bottom: 8px;
-}
-.role-card h3 {
-  font-size: 16px;
-  color: #f5cb60;
-  margin: 5px 0;
-}
-.role-card p {
-  font-size: 12px;
-  color: #cbd5e1;
-  margin: 0;
-}
+.role-card i { font-size: 24px; color: #f5cb60; margin-bottom: 8px; }
+.role-card h3 { font-size: 16px; color: #f5cb60; margin: 5px 0; }
+.role-card p { font-size: 12px; color: #cbd5e1; margin: 0; }
 .form-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(213, 173, 80, 0.3);
@@ -95,6 +117,11 @@ header h3{font-size:14px!important}
 </style>
 </head>
 <body>
+
+<!-- ফ্লোটিং হোয়াটসঅ্যাপ বাটন -->
+<a href="https://wa.me/8801342268929" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <header>
   <div class="logo-container">
@@ -110,8 +137,9 @@ header h3{font-size:14px!important}
   <a href="#learningSteps">পড়াশোনার ধাপ</a>
   <a href="#hifzCurriculum">হিফজ পাঠ্যক্রম</a>
   <a href="#expatPackage">প্রবাসী প্যাকেজ</a>
-  <a href="#courses">কোর্সসমূহ</a>
-  <a href="#features">বৈশিষ্ট্য</a>
+  <a href="#teachers">শিক্ষকগণ</a>
+  <a href="#testimonials">অভিভাবক রিভিউ</a>
+  <a href="#faq">প্রশ্নোত্তর</a>
   <a href="#paymentInfo">ফি ও পেমেন্ট</a>
   <a href="#admission">ভর্তি</a>
   <a href="#trialClass">ফ্রি ট্রায়াল</a>
@@ -216,7 +244,7 @@ header h3{font-size:14px!important}
     </div>
     <div class="syllabus-card">
       <h3>⭐ অন্তর্ভুক্ত সুবিধাসমূহ</h3>
-      <p>লাইভ ক্লাস (Zoom), ক্লাসের রেকর্ড, এবং শর্তসাপেক্ষে বদলি ক্লাস।</p>
+      <p>লাইভ ক্লাস (Zoom/Google Meet), ক্লাসের রেকর্ড, এবং শর্তসাপেক্ষে বদলি ক্লাস।</p>
     </div>
   </div>
   <div style="text-align:center;margin-top:25px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap">
@@ -243,13 +271,79 @@ header h3{font-size:14px!important}
 </div>
 </section>
 
-<section id="courses"><div class="container">
-<h2>আমাদের কোর্সসমূহ</h2><div class="grid">
-  <div class="card"><h3>নূরানী</h3><p>আরবি হরফ চেনা, সঠিক উচ্চারণ ও প্রাথমিক শিক্ষা।</p></div>
-  <div class="card"><h3>নাজেরা</h3><p>শুদ্ধ উচ্চারণে সাবলীল কুরআন তিলাওয়াত অনুশীলন।</p></div>
-  <div class="card"><h3>হিফজ</h3><p>পরিকল্পিত ও সুশৃঙ্খল উপায়ে সম্পূর্ণ কুরআন মুখস্থ শিক্ষা।</p></div>
-  <div class="card"><h3>ইসলামিক শিক্ষা</h3><p>দৈনন্দিন প্রয়োজনীয় দোয়া, কালিমা ও জরুরি মাসআলা-মাসাইল।</p></div>
-</div></div></section>
+<!-- শিক্ষক প্যানেল সেকশন (নতুন যুক্ত) -->
+<section id="teachers">
+<div class="container">
+  <h2 style="text-align:center;color:#f5cb60">আমাদের অভিজ্ঞ শিক্ষকগণ</h2>
+  <p style="text-align:center;margin-bottom:25px;color:#cbd5e1">দক্ষ ও সুশিক্ষিত হাফেজ ও আলেম শিক্ষকদের নিবিড় তত্ত্বাবধানে ক্লাস পরিচালিত হয়।</p>
+  <div class="grid">
+    <div class="teacher-card">
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" alt="Teacher" class="teacher-img">
+      <h3>হাফেজ মাওলানা কারী আব্দুল্লাহ</h3>
+      <span>প্রধান শিক্ষক ও কোর্স কোর্ডিনেটর</span>
+      <p style="font-size:14px;color:#cbd5e1;margin:0">হিফজ ও তাজবীদের উপর দীর্ঘ ১০ বছরের অভিজ্ঞতা সম্পন্ন।</p>
+    </div>
+    <div class="teacher-card">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" alt="Teacher" class="teacher-img">
+      <h3>মাওলানা ইব্রাহিম খলিল</h3>
+      <span>নূরানী ও নাজেরা বিভাগ প্রধান</span>
+      <p style="font-size:14px;color:#cbd5e1;margin:0">শিশুদের অত্যন্ত স্নেহের সাথে কায়দা ও কুরআন শিক্ষাদানে পারদর্শী।</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- অভিভাবক রিভিউ সেকশন (নতুন যুক্ত) -->
+<section id="testimonials">
+<div class="container">
+  <h2 style="text-align:center;color:#f5cb60">অভিভাবকদের মতামত</h2>
+  <p style="text-align:center;margin-bottom:25px;color:#cbd5e1">আমাদের একাডেমি নিয়ে সম্মানিত অভিভাবক ও প্রবাসীদের মূল্যায়ন।</p>
+  <div class="grid">
+    <div class="testimonial-card">
+      <p>"আমার ছেলে দুবাই থেকে অনলাইনে পড়ছে। শিক্ষকদের আন্তরিকতা ও মাখরাজ নিয়ে পড়ানোর ধরন দেখে আমি সত্যিই মুগ্ধ। এখন সে শুদ্ধভাবে কুরআন পড়তে পারে।"</p>
+      <h4>— মোহাম্মদ তারেক, প্রবাসী (দুবাই)</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"মেয়েদের জন্য আলাদা তত্ত্বাবধানে পড়ার ব্যবস্থা থাকায় খুব নিশ্চিন্তে ক্লাস করাতে পারছি। হোমওয়ার্কগুলো খুব সুন্দরভাবে চেক করা হয়।"</p>
+      <h4>— উম্মে সালমা, গৃহিণী (ঢাকা)</h4>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী (FAQ) সেকশন (নতুন যুক্ত) -->
+<section id="faq">
+<div class="container">
+  <h2 style="text-align:center;color:#f5cb60">সাধারণ জিজ্ঞাসা (FAQ)</h2>
+  <p style="text-align:center;margin-bottom:25px;color:#cbd5e1">আপনার মনে থাকা কিছু কমন প্রশ্নের উত্তর।</p>
+  <div class="grid">
+    <div class="faq-card">
+      <details>
+        <summary>ক্লাসগুলো কোন অ্যাপের মাধ্যমে নেওয়া হয়?</summary>
+        <p>ক্লাসগুলো মূলত Zoom অথবা Google Meet-এর মাধ্যমে লাইভ ওয়ান-টু-ওয়ান বা ব্যাচ আকারে নেওয়া হয়ে থাকে।</p>
+      </details>
+    </div>
+    <div class="faq-card">
+      <details>
+        <summary>ফ্রি ট্রায়াল ক্লাস কীভাবে বুক করব?</summary>
+        <p>আমাদের সাইটের 'ফ্রি ট্রায়াল' সেকশন থেকে ফর্ম পূরণ করে সহজেই যেকোনো সুবিধাজনক সময়ে একটি ফ্রি ট্রায়াল ক্লাস বুক করতে পারেন।</p>
+      </details>
+    </div>
+    <div class="faq-card">
+      <details>
+        <summary>মাসিক ফি কীভাবে পরিশোধ করতে হবে?</summary>
+        <p>প্রতি মাসের ৫ তারিখের মধ্যে বিকাশ, নগদ বা ব্যাংক ট্রান্সফারের মাধ্যমে সহজেই মাসিক হাদিয়া পরিশোধ করা যাবে।</p>
+      </details>
+    </div>
+    <div class="faq-card">
+      <details>
+        <summary>প্রবাসীদের জন্য সময়ের ব্যবধান কীভাবে মেলানো হয়?</summary>
+        <p>প্রবাসীর নিজ দেশের লোকাল টাইম জোনের সাথে মিলিয়ে সুবিধাজনক সময়ে ক্লাস স্লট নির্ধারণ করা হয়।</p>
+      </details>
+    </div>
+  </div>
+</div>
+</section>
 
 <section id="features"><div class="container">
 <h2>আমাদের বিশেষ বৈশিষ্ট্য</h2><div class="grid">
@@ -269,7 +363,16 @@ header h3{font-size:14px!important}
 <div class="panel" style="text-align:center;margin-top:20px">
   <h3>বিকাশ ও নগদ (পার্সোনাল) নম্বর</h3>
   <p style="font-size:22px;color:#f5cb60;font-weight:bold;margin:12px 0"><i class="fa-solid fa-wallet"></i> 01732668283</p>
-  <p style="color:#e2eafa;max-width:700px;margin:auto">📌 <strong>নিয়মাবলী:</strong> প্রতি মাসের ৫ তারিখের মধ্যে বিকাশ, নগদ বা ব্যাংক ট্রান্সফারের মাধ্যমে হাদিয়া পরিশোধ করতে হবে।</p>
+  
+  <!-- পেমেন্ট লোগো সেকশন (নতুন যুক্ত) -->
+  <div class="payment-logos">
+    <span class="pay-badge"><i class="fa-solid fa-circle-check" style="color:#e91e63"></i> bKash</span>
+    <span class="pay-badge"><i class="fa-solid fa-circle-check" style="color:#ff5722"></i> Nagad</span>
+    <span class="pay-badge"><i class="fa-solid fa-circle-check" style="color:#e91e63"></i> Rocket</span>
+    <span class="pay-badge"><i class="fa-solid fa-circle-check" style="color:#2196f3"></i> Visa / Card</span>
+  </div>
+
+  <p style="color:#e2eafa;max-width:700px;margin:15px auto 0">📌 <strong>নিয়মাবলী:</strong> প্রতি মাসের ৫ তারিখের মধ্যে বিকাশ, নগদ বা ব্যাংক ট্রান্সফারের মাধ্যমে হাদিয়া পরিশোধ করতে হবে।</p>
 </div>
 </div></section>
 
@@ -299,64 +402,29 @@ header h3{font-size:14px!important}
 <p id="trialMessage" class="status" style="text-align:center"></p>
 </form></div></div></section>
 
-<!-- আপনার প্রদান করা নতুন লগইন সেকশন এখানে যুক্ত করা হলো -->
+<!-- লগইন সেকশন -->
 <section id="login" class="section">
   <div class="container">
     <h2>একাউন্ট লগইন</h2>
     <p>আপনার পরিচয় অনুযায়ী লগইন করুন</p>
 
     <div class="role-grid">
-      <div class="role-card admin-role">
-        <i class="fa-solid fa-user-shield"></i>
-        <h3>Admin</h3>
-        <p>প্রশাসনিক ব্যবস্থাপনা</p>
-      </div>
-
-      <div class="role-card teacher-role">
-        <i class="fa-solid fa-chalkboard-user"></i>
-        <h3>Teacher</h3>
-        <p>শিক্ষক প্যানেল</p>
-      </div>
-
-      <div class="role-card student-role">
-        <i class="fa-solid fa-user-graduate"></i>
-        <h3>Student</h3>
-        <p>শিক্ষার্থী প্যানেল</p>
-      </div>
-
-      <div class="role-card parent-role">
-        <i class="fa-solid fa-users"></i>
-        <h3>Parent</h3>
-        <p>অভিভাবক প্যানেল</p>
-      </div>
-
-      <div class="role-card trainer-role">
-        <i class="fa-solid fa-person-chalkboard"></i>
-        <h3>Trainer</h3>
-        <p>প্রশিক্ষক প্যানেল</p>
-      </div>
+      <div class="role-card admin-role"><i class="fa-solid fa-user-shield"></i><h3>Admin</h3><p>প্রশাসনিক ব্যবস্থাপনা</p></div>
+      <div class="role-card teacher-role"><i class="fa-solid fa-chalkboard-user"></i><h3>Teacher</h3><p>শিক্ষক প্যানেল</p></div>
+      <div class="role-card student-role"><i class="fa-solid fa-user-graduate"></i><h3>Student</h3><p>শিক্ষার্থী প্যানেল</p></div>
+      <div class="role-card parent-role"><i class="fa-solid fa-users"></i><h3>Parent</h3><p>অভিভাবক প্যানেল</p></div>
+      <div class="role-card trainer-role"><i class="fa-solid fa-person-chalkboard"></i><h3>Trainer</h3><p>প্রশিক্ষক প্যানেল</p></div>
     </div>
 
     <form id="loginForm" class="form-card">
       <h3 id="loginTitle">সকল ব্যবহারকারীর লগইন</h3>
-
       <label>Email Address</label>
-      <input type="email" id="email"
-        placeholder="আপনার Email লিখুন" required>
-
+      <input type="email" id="email" placeholder="আপনার Email লিখুন" required>
       <label>Password</label>
-      <input type="password" id="password"
-        placeholder="আপনার Password লিখুন" required>
-
-      <button type="submit" id="loginSubmit" class="btn">
-        Login করুন
-      </button>
-
+      <input type="password" id="password" placeholder="আপনার Password লিখুন" required>
+      <button type="submit" id="loginSubmit" class="btn">Login করুন</button>
       <p id="loginMessage"></p>
-      <button type="button" id="logoutBtn"
-        class="btn" style="display:none">
-        Logout
-      </button>
+      <button type="button" id="logoutBtn" class="btn" style="display:none">Logout</button>
     </form>
   </div>
 </section>

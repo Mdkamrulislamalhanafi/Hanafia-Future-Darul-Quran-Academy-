@@ -60,7 +60,7 @@ header h3{font-size:14px!important}
 .video-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
   height: 0;
   border-radius: 12px;
   overflow: hidden;
@@ -354,7 +354,6 @@ header h3{font-size:14px!important}
   <div class="grid">
     <div class="video-card">
       <div class="video-container">
-        <!-- এখানে আপনার ইউটিউব বা ফেসবুক ভিডিওর এমবেড লিংক (src) বসিয়ে দেবেন -->
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Parent Video Review 1" allowfullscreen></iframe>
       </div>
       <h4>জনাব আব্দুল করিম (সৌদি প্রবাসী)</h4>
@@ -432,7 +431,7 @@ header h3{font-size:14px!important}
     <div class="dashboard-card">
       <h3><i class="fa-solid fa-calendar-days" style="color:#f5cb60"></i> ক্লাস রুটিন ও শিডিউল</h3>
       <p style="margin:0;color:#cbd5e1">বার: <strong>শনি, সোম, বুধ</strong></p>
-      <p style="margin:0;color:#cbd5e1">সময়: রাত ৮:০০ টা (বাংলাদেশ সময়)</p>
+      <p style="margin:0;color:#cbd5e1">সময়: রাত ৮ঃ০০ টা (বাংলাদেশ সময়)</p>
       <a href="#" class="btn" style="text-align:center;padding:6px;font-size:14px;margin-top:auto">Zoom লিংকে জয়েন করুন</a>
     </div>
 
@@ -461,8 +460,9 @@ header h3{font-size:14px!important}
   <div class="card"><h3>📝 এডমিশন ও অন্যান্য</h3><p style="font-size:18px;color:#f5cb60;font-weight:bold;margin:10px 0">এডমিশন ফি: ৫০০ টাকা</p><p>ভর্তি ও প্রথম মাসের ফি একসাথে পরিশোধ করলে বিশেষ ডিসকাউন্ট!</p></div>
 </div>
 <div class="panel" style="text-align:center;margin-top:20px">
-  <h3>বিকাশ ও নগদ (পার্সোনাল) নম্বর</h3>
-  <p style="font-size:22px;color:#f5cb60;font-weight:bold;margin:12px 0"><i class="fa-solid fa-wallet"></i> 01732668283</p>
+  <h3>বিকাশ, নগদ ও রকেট (পার্সোনাল) নম্বরসমূহ</h3>
+  <p style="font-size:18px;color:#cbd5e1;margin:8px 0"><i class="fa-solid fa-wallet" style="color:#e91e63"></i> <strong>বিকাশ:</strong> 01732668283</p>
+  <p style="font-size:18px;color:#cbd5e1;margin:8px 0"><i class="fa-solid fa-wallet" style="color:#ff5722"></i> <strong>নগদ:</strong> 01740117452</p>
   
   <div class="payment-logos">
     <span class="pay-badge"><i class="fa-solid fa-circle-check" style="color:#e91e63"></i> bKash</span>
@@ -638,6 +638,73 @@ function closeLevelDetails(){
   document.getElementById("levelGrid").scrollIntoView({behavior:"smooth",block:"start"});
 }
 renderLevels();
+
+// ==========================================
+// WhatsApp Integration for Forms
+// ==========================================
+const WHATSAPP_NUMBER = "8801342268929";
+
+// ভর্তি ফর্ম সাবমিট হ্যান্ডলার
+document.getElementById("admissionForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById("aName").value.trim();
+  const father = document.getElementById("aFather").value.trim();
+  const mobile = document.getElementById("aMobile").value.trim();
+  const age = document.getElementById("aAge").value;
+  const course = document.getElementById("aCourse").value;
+  const address = document.getElementById("aAddress").value.trim();
+
+  let message = `*নতুন ভর্তি আবেদন - HFDQA*\n\n`;
+  message += `👤 *শিক্ষার্থীর নাম:* ${name}\n`;
+  message += `👨‍👦 *পিতার নাম:* ${father}\n`;
+  message += `📞 *মোবাইল নম্বর:* ${mobile}\n`;
+  message += `👶 *বয়সভিত্তিক গ্রুপ:* ${age}\n`;
+  message += `📚 *পছন্দের কোর্স:* ${course}\n`;
+  message += `📍 *ঠিকানা:* ${address}`;
+
+  let encodedMessage = encodeURIComponent(message);
+  let whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+  const msgElement = document.getElementById("aMessage");
+  msgElement.style.color = "#25d366";
+  msgElement.textContent = "আবেদন সফল হয়েছে! আপনাকে WhatsApp-এ নিয়ে যাওয়া হচ্ছে...";
+
+  setTimeout(() => {
+    window.open(whatsappURL, "_blank");
+  }, 1000);
+});
+
+// ফ্রি ট্রায়াল ক্লাস বুকিং ফর্ম সাবমিট হ্যান্ডলার
+document.getElementById("trialForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById("trialName").value.trim();
+  const guardian = document.getElementById("trialGuardian").value.trim();
+  const mobile = document.getElementById("trialMobile").value.trim();
+  const course = document.getElementById("trialCourse").value;
+  const date = document.getElementById("trialDate").value;
+  const time = document.getElementById("trialTime").value;
+
+  let message = `*ফ্রি ট্রায়াল ক্লাস বুকিং - HFDQA*\n\n`;
+  message += `👤 *শিক্ষার্থীর নাম:* ${name}\n`;
+  message += `👥 *অভিভাবকের নাম:* ${guardian}\n`;
+  message += `📞 *WhatsApp নম্বর:* ${mobile}\n`;
+  message += `📖 *পছন্দের কোর্স:* ${course}\n`;
+  message += `📅 *পছন্দের তারিখ:* ${date}\n`;
+  message += `⏰ *পছন্দের সময়:* ${time}`;
+
+  let encodedMessage = encodeURIComponent(message);
+  let whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+  const msgElement = document.getElementById("trialMessage");
+  msgElement.style.color = "#25d366";
+  msgElement.textContent = "বুকিং সফল হয়েছে! আপনাকে WhatsApp-এ নিয়ে যাওয়া হচ্ছে...";
+
+  setTimeout(() => {
+    window.open(whatsappURL, "_blank");
+  }, 1000);
+});
 </script>
 </body>
 </html>

@@ -634,3 +634,41 @@ footer p, footer a {
     flex: 1;
   }
 }
+/* অ্যাডমিন ড্যাশবোর্ড স্টাইল */
+#adminDashboard {
+  display: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(213, 173, 80, 0.35);
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 25px;
+}
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.stat-box {
+  background: rgba(213, 173, 80, 0.08);
+  border: 1px solid rgba(213, 173, 80, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+.stat-box h4 { color: #f5cb60; margin: 0; font-size: 16px; }
+.stat-box p { color: #fff; font-size: 24px; font-weight: bold; margin: 5px 0 0; }
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+.admin-table th, .admin-table td {
+  border: 1px solid rgba(213, 173, 80, 0.2);
+  padding: 10px;
+  text-align: right;
+}
+.admin-table th { background: rgba(213, 173, 80, 0.15); color: #f5cb60; }

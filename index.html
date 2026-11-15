@@ -47,7 +47,9 @@ header h3{font-size:14px!important}
   flex-direction: column;
   gap: 12px;
 }
-.syllabus-card h3 { color: #f5cb60; margin: 0; font-size: 18px; }
+.card i, .syllabus-card i, .overview-card i { font-size: 24px; color: #f5cb60; margin-bottom: 5px; }
+.syllabus-card h3 { color: #f5cb60; margin: 0; font-size: 18px; display: flex; align-items: center; gap: 8px; }
+.card h3 { color: #f5cb60; margin-top: 0; display: flex; align-items: center; gap: 8px; font-size: 18px; }
 .syllabus-card p { margin: 0; color: #cbd5e1; line-height: 1.7; }
 .overview-card { text-align: center; background: rgba(213, 173, 80, 0.04); }
 .overview-card h3 { color: #f5cb60; margin: 0; font-size: 18px; }
@@ -197,11 +199,11 @@ header h3{font-size:14px!important}
   <h2 style="text-align:center;color:#f5cb60">এক নজরে কোর্স তথ্য</h2>
   <div class="quick-overview-grid">
     <div class="overview-card">
-      <h3>সময়কাল</h3>
+      <h3><i class="fa-regular fa-clock"></i> সময়কাল</h3>
       <p>প্রতিদিন ১–২ ঘণ্টা</p>
     </div>
     <div class="overview-card">
-      <h3>বয়স</h3>
+      <h3><i class="fa-solid fa-users-rectangle"></i> বয়স</h3>
       <p>ছোট-বড় সবার জন্য</p>
     </div>
   </div>
@@ -220,10 +222,22 @@ header h3{font-size:14px!important}
     <p style="max-width:650px;margin:auto;font-size:16px;color:#cbd5e1">শুদ্ধ কুরআন শিক্ষা, নৈতিক চরিত্র গঠন ও সুন্নাহ ভিত্তিক জীবন গড়ার এক অনন্য অনলাইন একাডেমি।</p>
   </div>
   <div class="grid">
-    <div class="card"><h3>📖 শুদ্ধ তিলাওয়াত বিভাগ</h3><p>নূরানী ও নাজেরার মাধ্যমে হরফের সঠিক মাখরাজ ও সাবলীল তিলাওয়াত শিক্ষা।</p></div>
-    <div class="card"><h3>🧠 হিফজুল কুরআন বিভাগ</h3><p>পরিকল্পিত উপায়ে সম্পূর্ণ কুরআন মুখস্থ করার বিশেষ তত্ত্বাবধান ও হিফজ প্রোগ্রাম।</p></div>
-    <div class="card"><h3>🎙️ তাজভীদ ও কিরাআত</h3><p>নিয়মকানুন মেনে সুন্দর ও সুরভিত কণ্ঠে কুরআন তিলাওয়াতের উন্নত প্রশিক্ষণ।</p></div>
-    <div class="card"><h3>🌍 ইসলামী ও নৈতিক শিক্ষা</h3><p>দৈনন্দিন দোয়া, জরুরি মাসআলা-মাসায়েল এবং সুন্নাহভিত্তিক জীবনগঠন শিক্ষা।</p></div>
+    <div class="card">
+      <h3><i class="fa-solid fa-book-quran"></i> শুদ্ধ তিলাওয়াত বিভাগ</h3>
+      <p>নূরানী ও নাজেরার মাধ্যমে হরফের সঠিক মাখরাজ ও সাবলীল তিলাওয়াত শিক্ষা।</p>
+    </div>
+    <div class="card">
+      <h3><i class="fa-solid fa-brain"></i> হিফজুল কুরআন বিভাগ</h3>
+      <p>পরিকল্পিত উপায়ে সম্পূর্ণ কুরআন মুখস্থ করার বিশেষ তত্ত্বাবধান ও হিফজ প্রোগ্রাম।</p>
+    </div>
+    <div class="card">
+      <h3><i class="fa-solid fa-microphone-lines"></i> তাজভীদ ও কিরাআত</h3>
+      <p>নিয়মকানুন মেনে সুন্দর ও সুরভিত কণ্ঠে কুরআন তিলাওয়াতের উন্নত প্রশিক্ষণ।</p>
+    </div>
+    <div class="card">
+      <h3><i class="fa-solid fa-hand-holding-heart"></i> ইসলামী ও নৈতিক শিক্ষা</h3>
+      <p>দৈনন্দিন দোয়া, জরুরি মাসআলা-মাসায়েল এবং সুন্নাহভিত্তিক জীবনগঠন শিক্ষা।</p>
+    </div>
   </div>
 </div>
 </section>
@@ -236,19 +250,19 @@ header h3{font-size:14px!important}
   
   <div class="hifz-syllabus-grid">
     <div class="syllabus-card">
-      <h3>ধাপ ১ — প্রস্তুতি ও তিলাওয়াত যাচাই</h3>
+      <h3><i class="fa-solid fa-list-check"></i> ধাপ ১ — প্রস্তুতি ও তিলাওয়াত</h3>
       <p>মাখরাজ, প্রয়োজনীয় তাজউইদ, তিলাওয়াতের শুদ্ধতা এবং পূর্বে মুখস্থ করা অংশ যাচাই করে উপযুক্ত পরিকল্পনা নির্ধারণ।</p>
     </div>
     <div class="syllabus-card">
-      <h3>ধাপ ২ — নির্বাচিত সূরা ও আমপারা</h3>
+      <h3><i class="fa-solid fa-book-open-reader"></i> ধাপ ২ — নির্বাচিত সূরা ও আমপারা</h3>
       <p>শিক্ষার্থীর সক্ষমতা অনুযায়ী ছোট সূরা ও আমপারার নির্ধারিত অংশ মুখস্থ করা এবং নিয়মিত শোনানো।</p>
     </div>
     <div class="syllabus-card">
-      <h3>ধাপ ৩ — নতুন সবক, সাবকি ও মানজিল</h3>
+      <h3><i class="fa-solid fa-rotate"></i> ধাপ ৩ — সবক, সাবকি ও মানজিল</h3>
       <p>নতুন মুখস্থ (সবক), সাম্প্রতিক মুখস্থের পুনরাবৃত্তি (সাবকি) এবং পুরোনো মুখস্থ অংশের চর্চা (মানজিল).</p>
     </div>
     <div class="syllabus-card">
-      <h3>ধাপ ৪ — পূর্ণ কুরআন হিফয</h3>
+      <h3><i class="fa-solid fa-award"></i> ধাপ ৪ — পূর্ণ কুরআন হিফয</h3>
       <p>প্রস্তুতি ও অগ্রগতি উপযুক্ত হলে পূর্ণ কুরআন মুখস্থের ধারাবাহিক পরিকল্পনা, নিয়মিত পুনরাবৃত্তি ও মূল্যায়ন।</p>
     </div>
   </div>
@@ -264,19 +278,19 @@ header h3{font-size:14px!important}
   
   <div class="hifz-syllabus-grid">
     <div class="syllabus-card">
-      <h3>◷ আনুমানিক সময়</h3>
+      <h3><i class="fa-solid fa-clock"></i> আনুমানিক সময়</h3>
       <p>সপ্তাহে ২–৫ দিন (শিক্ষার্থীর অগ্রগতি অনুযায়ী সময় কম-বেশি হতে পারে)। ক্লাসের দৈর্ঘ্য ৪৫ মিনিট অথবা ১ ঘণ্টা।</p>
     </div>
     <div class="syllabus-card">
-      <h3>✓ কাদের জন্য</h3>
+      <h3><i class="fa-solid fa-child-reaching"></i> কাদের জন্য</h3>
       <p>সকল বয়সের প্রবাসী বাংলাদেশি পরিবারের সন্তান, যাদের সময় বাংলাদেশের সময়ের সাথে মেলে না।</p>
     </div>
     <div class="syllabus-card">
-      <h3>📖 এই কোর্সে যা শেখানো হয়</h3>
+      <h3><i class="fa-solid fa-graduation-cap"></i> যা শেখানো হয়</h3>
       <p>কায়দা থেকে কুরআন নাজেরা পর্যন্ত সব লেভেল এবং স্থানীয় সময় অনুযায়ী সময়সূচি নির্ধারণ।</p>
     </div>
     <div class="syllabus-card">
-      <h3>⭐ অন্তর্ভুক্ত সুবিধাসমূহ</h3>
+      <h3><i class="fa-solid fa-star"></i> অন্তর্ভুক্ত সুবিধাসমূহ</h3>
       <p>লাইভ ক্লাস (Zoom/Google Meet), ক্লাসের রেকর্ড, এবং শর্তসাপেক্ষে বদলি ক্লাস।</p>
     </div>
   </div>
@@ -378,7 +392,6 @@ header h3{font-size:14px!important}
   <p style="text-align:center;margin-bottom:25px;color:#cbd5e1">Free Salah 5 Surah Course এবং সাধারণ ক্লাস সম্পর্কিত আপনার মনে থাকা কমন প্রশ্নসমূহের উত্তর।</p>
   
   <div class="grid">
-    <!-- Free Course Specific FAQs -->
     <div class="faq-card">
       <details>
         <summary>এই কোর্সটি কি সত্যিই Free?</summary>
@@ -491,7 +504,6 @@ header h3{font-size:14px!important}
       </details>
     </div>
 
-    <!-- General Academy FAQs -->
     <div class="faq-card">
       <details>
         <summary>ক্লাসগুলো কোন অ্যাপের মাধ্যমে নেওয়া হয়?</summary>
@@ -520,13 +532,29 @@ header h3{font-size:14px!important}
 </div>
 </section>
 
-<section id="features"><div class="container">
-<h2>আমাদের বিশেষ বৈশিষ্ট্য</h2><div class="grid">
-  <div class="card"><h3>🎯 ব্যক্তিগত মনোযোগ</h3><p>প্রতিটি শিক্ষার্থীর জন্য আলাদা যত্ন ও নিবিড় তদারকি।</p></div>
-  <div class="card"><h3>👨‍🏫 অভিজ্ঞ শিক্ষক</h3><p>প্রশিক্ষিত হাফেজ ও দক্ষ কারী শিক্ষক দ্বারা পাঠদান।</p></div>
-  <div class="card"><h3>🌍 অনলাইন ক্লাস</h3><p>বিশ্বের যেকোনো স্থান থেকে নিরবচ্ছিন্নভাবে ক্লাসে অংশগ্রহণ।</p></div>
-  <div class="card"><h3>📚 পরিকল্পিত সিলেবাস</h3><p>নূরানী, নাজেরা, হিফজ ও ইসলামিক শিক্ষার আধুনিক সমন্বয়।</p></div>
-</div></div></section>
+<section id="features">
+<div class="container">
+  <h2 style="text-align:center;color:#f5cb60">আমাদের বিশেষ বৈশিষ্ট্য</h2>
+  <div class="grid">
+    <div class="card">
+      <h3><i class="fa-solid fa-bullseye"></i> ব্যক্তিগত মনোযোগ</h3>
+      <p>প্রতিটি শিক্ষার্থীর জন্য আলাদা যত্ন ও নিবিড় তদারকি।</p>
+    </div>
+    <div class="card">
+      <h3><i class="fa-solid fa-chalkboard-user"></i> অভিজ্ঞ শিক্ষক</h3>
+      <p>প্রশিক্ষিত হাফেজ ও দক্ষ কারী শিক্ষক দ্বারা পাঠদান।</p>
+    </div>
+    <div class="card">
+      <h3><i class="fa-solid fa-globe"></i> অনলাইন ক্লাস</h3>
+      <p>বিশ্বের যেকোনো স্থান থেকে নিরবচ্ছিন্নভাবে ক্লাসে অংশগ্রহণ।</p>
+    </div>
+    <div class="card">
+      <h3><i class="fa-solid fa-book-bookmark"></i> পরিকল্পিত সিলেবাস</h3>
+      <p>নূরানী, নাজেরা, হিফজ ও ইসলামিক শিক্ষার আধুনিক সমন্বয়।</p>
+    </div>
+  </div>
+</div>
+</section>
 
 <!-- স্টুডেন্ট ড্যাশবোর্ড / লার্নিং ম্যানেজমেন্ট প্রিভিউ -->
 <section id="studentDashboardPreview" style="background: rgba(213,173,80,0.03); padding: 40px 0;">
@@ -569,10 +597,22 @@ header h3{font-size:14px!important}
 
 <section id="paymentInfo"><div class="container">
 <h2>হাদিয়া, ফি ও পেমেন্ট পদ্ধতি</h2><div class="grid">
-  <div class="card"><h3>👥 ব্যাচ ক্লাস</h3><p style="font-size:20px;color:#f5cb60;font-weight:bold;margin:10px 0">১,২৫০ টাকা / মাস</p><p>সপ্তাহে ৩ দিন নিয়মিত ক্লাস।</p></div>
-  <div class="card"><h3>👤 ওয়ান-টু-ওয়ান (৩ দিন)</h3><p style="font-size:20px;color:#f5cb60;font-weight:bold;margin:10px 0">২,৫০০ টাকা / মাস</p><p>ডিসকাউন্টে (প্রথম মাস একসাথে): <strong>২,২০০ টাকা</strong></p></div>
-  <div class="card"><h3>👤 ওয়ান-টু-ওয়ান (৬ দিন)</h3><p style="font-size:20px;color:#f5cb60;font-weight:bold;margin:10px 0">৫,০০০ টাকা / মাস</p><p>ডিসকাউন্টে (প্রথম মাস একসাথে): <strong>৪,৩০০ টাকা</strong></p></div>
-  <div class="card"><h3>📝 এডমিশন ও অন্যান্য</h3><p style="font-size:18px;color:#f5cb60;font-weight:bold;margin:10px 0">এডমিশন ফি: ৫০০ টাকা</p><p>ভর্তি ও প্রথম মাসের ফি একসাথে পরিশোধ করলে বিশেষ ডিসকাউন্ট!</p></div>
+  <div class="card">
+    <h3><i class="fa-solid fa-people-group"></i> ব্যাচ ক্লাস</h3>
+    <p style="font-size:20px;color:#f5cb60;font-weight:bold;margin:10px 0">১,২৫০ টাকা / মাস</p><p>সপ্তাহে ৩ দিন নিয়মিত ক্লাস।</p>
+  </div>
+  <div class="card">
+    <h3><i class="fa-solid fa-user"></i> ওয়ান-টু-ওয়ান (৩ দিন)</h3>
+    <p style="font-size:20px;color:#f5cb60;font-weight:bold;margin:10px 0">২,৫০০ টাকা / মাস</p><p>ডিসকাউন্টে (প্রথম মাস একসাথে): <strong>২,২০০ টাকা</strong></p>
+  </div>
+  <div class="card">
+    <h3><i class="fa-solid fa-user-check"></i> ওয়ান-টু-ওয়ান (৬ দিন)</h3>
+    <p style="font-size:20px;color:#f5cb60;font-weight:bold;margin:10px 0">৫,০০০ টাকা / মাস</p><p>ডিসকাউন্টে (প্রথম মাস একসাথে): <strong>৪,৩০০ টাকা</strong></p>
+  </div>
+  <div class="card">
+    <h3><i class="fa-solid fa-file-invoice-dollar"></i> এডমিশন ও অন্যান্য</h3>
+    <p style="font-size:18px;color:#f5cb60;font-weight:bold;margin:10px 0">এডমিশন ফি: ৫০০ টাকা</p><p>ভর্তি ও প্রথম মাসের ফি একসাথে পরিশোধ করলে বিশেষ ডিসকাউন্ট!</p>
+  </div>
 </div>
 <div class="panel" style="text-align:center;margin-top:20px">
   <h3>বিকাশ, নগদ ও রকেট (পার্সোনাল) নম্বরসমূহ</h3>
@@ -586,7 +626,7 @@ header h3{font-size:14px!important}
     <span class="pay-badge"><i class="fa-solid fa-circle-check" style="color:#2196f3"></i> Visa / Card</span>
   </div>
 
-  <p style="color:#e2eafa;max-width:700px;margin:15px auto 0">📌 <strong>নিয়মাবলী:</strong> প্রতি মাসের ৫ তারিখের মধ্যে বিকাশ, নগদ বা ব্যাংক ট্রান্সফারের মাধ্যমে হাদিয়া পরিশোধ করতে হবে।</p>
+  <p style="color:#e2eafa;max-width:700px;margin:15px auto 0">📌 <strong>নিয়মাবলী:</strong> প্রতি মাসের ৫ তারিখের মধ্যে বিকাশ, নগদ বা ব্যাংক ট্রান্সফারের মাধ্যমে হাদিয়া পরিশোধ করতে হবে。</p>
 </div>
 </div></section>
 

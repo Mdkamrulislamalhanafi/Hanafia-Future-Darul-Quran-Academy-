@@ -6,7 +6,6 @@
 <title>Hanafia Future Darul Quran Academy</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 <style>
 /* ==========================================
    HANAFIA FUTURE DARUL QURAN ACADEMY
@@ -40,7 +39,6 @@ body {
   line-height: 1.9;
   font-size: 18px !important;
   overflow-x: hidden;
-  animation: pageFade 1s ease both;
   direction: ltr;
 }
 
@@ -141,7 +139,6 @@ section {
   border-radius: 18px;
   margin: 12px auto;
   color: #ffffff;
-  animation: sectionFade 0.8s ease both;
   background: #071735;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -194,7 +191,6 @@ p, li {
   border-radius: 20px;
   border: 1px solid rgba(185,155,85,0.3);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  animation: heroReveal 1.2s ease both;
 }
 
 .hero h1 {
@@ -531,23 +527,6 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(212,175,55,0.25);
 }
 
-/* NOTICE */
-.notice {
-  padding: 15px;
-  background: #071B46;
-  color: #ffffff;
-  border-left: 4px solid #f5cb60;
-  border-radius: 9px;
-  margin: 12px 0;
-  border: 1px solid rgba(185,155,85,0.3);
-}
-
-.notice::before {
-  content: "📢 ";
-  display: inline-block;
-  animation: iconPulse 1.5s ease-in-out infinite;
-}
-
 /* FOOTER */
 footer {
   text-align: center;
@@ -576,15 +555,6 @@ footer p, footer a {
   }
   50% {
     transform: translateY(-8px) rotate(8deg);
-  }
-}
-
-@keyframes iconPulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.18);
   }
 }
 
@@ -1298,6 +1268,7 @@ const WHATSAPP_NUMBER = "8801342268929";
 
 document.getElementById("admissionForm").addEventListener("submit", function(e) {
   e.preventDefault();
+
   const name = document.getElementById("aName").value.trim();
   const father = document.getElementById("aFather").value.trim();
   const mobile = document.getElementById("aMobile").value.trim();
@@ -1305,15 +1276,52 @@ document.getElementById("admissionForm").addEventListener("submit", function(e) 
   const course = document.getElementById("aCourse").value;
   const address = document.getElementById("aAddress").value.trim();
 
-  let message = `*নতুন ভর্তি আবেদন - HFDQA*\n\n👤 *শিক্ষার্থীর নাম:* ${name}\n👨‍👦 *পিতার নাম:* ${father}\n📞 *মোবাইল নম্বর:* ${mobile}\n👶 *বয়সভিত্তিক গ্রুপ:* ${age}\n📚 *কোর্স:* ${course}\n📍 *ঠিকানা:* ${address}`;
-  let whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  if (!name || !father || !mobile || !age || !course || !address) {
+    alert("দয়া করে ভর্তি ফরমের সব তথ্য পূরণ করুন।");
+    return;
+  }
+
+  const message = `🌙 *নতুন ভর্তি আবেদন*
+*HANAFIA FUTURE DARUL QURAN ACADEMY*
+
+━━━━━━━━━━━━━━
+
+👤 *শিক্ষার্থীর নাম:* ${name}
+
+👨‍👦 *পিতার নাম:* ${father}
+
+📞 *মোবাইল নম্বর:* ${mobile}
+
+👶 *বয়সভিত্তিক গ্রুপ:* ${age}
+
+📚 *নির্বাচিত কোর্স:* ${course}
+
+📍 *দেশ ও ঠিকানা:* ${address}
+
+━━━━━━━━━━━━━━
+
+ওয়েবসাইট থেকে নতুন ভর্তি আবেদন এসেছে।
+অনুগ্রহ করে আবেদনটি যাচাই করুন।
+
+جزاك الله خيراً`;
+
+  const whatsappURL =
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" +
+    encodeURIComponent(message);
 
   const msgElement = document.getElementById("aMessage");
+
   msgElement.style.color = "#25d366";
-  msgElement.textContent = "আবেদন সফল হয়েছে! WhatsApp-এ নিয়ে যাওয়া হচ্ছে...";
-  setTimeout(() => { window.open(whatsappURL, "_blank"); }, 1000);
+  msgElement.textContent =
+    "আপনার আবেদন প্রস্তুত। WhatsApp খুলছে, Send বাটনে চাপ দিয়ে পাঠিয়ে দিন।";
+
+  // সরাসরি WhatsApp খুলবে
+  window.location.href = whatsappURL;
 });
 
+// ট্রায়াল ফর্ম হ্যান্ডলার
 document.getElementById("trialForm").addEventListener("submit", function(e) {
   e.preventDefault();
   const name = document.getElementById("trialName").value.trim();

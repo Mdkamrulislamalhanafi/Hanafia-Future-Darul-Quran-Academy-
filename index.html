@@ -10,15 +10,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Noto+Serif+Bengali:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f4f8f6; --surface:#ffffff; --ink:#12302d; --muted:#4d6663;
-  --brand:#14524a; --brand-ink:#ffffff; --gold:#a97a1e; --line:#d5e2de; --soft:#e6f0ec;
+  --bg:#f2f7f3; --surface:#ffffff; --ink:#0f2e25; --muted:#4a6a5f;
+  --brand:#0b5d46; --brand-ink:#ffffff; --gold:#9a6f0f; --line:#cfe0d6; --soft:#e3efe7;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#0e1d1b; --surface:#152a27; --ink:#e8f1ee; --muted:#9db5b0;
-    --brand:#5cc2aa; --brand-ink:#08201b; --gold:#e0b45a; --line:#26403c; --soft:#1a3330;
+    --bg:#0a1a15; --surface:#112820; --ink:#e9f3ee; --muted:#9bb8ac;
+    --brand:#4fc79c; --brand-ink:#06201a; --gold:#e3bb55; --line:#22403a; --soft:#16322a;
     color-scheme:dark;
   }
 }
@@ -95,6 +95,12 @@ input,select{font:inherit;padding:11px 12px;border:1px solid var(--line);border-
 footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.95rem}
 .wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#1f8f4d;color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:11}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.hero{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.13' stroke-width='1.5'%3E%3Crect x='14' y='14' width='32' height='32'/%3E%3Crect x='14' y='14' width='32' height='32' transform='rotate(45 30 30)'/%3E%3C/g%3E%3C/svg%3E");
+  border-bottom:6px solid var(--gold);
+}
+.card{border-top:3px solid var(--gold)}
 </style>
 </head>
 <body>

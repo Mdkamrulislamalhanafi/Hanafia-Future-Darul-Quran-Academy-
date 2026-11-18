@@ -1,0 +1,20 @@
+:root:root:root{
+  --bg:#071735; --surface:#0d234a; --ink:#ffffff; --muted:#cbd5e1;
+  --brand:#f5cb60; --brand-ink:#102247; --gold:#d5ad50;
+  --line:rgba(213,173,80,.3); --soft:#0b2450; color-scheme:dark;
+}
+header{background:linear-gradient(135deg,#071735,#123d7b);border-bottom:3px solid #d5ad50}
+h2,h3{color:#ffe28b}
+.btn{background:linear-gradient(120deg,#ffe28b,#c18c25);color:#102247;border-radius:30px;box-shadow:0 5px 15px rgba(212,175,55,.2)}
+.btn.alt{background:transparent;color:#f5cb60;border:1.5px solid #f5cb60;box-shadow:none}
+.hero{background-color:#123d7b;color:#fff}
+.hero h1{color:#f5cb60}
+.hero .btn{background:linear-gradient(120deg,#ffe28b,#c18c25);color:#102247}
+.hero .btn.alt{background:transparent;color:#fff;border-color:#f5cb60}
+.card h3{color:#fff}
+.grid>.card:nth-child(4n+1){background:linear-gradient(135deg,#102d59,#071b46);border-color:#60a5fa}
+.grid>.card:nth-child(4n+2){background:linear-gradient(135deg,#064e3b,#071b46);border-color:#34d399}
+.grid>.card:nth-child(4n+3){background:linear-gradient(135deg,#30245e,#071b46);border-color:#c4b5fd}
+.grid>.card:nth-child(4n+4){background:linear-gradient(135deg,#702b50,#071b46);border-color:#f9a8d4}
+.card,details,.steps li{box-shadow:0 8px 20px rgba(0,0,0,.35)}
+footer{background:#041027;border-top:2px solid #c5ad50}
